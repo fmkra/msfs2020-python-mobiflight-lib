@@ -1,7 +1,41 @@
 from enum import Enum
 
+class _FlightSim_Aircraft:
+    def __init__(self, flightSim):
+        self._ = flightSim
+        self.Control = _FlightSim_Aircraft_Control(flightSim)
+
+
+class _FlightSim_Aircraft_Control:
+    def __init__(self, flightSim):
+        self._ = flightSim
+        self.AILERON_AVERAGE_DEFLECTION = _FlightSim_Aircraft_AILERON_AVERAGE_DEFLECTION(flightSim)
+        self.AILERON_LEFT_DEFLECTION = _FlightSim_Aircraft_AILERON_LEFT_DEFLECTION(flightSim)
+
+
+# Angle deflection for the aileron.	
+class _FlightSim_Aircraft_AILERON_AVERAGE_DEFLECTION:
+    def __init__(self, flightSim):
+        self._ = flightSim
+    
+    def get(self, unit: 'FlightSim.Unit.Angle'):
+        self._.get('AILERON AVERAGE DEFLECTION', unit)
+
+
+# Angle deflection for the aileron.
+class _FlightSim_Aircraft_AILERON_LEFT_DEFLECTION:
+    def __init__(self, flightSim):
+        self._ = flightSim
+    
+    def get(self, unit: 'FlightSim.Unit.Angle'):
+        self._.get('AILERON LEFT DEFLECTION', unit)
+
 
 class FlightSim:
+    def get(self, varname):
+        print('getting', varname)
+    
+
     class Unit:
         class Length(Enum):
             # The meter is the base unit of length in the International System of Units (SI). 1m is equal to 3.28084 imperial feet.
@@ -184,3 +218,6 @@ class FlightSim:
         class Miscellaneous():
             pass
     
+
+    def __init__(self):
+        self.Aircraft = _FlightSim_Aircraft(self)
