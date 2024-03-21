@@ -19,7 +19,7 @@ class _FlightSim_Aircraft_AILERON_AVERAGE_DEFLECTION:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Angle'):
-        self._.get('AILERON AVERAGE DEFLECTION', unit)
+        return self._.get(f"(A:AILERON AVERAGE DEFLECTION,{unit.value})")
 
 
 # Angle deflection for the aileron.
@@ -28,12 +28,13 @@ class _FlightSim_Aircraft_AILERON_LEFT_DEFLECTION:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Angle'):
-        self._.get('AILERON LEFT DEFLECTION', unit)
+        return self._.get(f"(A:AILERON LEFT DEFLECTION,{unit.value})")
 
 
 class FlightSim:
     def get(self, varname):
         print('getting', varname)
+        return varname # TODO: implement correctly
     
 
     class Unit:
@@ -46,6 +47,7 @@ class FlightSim:
             MILLIMETER = "millimeter"
             # A centimeter is an SI unit of length, equal to one hundredth of a meter. 1cm is equal to 0.393701 imperial inches.
             CENTIMETER = "centimeter"
+            # The kilometer is an SI unit of length, equal to one thousand meters. 1km is equal to 0.621371 imperial miles.
             KILOMETER = "kilometer"
 
             # A nautical mile is a unit of length used in air and marine navigation. The nautical mile is defined as exactly 1852 meters (6076 ft or 1.151 miles).
