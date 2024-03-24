@@ -1,0 +1,940 @@
+<div>
+    <h2 id="aircraft_autopi">AIRCRAFT AUTOPILOT/ASSISTANT VARIABLES</h2>
+    <p>The table below indicates the properties for the <a href="Simulation_Variables.htm">Simulation Variables</a> that
+        can be used to get and set properties related to the autopilot of an aircraft. For information on the units
+        listed for each variable, please see here: <a href="Simulation_Variable_Units.htm">Simulation Variable Units</a>
+    </p>
+    <p><span class="note"><strong>NOTE</strong>: When <span data-keyref="game_name">Microsoft Flight Simulator</span> is
+            running in multiplayer mode, only a small number of variables are communicated between aircraft. Those
+            variables that are available will say so in the description as being either for "All Aircraft" or for
+            "Shared Cockpit".</span></p>
+    <p>You can find a complete index of all available SimVars here: <a href="Simulation_Variables.htm#h">SimVar
+            Index</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="autopilot">Autopilot</h3>
+    <p><strong></strong><span class="note"><strong>IMPORTANT!</strong> The SimVars listed here
+            are&nbsp;<strong>not</strong>&nbsp;applicable - and will not work correctly (if at all) - when used with a
+            helicopter.</span></p>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 246px;">
+            <col>
+            <col style="width: 182px;">
+            <col style="width: 43px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="1">Description</th>
+                <th colspan="1" rowspan="1">Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT AIRSPEED ACQUISITION"></a><code
+                        class="inline">AUTOPILOT AIRSPEED ACQUISITION</code></td>
+                <td colspan="1" rowspan="1"><em>Currently not used within the simulation.</em></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT AIRSPEED HOLD"></a><code class="inline">AUTOPILOT AIRSPEED HOLD</code></td>
+                <td>returns whether airspeed hold is active (1, TRUE) or not (0, FALSE).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT AIRSPEED HOLD CURRENT"></a><code
+                        class="inline">AUTOPILOT AIRSPEED HOLD CURRENT</code></td>
+                <td colspan="1" rowspan="1"><em>Currently not used within the simulation.</em></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT AIRSPEED HOLD VAR"></a><code class="inline">AUTOPILOT AIRSPEED HOLD VAR</code></td>
+                <td>Returns the target holding airspeed for the autopilot.</td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT AIRSPEED MAX CALCULATED"></a><code
+                        class="inline">AUTOPILOT AIRSPEED MAX CALCULATED</code></td>
+                <td colspan="1" rowspan="1">Returns the maximum calculated airspeed (<a href="#"
+                        data-popovertext="This stands for 'Knots Calibrated AirSpeed' and is a unit of measurement for aircraft speed based on the 'knot' and corrected for instrument and position error."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">kcas</a>) limit set for the
+                    autopilot.</td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT AIRSPEED MIN CALCULATED"></a><code
+                        class="inline">AUTOPILOT AIRSPEED MIN CALCULATED</code></td>
+                <td colspan="1" rowspan="1">Returns the minimum calculated airspeed (<a href="#"
+                        data-popovertext="This stands for 'Knots Calibrated AirSpeed' and is a unit of measurement for aircraft speed based on the 'knot' and corrected for instrument and position error."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">kcas</a>) limit set for the
+                    autopilot.</td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT ALT RADIO MODE"></a><code class="inline">AUTOPILOT ALT RADIO MODE</code></td>
+                <td>If enabled the Autopilot will use the Radio Altitude rather than the Indicated Altitude.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT ALTITUDE ARM"></a><code class="inline">AUTOPILOT ALTITUDE ARM</code></td>
+                <td colspan="1" rowspan="1">Returns whether the autopilot is in Altitude Arm mode (1, TRUE) or not (0,
+                    FALSE).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT ALTITUDE LOCK"></a><code class="inline">AUTOPILOT ALTITUDE LOCK</code></td>
+                <td>Altitude hold active</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT ALTITUDE LOCK VAR"></a><code class="inline">AUTOPILOT ALTITUDE LOCK VAR</code></td>
+                <td>Set or get the slot index <span>which the altitude hold mode will track when captured. See <code
+                            class="inline"><a href="../../Content_Configuration/SimObjects/Aircraft_SimO/systems_cfg.htm#alt_mode_slot_index">alt_mode_slot_index</a></code>
+                        for more information.</span><span></span></td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT ALTITUDE MANUALLY TUNABLE"></a><code
+                        class="inline">AUTOPILOT ALTITUDE MANUALLY TUNABLE</code></td>
+                <td colspan="1" rowspan="1">Whether or not the autopilot altitude is manually tunable or not.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT ALTITUDE SLOT INDEX"></a><code class="inline">AUTOPILOT ALTITUDE SLOT INDEX</code>
+                </td>
+                <td colspan="1">
+                    <p>Index of the slot that the autopilot will use for the altitude reference. Note that there are 3
+                        slots (1, 2, 3) that you can set/get normally, however you can also target slot index 0. Writing
+                        to slot 0 will overwrite all other slots with the slot 0 value, and by default the autopilot
+                        will follow slot 0 if you have not selected any slot index.</p>
+                    <p><span>See <code
+                                class="inline"><a href="../../Content_Configuration/SimObjects/Aircraft_SimO/systems_cfg.htm#alt_mode_slot_index">alt_mode_slot_index</a></code>
+                            for more information.</span></p>
+                </td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT APPROACH ACTIVE"></a><code class="inline">AUTOPILOT APPROACH ACTIVE</code></td>
+                <td colspan="1" rowspan="1">When true, the autopilot is currently flying the approach Flight Plan (the
+                    last legs).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td>
+                    <p><a id="AUTOPILOT APPROACH ARM"></a><code class="inline">AUTOPILOT APPROACH ARM</code></p>
+                </td>
+                <td colspan="1">Returns true when the autopilot is active on the approach, once it reaches the adequate
+                    condition (in most cases, once it reaches the second-last waypoint of the flightplan).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT APPROACH CAPTURED"></a><code class="inline">AUTOPILOT APPROACH CAPTURED</code></td>
+                <td colspan="1">Returns true when the lateral NAV mode is engaged and the angular deviation with the
+                    current tuned navigation frequency is less than 5°.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT APPROACH HOLD"></a><code class="inline">AUTOPILOT APPROACH HOLD</code></td>
+                <td>Returns whether pproach mode is active (1, TRUE) or not (0, FALSE).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT APPROACH IS LOCALIZER"></a><code
+                        class="inline">AUTOPILOT APPROACH IS LOCALIZER</code></td>
+                <td>Returns true if the current approach is using a localizer.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT ATTITUDE HOLD"></a><code class="inline">AUTOPILOT ATTITUDE HOLD</code></td>
+                <td>Attitude hold active</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT AVAILABLE"></a><code class="inline">AUTOPILOT AVAILABLE</code></td>
+                <td colspan="1">Available flag</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT AVIONICS MANAGED"></a><code class="inline">AUTOPILOT AVIONICS MANAGED</code></td>
+                <td colspan="1">Returns whether the autopilot has active managed avionics (1, TRUE) or not (0, FALSE).
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT BACKCOURSE HOLD"></a><code class="inline">AUTOPILOT BACKCOURSE HOLD</code></td>
+                <td>Returns whether the autopilot back course mode is active (1, TRUE) or not (0, FALSE).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT BANK HOLD"></a><code class="inline">AUTOPILOT BANK HOLD</code></td>
+                <td>Returns whether the autopilot bank hold mode is active (1, TRUE) or not (0, FALSE).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT BANK HOLD REF"></a><code class="inline">AUTOPILOT BANK HOLD REF</code></td>
+                <td colspan="1" rowspan="1">
+                    <p>The current bank-hold bank reference.</p>
+                    <p>Note that if you set this, the next frame the value will be overwritten by the engine, so you may
+                        need to write to this every game frame to ensure it maintains the required value.</p>
+                </td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT CRUISE SPEED HOLD"></a><code class="inline">AUTOPILOT CRUISE SPEED HOLD</code></td>
+                <td colspan="1" rowspan="1"><em>Currently not used within the simulation.</em></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT DEFAULT PITCH MODE"></a><code class="inline">AUTOPILOT DEFAULT PITCH MODE</code>
+                </td>
+                <td colspan="1" rowspan="1">
+                    <p>The current default pitch mode of the autopilot as configured in the plane configuration with the
+                        parameter <code
+                            class="inline"><a href="../../Content_Configuration/SimObjects/Aircraft_SimO/systems_cfg.htm#default_pitch_mode">default_pitch_mode</a></code>.
+                    </p>
+                </td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = None</li>
+                        <li>1 = Pitch</li>
+                        <li>2 = Altitude Hold</li>
+                        <li>3 = Vertical Speed</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT DEFAULT ROLL MODE"></a><code class="inline">AUTOPILOT DEFAULT ROLL MODE</code></td>
+                <td colspan="1" rowspan="1">The current default roll mode of the autopilot as configured in the plane
+                    configuration with the parameter <code
+                        class="inline"><a href="../../Content_Configuration/SimObjects/Aircraft_SimO/systems_cfg.htm#default_bank_mode">default_bank_mode</a></code>.
+                </td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li><span>0 = None</span></li>
+                        <li><span>1 = Wing Leveler</span></li>
+                        <li><span>2 = Heading</span></li>
+                        <li><span>3 = Roll Hold</span></li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT DISENGAGED"></a><code class="inline">AUTOPILOT DISENGAGED</code></td>
+                <td>Returns whether the autopilot has been disengaged (1, TRUE) or not (0, FALSE).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT FLIGHT DIRECTOR ACTIVE"></a><code
+                        class="inline">AUTOPILOT FLIGHT DIRECTOR ACTIVE</code></td>
+                <td>Flight director active</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT FLIGHT DIRECTOR BANK"></a><code
+                        class="inline">AUTOPILOT FLIGHT DIRECTOR BANK</code></td>
+                <td colspan="1">Reference bank angle</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT FLIGHT DIRECTOR BANK EX1"></a><code
+                        class="inline">AUTOPILOT FLIGHT DIRECTOR BANK EX1</code></td>
+                <td colspan="1">Raw reference bank angle</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT FLIGHT DIRECTOR PITCH"></a><code
+                        class="inline">AUTOPILOT FLIGHT DIRECTOR PITCH</code></td>
+                <td colspan="1">Reference pitch angle</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT FLIGHT DIRECTOR PITCH EX1"></a><code
+                        class="inline">AUTOPILOT FLIGHT DIRECTOR PITCH EX1</code></td>
+                <td colspan="1">Raw reference pitch angle</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT FLIGHT LEVEL CHANGE"></a><code class="inline">AUTOPILOT FLIGHT LEVEL CHANGE</code>
+                </td>
+                <td colspan="1" rowspan="1">Boolean, toggles the autopilot Flight Level Change mode</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT GLIDESLOPE ACTIVE"></a><code class="inline">AUTOPILOT GLIDESLOPE ACTIVE</code></td>
+                <td colspan="1" rowspan="1">When true, the autopilot is receiving a signal from the runway beacon and is
+                    following the slope to reach the ground.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT GLIDESLOPE ARM"></a><code class="inline">AUTOPILOT GLIDESLOPE ARM</code></td>
+                <td colspan="1" rowspan="1">Returns true when the autopilot is active on the glide slope.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT GLIDESLOPE HOLD"></a><code class="inline">AUTOPILOT GLIDESLOPE HOLD</code></td>
+                <td>Returns whether the autopilot glidslope hold is active (1, TRUE) or not (0, FALSE).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT HEADING LOCK"></a><code class="inline">AUTOPILOT HEADING LOCK</code></td>
+                <td>Returns whether the autopilot heading lock is enabled (1, TRUE) or not (0, FALSE).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT HEADING LOCK DIR"></a><code class="inline">AUTOPILOT HEADING LOCK DIR</code></td>
+                <td>Specifies / Returns the locked in heading for the autopilot.&nbsp;</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT HEADING MANUALLY TUNABLE"></a><code
+                        class="inline">AUTOPILOT HEADING MANUALLY TUNABLE</code></td>
+                <td colspan="1">Whether or not the autopilot heading is manually tunable or not.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT HEADING SLOT INDEX"></a><code class="inline">AUTOPILOT HEADING SLOT INDEX</code>
+                </td>
+                <td colspan="1">Index of the slot that the autopilot will use for the heading reference. Note that there
+                    are 3 slots (1, 2, 3) that you can set/get normally, however you can also target slot index 0.
+                    Writing to slot 0 will overwrite all other slots with the slot 0 value, and by default the autopilot
+                    will follow slot 0 if you have not selected any slot index.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT MACH HOLD"></a><code class="inline">AUTOPILOT MACH HOLD</code></td>
+                <td>Mach hold active</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT MACH HOLD VAR"></a><code class="inline">AUTOPILOT MACH HOLD VAR</code></td>
+                <td>Returns the target holding mach airspeed&nbsp;for the autopilot.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a id="AUTOPILOT MANAGED INDEX"></a><code
+                        class="inline">AUTOPILOT MANAGED INDEX</code></td>
+                <td colspan="1" style="background-color: rgba(255, 0, 0, 0.10)"><em>Currently not used within the
+                        simulation.</em></td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)">Number</td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT MANAGED SPEED IN MACH"></a><code
+                        class="inline">AUTOPILOT MANAGED SPEED IN MACH</code></td>
+                <td colspan="1">Returns whether the managed speed is in mach (1, TRUE) or not (0, FALSE).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT MANAGED THROTTLE ACTIVE"></a><code
+                        class="inline">AUTOPILOT MANAGED THROTTLE ACTIVE</code></td>
+                <td>Returns whether the autopilot managed throttle is active (1, TRUE) or not (0, FALSE).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT MASTER"></a><code class="inline">AUTOPILOT MASTER</code></td>
+                <td>On/off flag</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT MAX BANK"></a><code class="inline">AUTOPILOT MAX BANK</code></td>
+                <td colspan="1">Returns the maximum banking angle for the autopilot, in radians.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT MAX BANK ID"></a><code class="inline">AUTOPILOT MAX BANK ID</code></td>
+                <td colspan="1">Returns the index of the current maximum bank setting of the autopilot.</td>
+                <td>Integer</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a id="AUTOPILOT MAX SPEED HOLD"></a><code
+                        class="inline">AUTOPILOT MAX SPEED HOLD</code></td>
+                <td colspan="1" style="background-color: rgba(255, 0, 0, 0.10)"><em>Currently not used within the
+                        simulation.</em></td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)">Bool</td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT NAV1 LOCK"></a><code class="inline">AUTOPILOT NAV1 LOCK</code></td>
+                <td>Returns TRUE (1) if the autopilot Nav1 lock is applied, or 0 (FALSE) otherwise.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT NAV SELECTED"></a><code class="inline">AUTOPILOT NAV SELECTED</code></td>
+                <td colspan="1">Index of Nav radio selected</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT PITCH HOLD"></a><code class="inline">AUTOPILOT PITCH HOLD</code></td>
+                <td colspan="1">Set to True if the autopilot pitch hold has is engaged.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT PITCH HOLD REF"></a><code class="inline">AUTOPILOT PITCH HOLD REF</code></td>
+                <td colspan="1">Returns the current autotpilot reference pitch.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT RPM HOLD"></a><code class="inline">AUTOPILOT RPM HOLD</code></td>
+                <td colspan="1">True if autopilot rpm hold applied</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT RPM HOLD VAR"></a><code class="inline">AUTOPILOT RPM HOLD VAR</code></td>
+                <td colspan="1">Selected rpm</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT RPM SLOT INDEX"></a><code class="inline">AUTOPILOT RPM SLOT INDEX</code></td>
+                <td colspan="1">Index of the slot that the autopilot will use for the RPM reference. Note that there are
+                    3 slots (1, 2, 3) that you can set/get normally, however you can also target slot index 0. Writing
+                    to slot 0 will overwrite all other slots with the slot 0 value, and by default the autopilot will
+                    follow slot 0 if you have not selected any slot index.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a id="AUTOPILOT SPEED SETTING"></a><code
+                        class="inline">AUTOPILOT SPEED SETTING</code></td>
+                <td colspan="1" style="background-color: rgba(255, 0, 0, 0.10)"><em>Currently not used within the
+                        simulation.</em></td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT SPEED SLOT INDEX"></a><code class="inline">AUTOPILOT SPEED SLOT INDEX</code></td>
+                <td colspan="1">Index of the managed references</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT TAKEOFF POWER ACTIVE"></a><code
+                        class="inline">AUTOPILOT TAKEOFF POWER ACTIVE</code></td>
+                <td>Takeoff / Go Around power mode active</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT THROTTLE ARM"></a><code class="inline">AUTOPILOT THROTTLE ARM</code></td>
+                <td>Returns whether the autopilot auto-throttle is armed (1, TRUE) or not (0, FALSE).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT THROTTLE MAX THRUST"></a><code class="inline">AUTOPILOT THROTTLE MAX THRUST</code>
+                </td>
+                <td>This can be used to set/get the thrust lever position for autopilot maximum thrust.</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT VERTICAL HOLD"></a><code class="inline">AUTOPILOT VERTICAL HOLD</code></td>
+                <td colspan="1">True if autopilot vertical hold applied</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT VERTICAL HOLD VAR"></a><code class="inline">AUTOPILOT VERTICAL HOLD VAR</code></td>
+                <td>Selected vertical speed</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)/minute</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT VS SLOT INDEX"></a><code class="inline">AUTOPILOT VS SLOT INDEX</code></td>
+                <td colspan="1">Index of the slot that the autopilot will use for the VS reference. Note that there are
+                    3 slots (1, 2, 3) that you can set/get normally, however you can also target slot index 0. Writing
+                    to slot 0 will overwrite all other slots with the slot 0 value, and by default the autopilot will
+                    follow slot 0 if you have not selected any slot index.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT WING LEVELER"></a><code class="inline">AUTOPILOT WING LEVELER</code></td>
+                <td>Wing leveler active</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOPILOT YAW DAMPER"></a><code class="inline">AUTOPILOT YAW DAMPER</code></td>
+                <td>Yaw damper active</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="aircraft_assist">Aircraft Assistance</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="2">Description</th>
+                <th colspan="1" rowspan="1">Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="ASSISTANCE LANDING ENABLED"></a><code class="inline">ASSISTANCE LANDING ENABLED</code></td>
+                <td colspan="2">Returns whether landing assistance has been enabled or not.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ASSISTANCE TAKEOFF ENABLED"></a><code class="inline">ASSISTANCE TAKEOFF ENABLED</code></td>
+                <td colspan="2">Returns whether takeoff assistance has been enabled or not.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="ai_aircraft___p">AI Aircraft / Pilot</h3>
+    <p>The following SimVars are used to get information about the AI pilot:</p>
+    <p>&nbsp;</p>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 241px;">
+            <col style="width: 456px;">
+            <col style="width: 149px;">
+            <col style="width: 1px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="1">Description</th>
+                <th colspan="1" rowspan="1">Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="AI ANTISTALL STATE"></a><code class="inline">AI ANTISTALL STATE</code></td>
+                <td colspan="1">The current state of the AI anti-stall system.</td>
+                <td>
+                    <p>Enum:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = Active</li>
+                        <li>1 = Stabilizing</li>
+                        <li>2 = Inactive</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AI AUTOTRIM ACTIVE"></a><code class="inline">AI AUTOTRIM ACTIVE</code></td>
+                <td colspan="1">Returns whether the AI auto-trim system is enabled or not.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AI AUTOTRIM ACTIVE AGAINST PLAYER"></a><code
+                        class="inline">AI AUTOTRIM ACTIVE AGAINST PLAYER</code></td>
+                <td colspan="1">Returns whether the AI auto-trim system is enabled or not for AI controlled aircraft.
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AI CONTROLS"></a><code class="inline">AI CONTROLS</code></td>
+                <td colspan="1">Returns whether the AI control system is enabled or not.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AI CURSOR MODE ACTIVE"></a><code class="inline">AI CURSOR MODE ACTIVE</code></td>
+                <td colspan="1">Returns whether the AI cursor mode is active or not.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATTITUDE BARS POSITION"></a><code class="inline">ATTITUDE BARS POSITION</code></td>
+                <td>AI reference pitch reference bars</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATTITUDE CAGE"></a><code class="inline">ATTITUDE CAGE</code></td>
+                <td>AI caged state</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATTITUDE INDICATOR BANK DEGREES"></a><code
+                        class="inline">ATTITUDE INDICATOR BANK DEGREES</code></td>
+                <td>AI bank indication</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATTITUDE INDICATOR PITCH DEGREES"></a><code
+                        class="inline">ATTITUDE INDICATOR PITCH DEGREES</code></td>
+                <td>AI pitch indication</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="DELEGATE CONTROLS TO AI"></a><code class="inline">DELEGATE CONTROLS TO AI</code></td>
+                <td colspan="1">Returns whether the AI control system is active or not.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="flight_assistan">Flight Assistant</h3>
+    <p>The flight assistant panel is a panel that the user can open in the <span data-keyref="game_name">Microsoft
+            Flight Simulator</span> UI. this panel lets the user set a destination in-sim among nearest Airports, POI,
+        Cities, etc... as well as give information on some design speeds of the aircraft or turn on / off some
+        assistances.</p>
+    <p>&nbsp;</p>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 225px;">
+            <col style="width: 460px;">
+            <col style="width: 152px;">
+            <col style="width: 1px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_CANCEL_DESTINATION"></a><code
+                        class="inline">FLY ASSISTANT CANCEL DESTINATION</code></td>
+                <td>When set with any value this will cancel the current flight assistant destination.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_CANCEL_DESTINATION_DISPLAY"></a><code
+                        class="inline">FLY ASSISTANT CANCEL DESTINATION DISPLAY</code></td>
+                <td>When set with any value this will cancel the display of the current flight assistant destination.
+                </td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_COM_AI_LOCKED"></a><code class="inline">FLY ASSISTANT COM AI LOCKED</code></td>
+                <td>Returns true when the copilot AI control is active and therefore COM AI is locked on active too.
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_HAVE_DESTINATION"></a><code
+                        class="inline">FLY ASSISTANT HAVE DESTINATION</code></td>
+                <td><span>Returns true when a destination has been set in the flight assistant.</span></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_LANDING_SPEED"></a><code class="inline">FLY ASSISTANT LANDING SPEED</code></td>
+                <td>Returns the <a href="#"
+                        data-popovertext="Stands for 'Pilots Operating Handbook' and is a manual that explains everything about the aircraft it is for. It usually includes the Aircraft Flight Manual (AFM), as well as other technical and operational information and is FAA (Federal Aviation Administration) approved."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">POH</a> range or an estimated
+                    value for this speed.</td>
+                <td>
+                    <p>String</p>
+                    <p>(max 32 chars)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_LANDING_SPEED_DISPLAY_MODE"></a><code
+                        class="inline">FLY ASSISTANT LANDING SPEED DISPLAY MODE</code></td>
+                <td>Returns the display mode of the speed, CSS side (only STALL SPEED is working and will turn red when
+                    below).</td>
+                <td>
+                    <p>String</p>
+                    <p>(max 32 chars)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_NEAREST_CATEGORY"></a><code
+                        class="inline">FLY ASSISTANT NEAREST CATEGORY</code></td>
+                <td>Selected category</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>1 = Airport</li>
+                        <li>2 = Cities</li>
+                        <li>3 = Landmark</li>
+                        <li>4 = Fauna</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_NEAREST_COUNT"></a><code class="inline">FLY ASSISTANT NEAREST COUNT</code></td>
+                <td>Number of elements in this category</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a id="FLY_ASSISTANT_NEAREST_METADATA"></a><code
+                        class="inline">FLY ASSISTANT NEAREST METADATA</code></td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><em>Currently not used within the simulation.</em>
+                </td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)">-</td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_NEAREST_NAME"></a><code class="inline">FLY ASSISTANT NEAREST NAME</code></td>
+                <td>Returns the name of the element at the specified index.</td>
+                <td>
+                    <p>String</p>
+                    <p>(max 256 chars)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_NEAREST_SELECTED"></a><code
+                        class="inline">FLY ASSISTANT NEAREST SELECTED</code></td>
+                <td>Returns the index of the currently selected element.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_RIBBONS_ACTIVE"></a><code class="inline">FLY ASSISTANT RIBBONS ACTIVE</code>
+                </td>
+                <td>Returns true when both ribbon assistances are active (taxi and landing), and can also be used to set
+                    them.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_SET_AS_DESTINATION"></a><code
+                        class="inline">FLY ASSISTANT SET AS DESTINATION</code></td>
+                <td>When set with any value, it will set the selected element as the current destination.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_STALL_SPEED"></a><code class="inline">FLY ASSISTANT STALL SPEED</code></td>
+                <td>Returns the flight assistant stall speed.</td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_STALL_SPEED_DISPLAY_MODE"></a><code
+                        class="inline">FLY ASSISTANT STALL SPEED DISPLAY MODE</code></td>
+                <td>Returns the flight assistant stall speed display mode.</td>
+                <td>
+                    <p>String</p>
+                    <p>(max 32 chars)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_TAKEOFF_SPEED"></a><code class="inline">FLY ASSISTANT TAKEOFF SPEED</code></td>
+                <td>Returns the flight assistant takeoff speed.</td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_TAKEOFF_SPEED_DISPLAY_MODE"></a><code
+                        class="inline">FLY ASSISTANT TAKEOFF SPEED DISPLAY MODE</code></td>
+                <td>Returns the flight assistant takeoff speed display mode.</td>
+                <td>
+                    <p>String</p>
+                    <p>(max 32 chars)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_ASSISTANT_TAKEOFF_SPEED_ESTIMATED"></a><code
+                        class="inline">FLY ASSISTANT TAKEOFF SPEED ESTIMATED</code></td>
+                <td>Can be set to override the estimated takeoff speed</td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+</div>

@@ -1,0 +1,901 @@
+<div>
+    <h2 id="aircraft_contro">AIRCRAFT CONTROL VARIABLES</h2>
+    <p>The tables below indicate the properties for the <a href="Simulation_Variables.htm">Simulation Variables</a> that
+        can be used to get and set properties related to the various aircraft control systems. For information on the
+        units listed for each variable, please see here: <a href="Simulation_Variable_Units.htm">Simulation Variable
+            Units</a></p>
+    <p><span class="note"><strong>NOTE</strong>: When <span data-keyref="game_name">Microsoft Flight Simulator</span> is
+            running in multiplayer mode, only a small number of variables are communicated between aircraft. Those
+            variables that are available will say so in the description as being either for "All Aircraft" or for
+            "Shared Cockpit".</span></p>
+    <p>You can find a complete index of all available SimVars here: <a href="Simulation_Variables.htm#h">SimVar
+            Index</a></p>
+    <p>&nbsp;</p>
+    <h3 id="ailerons">Ailerons</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="AILERON AVERAGE DEFLECTION"></a><code class="inline">AILERON AVERAGE DEFLECTION</code></td>
+                <td>Angle deflection for the aileron.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AILERON LEFT DEFLECTION"></a><code class="inline">AILERON LEFT DEFLECTION</code></td>
+                <td>Angle deflection for the aileron.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AILERON LEFT DEFLECTION PCT"></a><code class="inline">AILERON LEFT DEFLECTION PCT</code></td>
+                <td>
+                    <p>Percent deflection for the aileron.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer to all near aircraft.
+                            See here for more information:&nbsp;<a href="Simulation_Variables.htm#multiplayer">Note On
+                                SimVars In Multiplayer</a>.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AILERON POSITION"></a><code class="inline">AILERON POSITION</code></td>
+                <td>Percent aileron input left/right.</td>
+                <td>
+                    <p>Position</p>
+                    <p>(-16K to 0)</p>
+                    <p>-16K = full left</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AILERON RIGHT DEFLECTION"></a><code class="inline">AILERON RIGHT DEFLECTION</code></td>
+                <td>Angle deflection.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AILERON RIGHT DEFLECTION PCT"></a><code class="inline">AILERON RIGHT DEFLECTION PCT</code>
+                </td>
+                <td>
+                    <p>Percent deflection.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer to all near aircraft.
+                            See here for more information:&nbsp;<a href="Simulation_Variables.htm#multiplayer">Note On
+                                SimVars In Multiplayer</a>.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AILERON TRIM"></a><code class="inline">AILERON TRIM</code></td>
+                <td>Angle deflection.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AILERON TRIM DISABLED"></a><code class="inline">AILERON TRIM DISABLED</code></td>
+                <td>Whether or not the Aileron Trim has been disabled.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AILERON TRIM PCT"></a><code class="inline">AILERON TRIM PCT</code></td>
+                <td>
+                    <p>The trim position of the ailerons. Zero is fully retracted.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer to all near aircraft.
+                            See here for more information:&nbsp;<a href="Simulation_Variables.htm#multiplayer">Note On
+                                SimVars In Multiplayer</a>.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="elevator">Elevator</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="1">Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="ELEVATOR DEFLECTION"></a><code class="inline">ELEVATOR DEFLECTION</code></td>
+                <td colspan="1">Angle deflection.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELEVATOR DEFLECTION PCT"></a><code class="inline">ELEVATOR DEFLECTION PCT</code></td>
+                <td colspan="1">
+                    <p>Percent deflection.</p>
+                    <p>NOTE: This is available in multiplayer. See here for more information:&nbsp;<a
+                            href="Simulation_Variables.htm#multiplayer">Note On SimVars In Multiplayer</a>.</p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELEVATOR POSITION"></a><code class="inline">ELEVATOR POSITION</code></td>
+                <td colspan="1">Percent elevator input deflection.</td>
+                <td>
+                    <p>Position</p>
+                    <p>(-16K to 0)</p>
+                    <p>-16K = full down</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELEVATOR TRIM DISABLED"></a><code class="inline">ELEVATOR TRIM DISABLED</code></td>
+                <td colspan="1">Whether or not the Elevator Trim has been disabled.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELEVATOR TRIM DOWN LIMIT"></a><code class="inline">ELEVATOR TRIM DOWN LIMIT</code></td>
+                <td colspan="1">Returns the maximum elevator trim value. This corresponds to the <code
+                        class="inline"><a href="../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/geometry.htm#elevator_trim_down_limit">elevator_trim_down_limit</a></code>
+                    in the <a href="../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">Flight
+                        Model Config</a> file.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELEVATOR TRIM INDICATOR"></a><code class="inline">ELEVATOR TRIM INDICATOR</code></td>
+                <td colspan="1">Percent elevator trim (for indication).</td>
+                <td>
+                    <p>Position</p>
+                    <p>(-16K to 0)</p>
+                    <p>-16K = full down</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELEVATOR TRIM NEUTRAL"></a><code class="inline">ELEVATOR TRIM NEUTRAL</code></td>
+                <td colspan="1">Elevator trim neutral.</td>
+                <td colspan="1" rowspan="1">
+                    <p>Radians</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELEVATOR TRIM PCT"></a><code class="inline">ELEVATOR TRIM PCT</code></td>
+                <td colspan="1">Percent elevator trim.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELEVATOR TRIM POSITION"></a><code class="inline">ELEVATOR TRIM POSITION</code></td>
+                <td>Elevator trim deflection.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELEVATOR TRIM UP LIMIT"></a><code class="inline">ELEVATOR TRIM UP LIMIT</code></td>
+                <td colspan="1" rowspan="1">Returns the maximum elevator trim value. This corresponds to the <code
+                        class="inline"><a href="../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/geometry.htm#elevator_trim_up_limit">elevator_trim_up_limit</a></code>
+                    in the <a href="../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">Flight
+                        Model Config</a> file.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELEVON DEFLECTION"></a><code class="inline">ELEVON DEFLECTION</code></td>
+                <td colspan="1">Elevon deflection.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="flaps">Flaps</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="1">Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="FLAP_DAMAGE_BY_SPEED"></a><code class="inline">FLAP DAMAGE BY SPEED</code></td>
+                <td colspan="1">True if flaps are damaged by excessive speed.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLAP_POSITION_SET"></a><code class="inline">FLAP POSITION SET</code></td>
+                <td colspan="1">Set the position of the flaps control.</td>
+                <td>Position</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLAP_SPEED_EXCEEDED"></a><code class="inline">FLAP SPEED EXCEEDED</code></td>
+                <td colspan="1">True if safe speed limit for flaps exceeded.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLAPS_AVAILABLE"></a><code class="inline">FLAPS AVAILABLE</code></td>
+                <td colspan="1">True if flaps available.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLAPS_EFFECTIVE_HANDLE_INDEX"></a><code
+                        class="inline">FLAPS EFFECTIVE HANDLE INDEX:index</code></td>
+                <td colspan="1" rowspan="1">This returns the effective flaps handle index, <em>after</em> some of the
+                    conditions have potentially forced the state to change.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLAPS_HANDLE_INDEX"></a><code class="inline">FLAPS HANDLE INDEX:index</code></td>
+                <td>Index of current flap position.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLAPS_HANDLE_PERCENT"></a><code class="inline">FLAPS HANDLE PERCENT</code></td>
+                <td colspan="1">
+                    <p>Percent flap handle extended.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer&nbsp;to all near
+                            aircraft. See here for more information:&nbsp;<a
+                                href="Simulation_Variables.htm#multiplayer">Note On SimVars In Multiplayer</a>.</span>
+                    </p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLAPS_NUM_HANDLE_POSITIONS"></a><code class="inline">FLAPS NUM HANDLE POSITIONS</code></td>
+                <td colspan="1">Number of available flap positions.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="LEADING_EDGE_FLAPS_LEFT_ANGLE"></a><code class="inline">LEADING EDGE FLAPS LEFT ANGLE</code>
+                </td>
+                <td colspan="1">Angle left leading edge flap extended. Use <code
+                        class="inline"><a href="Aircraft_SimVars/Aircraft_Control_Variables.htm#LEADING_EDGE_FLAPS_LEFT_PERCENT">LEADING_EDGE_FLAPS_LEFT_PERCENT</a></code>
+                    to set a value.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="LEADING_EDGE_FLAPS_LEFT_INDEX"></a><code class="inline">LEADING EDGE FLAPS LEFT INDEX</code>
+                </td>
+                <td>Index of left leading edge flap position.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="LEADING_EDGE_FLAPS_LEFT_PERCENT"></a><code
+                        class="inline">LEADING EDGE FLAPS LEFT PERCENT</code></td>
+                <td colspan="1">
+                    <p>Percent left leading edge flap extended.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer&nbsp;to all near
+                            aircraft. See here for more information:&nbsp;<a
+                                href="Simulation_Variables.htm#multiplayer">Note On SimVars In Multiplayer</a>.</span>
+                    </p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="LEADING_EDGE_FLAPS_RIGHT_ANGLE"></a><code
+                        class="inline">LEADING EDGE FLAPS RIGHT ANGLE</code></td>
+                <td colspan="1">Angle right leading edge flap extended. Use <code
+                        class="inline"><a href="Aircraft_SimVars/Aircraft_Control_Variables.htm#LEADING_EDGE_FLAPS_RIGHT_PERCENT">LEADING_EDGE_FLAPS_RIGHT_PERCENT</a></code>
+                    to set a value.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="LEADING_EDGE_FLAPS_RIGHT_INDEX"></a><code
+                        class="inline">LEADING EDGE FLAPS RIGHT INDEX</code></td>
+                <td>Index of right leading edge flap position.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="LEADING_EDGE_FLAPS_RIGHT_PERCENT"></a><code
+                        class="inline">LEADING EDGE FLAPS RIGHT PERCENT</code></td>
+                <td colspan="1">
+                    <p>Percent right leading edge flap extended.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer to
+                            all&nbsp;<strong>near</strong>&nbsp;aircraft. See here for more information:&nbsp;<a
+                                href="Simulation_Variables.htm#multiplayer">Note On SimVars In Multiplayer</a>.</span>
+                    </p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TRAILING_EDGE_FLAPS_LEFT_ANGLE"></a><code
+                        class="inline">TRAILING EDGE FLAPS LEFT ANGLE</code></td>
+                <td colspan="1">Angle left trailing edge flap extended. Use <code
+                        class="inline"><a href="Aircraft_SimVars/Aircraft_Control_Variables.htm#TRAILING_EDGE_FLAPS_LEFT_PERCENT">TRAILING_EDGE_FLAPS_LEFT_PERCENT</a></code>
+                    to set a value.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TRAILING_EDGE_FLAPS_LEFT_INDEX"></a><code
+                        class="inline">TRAILING EDGE FLAPS LEFT INDEX</code></td>
+                <td>Index of left trailing edge flap position.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TRAILING_EDGE_FLAPS_LEFT_PERCENT"></a><code
+                        class="inline">TRAILING EDGE FLAPS LEFT PERCENT</code></td>
+                <td colspan="1">
+                    <p>Percent left trailing edge flap extended.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer&nbsp;to all near
+                            aircraft. See here for more information:&nbsp;<a
+                                href="Simulation_Variables.htm#multiplayer">Note On SimVars In Multiplayer</a>.</span>
+                    </p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TRAILING_EDGE_FLAPS_RIGHT_ANGLE"></a><code
+                        class="inline">TRAILING EDGE FLAPS RIGHT ANGLE</code></td>
+                <td colspan="1">Angle right trailing edge flap extended. Use <code
+                        class="inline"><a href="Aircraft_SimVars/Aircraft_Control_Variables.htm#TRAILING_EDGE_FLAPS_RIGHT_PERCENT">TRAILING_EDGE_FLAPS_RIGHT_PERCENT</a></code>
+                    to set a value.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TRAILING_EDGE_FLAPS_RIGHT_INDEX"></a><code
+                        class="inline">TRAILING EDGE FLAPS RIGHT INDEX</code></td>
+                <td>Index of right trailing edge flap position.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TRAILING_EDGE_FLAPS_RIGHT_PERCENT"></a><code
+                        class="inline">TRAILING EDGE FLAPS RIGHT PERCENT</code></td>
+                <td colspan="1">
+                    <p>Percent right trailing edge flap extended.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer&nbsp;to all near
+                            aircraft. See here for more information:&nbsp;<a
+                                href="Simulation_Variables.htm#multiplayer">Note On SimVars In Multiplayer</a>.</span>
+                    </p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="fly_by_wire">Fly By Wire</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="2">Description</th>
+                <th colspan="1" rowspan="1">Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="FLY_BY_WIRE_ALPHA_PROTECTION"></a><code class="inline">FLY BY WIRE ALPHA PROTECTION</code>
+                </td>
+                <td colspan="2" rowspan="1">Returns true if the fly-by-wire alpha protection is enabled or false
+                    otherwise.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_BY_WIRE_ELAC_FAILED"></a><code class="inline">FLY BY WIRE ELAC FAILED</code></td>
+                <td colspan="2">True if the Elevators and Ailerons computer has failed.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_BY_WIRE_ELAC_SWITCH"></a><code class="inline">FLY BY WIRE ELAC SWITCH</code></td>
+                <td colspan="2">True if the fly by wire Elevators and Ailerons computer is on.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_BY_WIRE_FAC_FAILED"></a><code class="inline">FLY BY WIRE FAC FAILED</code></td>
+                <td colspan="2">True if the Flight Augmentation computer has failed.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_BY_WIRE_FAC_SWITCH"></a><code class="inline">FLY BY WIRE FAC SWITCH</code></td>
+                <td colspan="2">True if the fly by wire Flight Augmentation computer is on.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_BY_WIRE_SEC_FAILED"></a><code class="inline">FLY BY WIRE SEC FAILED</code></td>
+                <td colspan="2">True if the Spoilers and Elevators computer has failed.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLY_BY_WIRE_SEC_SWITCH"></a><code class="inline">FLY BY WIRE SEC SWITCH</code></td>
+                <td colspan="2">True if the fly by wire Spoilers and Elevators computer is on.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="folding_wings">Folding Wings</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="FOLDING_WING_HANDLE_POSITION"></a><code class="inline">FOLDING WING HANDLE POSITION</code>
+                </td>
+                <td>True if the folding wing handle is engaged.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FOLDING_WING_LEFT_PERCENT"></a><code class="inline">FOLDING WING LEFT PERCENT</code></td>
+                <td>Left folding wing position, 1.0 is fully folded.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FOLDING_WING_RIGHT_PERCENT"></a><code class="inline">FOLDING WING RIGHT PERCENT</code></td>
+                <td>Right folding wing position, 1.0 is fully folded.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="rudder">Rudder</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 218px;">
+            <col style="width: 440px;">
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="RUDDER_DEFLECTION"></a><code class="inline">RUDDER DEFLECTION</code></td>
+                <td>Angle deflection.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RUDDER_DEFLECTION_PCT"></a><code class="inline">RUDDER DEFLECTION PCT</code></td>
+                <td>
+                    <p>Percent deflection.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer. See here for more
+                            information:&nbsp;<a href="Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RUDDER_PEDAL_INDICATOR"></a><code class="inline">RUDDER PEDAL INDICATOR</code></td>
+                <td>Rudder pedal position.</td>
+                <td>Position</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RUDDER_PEDAL_POSITION"></a><code class="inline">RUDDER PEDAL POSITION</code></td>
+                <td>Percent rudder pedal deflection (for animation).</td>
+                <td>
+                    <p>Position (-16K to 0)</p>
+                    <p>-16K = left pedal pushed full in</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RUDDER_POSITION"></a><code class="inline">RUDDER POSITION</code></td>
+                <td>Percent rudder input deflection.</td>
+                <td>
+                    <p>Position (-16K to 0)</p>
+                    <p>-16K = full left</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RUDDER_TRIM"></a><code class="inline">RUDDER TRIM</code></td>
+                <td>Angle deflection.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RUDDER_TRIM_DISABLED"></a><code class="inline">RUDDER TRIM DISABLED</code></td>
+                <td>Whether or not the Rudder Trim has been disabled.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RUDDER_TRIM_PCT"></a><code class="inline">RUDDER TRIM PCT</code></td>
+                <td>The trim position of the rudder. Zero is no trim.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="spoilers">Spoilers</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col style="width: 170px;">
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="1">Description</th>
+                <th colspan="2">Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="SPOILERS_ARMED"></a><code class="inline">SPOILERS ARMED</code></td>
+                <td>Checks if autospoilers are armed (true) or not (false).</td>
+                <td colspan="2" rowspan="1">Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="SPOILER_AVAILABLE"></a><code class="inline">SPOILER AVAILABLE</code></td>
+                <td colspan="1">True if spoiler system available.</td>
+                <td colspan="2">Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="SPOILERS_HANDLE_POSITION"></a><code class="inline">SPOILERS HANDLE POSITION</code></td>
+                <td>Spoiler handle position.</td>
+                <td colspan="2" rowspan="1">
+                    <p><a href="#"
+                            data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></p>
+                    <p>or</p>
+                    <p>Position</p>
+                    <p>(16K = down, 0 = up)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="SPOILERS_LEFT_POSITION"></a><code class="inline">SPOILERS LEFT POSITION</code></td>
+                <td colspan="1">
+                    <p>Percent left spoiler deflected.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer. See here for more
+                            information:&nbsp;<a href="Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td colspan="2">
+                    <p><a href="#"
+                            data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></p>
+                    <p>or</p>
+                    <p>Position</p>
+                    <p>(0 = retracted, 16K fully extended)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="SPOILERS_RIGHT_POSITION"></a><code class="inline">SPOILERS RIGHT POSITION</code></td>
+                <td colspan="1">
+                    <p>Percent right spoiler deflected.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer. See here for more
+                            information:&nbsp;<a href="Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td colspan="2">
+                    <p><a href="#"
+                            data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></p>
+                    <p>or</p>
+                    <p>Position (0 = retracted, 16K fully extended)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="carrier-operations">Carrier Operations</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col style="width: 594px;">
+            <col style="width: 119px;">
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="BLAST_SHIELD_POSITION"></a><code class="inline">BLAST SHIELD POSITION:index</code></td>
+                <td>Indexed from 1, 100 is fully deployed, 0 flat on deck</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CABLE_CAUGHT_BY_TAILHOOK"></a><code class="inline">CABLE CAUGHT BY TAILHOOK:index</code></td>
+                <td>A number 1 through 4 for the cable number caught by the tailhook. Cable 1 is the one closest to the
+                    stern of the carrier. A value of 0 indicates no cable was caught.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CATAPULT_STROKE_POSITION"></a><code class="inline">CATAPULT STROKE POSITION:index</code></td>
+                <td>Catapults are indexed from 1. This value will be 0 before the catapult fires, and then up to 100 as
+                    the aircraft is propelled down the catapult. The aircraft may takeoff before the value reaches 100
+                    (depending on the aircraft weight, power applied, and other factors), in which case this value will
+                    not be further updated. This value could be used to drive a bogie animation.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="HOLDBACK_BAR_INSTALLED"></a><code class="inline">HOLDBACK BAR INSTALLED</code></td>
+                <td>Holdback bars allow build up of thrust before takeoff from a catapult, and are installed by the deck
+                    crew of an aircraft carrier.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="LAUNCHBAR_HELD_EXTENDED"></a><code class="inline">LAUNCHBAR HELD EXTENDED</code></td>
+                <td>This will be True if the launchbar is fully extended, and can be used, for example, to change the
+                    color of an instrument light.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="LAUNCHBAR_POSITION"></a><code class="inline">LAUNCHBAR POSITION</code></td>
+                <td>Installed on aircraft before takeoff from a carrier catapult. Note that gear cannot retract with
+                    this extended. 100 = fully extended.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="LAUNCHBAR_SWITCH"></a><code class="inline">LAUNCHBAR SWITCH</code></td>
+                <td>If this is set to True the launch bar switch has been engaged.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NUMBER_OF_CATAPULTS"></a><code class="inline">NUMBER OF CATAPULTS</code></td>
+                <td>Maximum of 4. A model can contain more than 4 catapults, but only the first four will be read and
+                    recognized by the simulation.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="concorde">Concorde<span class="deprecated"></span></h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col style="width: 336px;">
+            <col style="width: 7px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="1">Description</th>
+                <th>Units</th>
+                <th rowspan="1">Settable</th>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a id="CONCORDE NOSE ANGLE"></a><code
+                        class="inline">CONCORDE NOSE ANGLE</code></td>
+                <td colspan="1" style="background-color: rgba(255, 0, 0, 0.10)">The nose angle, where 0 is fully up.
+                </td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)">Radians</td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a id="CONCORDE VISOR NOSE HANDLE"></a><code
+                        class="inline">CONCORDE VISOR NOSE HANDLE</code></td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)">The visor nose handle position.</td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)">
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0:[index] visor up, nose down</li>
+                        <li>1:[index] visor down, nose up</li>
+                        <li>2:[index] visor down, nose 5 degrees</li>
+                        <li>3:[index] visor down, nose 12.5 degrees</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a id="CONCORDE VISOR POSITION PERCENT"></a><code
+                        class="inline">CONCORDE VISOR POSITION PERCENT</code></td>
+                <td colspan="1" style="background-color: rgba(255, 0, 0, 0.10)">
+                    <p>The visor position expressed as a percentage where 0.0 = up and 1.0 = extended/down.</p>
+                </td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+</div>

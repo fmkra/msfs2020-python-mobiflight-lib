@@ -1,0 +1,795 @@
+<div>
+    <h2 id="aircraft_electr">AIRCRAFT ELECTRICS VARIABLES</h2>
+    <p>The tables below indicate the properties for the <a href="Simulation_Variables.htm">Simulation Variables</a> that
+        can be used to get and set variables related to the electrical system of the aircraft. For information on the
+        units listed for each variable, please see here: <a href="Simulation_Variable_Units.htm">Simulation Variable
+            Units</a></p>
+    <p><span class="note"><strong>NOTE</strong>: When <span data-keyref="game_name">Microsoft Flight Simulator</span> is
+            running in multiplayer mode, only a small number of variables are communicated between aircraft. Those
+            variables that are available will say so in the description as being either for "All Aircraft" or for
+            "Shared Cockpit".</span></p>
+    <p>You can find a complete index of all available SimVars here: <a href="Simulation_Variables.htm#h">SimVar
+            Index</a></p>
+    <p>&nbsp;</p>
+    <p>The SimVars below are all related to the aircraft electrical system (including lights). Large parts of this
+        system are setup using the <code
+            class="inline"><a href="../../Content_Configuration/SimObjects/Aircraft_SimO/systems_cfg.htm#h1">[ELECTRICAL]</a></code>
+        section of the <a href="../../Content_Configuration/SimObjects/Aircraft_SimO/systems_cfg.htm"><code
+                class="inline">system.cfg</code></a> file, and many may also require the use of the different <a
+            href="../../Content_Configuration/SimObjects/Aircraft_SimO/Additional_CFG_Information.htm#Keys"> </a> to
+        retrieve and edit their values.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="h">General / Buses</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 249px;">
+            <col style="width: 482px;">
+            <col>
+            <col style="width: 116px;">
+            <col style="width: 17px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="2">Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="BUS_LOOKUP_INDEX"></a><code class="inline">BUS LOOKUP INDEX</code></td>
+                <td colspan="2">
+                    <p>This is a settable simvar meaning that it can both be read and set. Some of the simvars in this
+                        list are using this to lookup a value using two arguments (one argument in addition to the
+                        component index). For example to check the state of the connection between a "circuit.45" and
+                        the "bus.2" it would be written as follows:</p>
+                    <p><code class="inline">2 (&gt;A:BUS LOOKUP INDEX, Number) (A:CIRCUIT CONNECTION ON:45, Bool)</code>
+                    </p>
+                    <p>It should be notes that when <code class="inline">BUS_LOOKUP_INDEX</code> is not set (ie: it is
+                        0) then TRUE will be returned if <strong><em>any</em></strong> of your bus connections are on.
+                    </p>
+                </td>
+                <td>-</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BUS_BREAKER_PULLED"></a><code class="inline">BUS BREAKER PULLED</code></td>
+                <td colspan="2">This will be <code class="inline">true</code> if the bus breaker is pulled. Requires a
+                    <code
+                        class="inline"><a href="Aircraft_SimVars/Aircraft_Electrics_Variables.htm#BUS_LOOKUP_INDEX">BUS_LOOKUP_INDEX</a></code>
+                    and a bus index.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BUS_CONNECTION_ON"></a><code class="inline">BUS CONNECTION ON</code></td>
+                <td colspan="2">This will be <code class="inline">true</code> if the bus is connected. Requires a <code
+                        class="inline"><a href="Aircraft_SimVars/Aircraft_Electrics_Variables.htm#BUS_LOOKUP_INDEX">BUS_LOOKUP_INDEX</a></code>
+                    and a bus index.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_GENALT_LOAD"></a><code class="inline">ELECTRICAL GENALT LOAD</code></td>
+                <td colspan="2">
+                    <p>This returns the percentage of the load output that is being consumed. This requires an
+                        alternator index when referencing.</p>
+                </td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_GENALT_BUS_AMPS"></a><code class="inline">ELECTRICAL GENALT BUS AMPS</code></td>
+                <td colspan="2">The load handled by the alternator. This requires an alternator index when referencing.
+                </td>
+                <td>Amperes</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_GENALT_BUS_VOLTAGE"></a><code class="inline">ELECTRICAL GENALT BUS VOLTAGE</code>
+                </td>
+                <td colspan="2">General alternator voltage. This requires an alternator index when referencing.</td>
+                <td>Volts</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_MAIN_BUS_VOLTAGE"></a><code class="inline">ELECTRICAL MAIN BUS VOLTAGE</code></td>
+                <td colspan="2">The main bus voltage. Use a bus index when referencing.</td>
+                <td>Volts</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_AVIONICS_BUS_AMPS"></a><code class="inline">ELECTRICAL AVIONICS BUS AMPS</code>
+                </td>
+                <td colspan="2">Avionics bus current</td>
+                <td>Amperes</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_AVIONICS_BUS_VOLTAGE"></a><code
+                        class="inline">ELECTRICAL AVIONICS BUS VOLTAGE</code></td>
+                <td colspan="2">Avionics bus voltage</td>
+                <td>Volts</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_MAIN_BUS_AMPS"></a><code class="inline">ELECTRICAL MAIN BUS AMPS</code></td>
+                <td colspan="2">Main bus current</td>
+                <td>Amperes</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><a id="ELECTRICAL_OLD_CHARGING_AMPS"></a><code
+                        class="inline">ELECTRICAL OLD CHARGING AMPS</code><span class="deprecated"></span></td>
+                <td colspan="2" rowspan="1" style="background-color: rgba(255, 0, 0, 0.1);">
+                    <p><strong>Deprecated, do not use!</strong></p>
+                    <p>Use ELECTRICAL BATTERY LOAD.</p>
+                </td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)">Amps</td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_TOTAL_LOAD_AMPS"></a><code class="inline">ELECTRICAL TOTAL LOAD AMPS</code></td>
+                <td colspan="2">Total load amps</td>
+                <td>Amperes</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NEW_ELECTRICAL_SYSTEM"></a><code class="inline">NEW ELECTRICAL SYSTEM</code></td>
+                <td colspan="2" rowspan="1">Is the aircraft using the new Electrical System or the legacy <span
+                        data-keyref="game_fx_short">FSX</span> one.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="h3">Alternators</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col style="width: 143.5px;">
+            <col style="width: 1px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="1" rowspan="1">Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="ALTERNATOR BREAKER PULLED"></a><code class="inline">ALTERNATOR BREAKER PULLED</code></td>
+                <td colspan="1">This will be <code class="inline">true</code> if the alternator breaker is pulled.
+                    Requires a <code
+                        class="inline"><a href="Aircraft_SimVars/Aircraft_Electrics_Variables.htm#BUS_LOOKUP_INDEX">BUS_LOOKUP_INDEX</a></code>
+                    and an alternator index.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ALTERNATOR CONNECTION ON"></a><code class="inline">ALTERNATOR CONNECTION ON</code></td>
+                <td colspan="1">This will be <code class="inline">true</code> if the alternator is connected. Requires a
+                    <code
+                        class="inline"><a href="Aircraft_SimVars/Aircraft_Electrics_Variables.htm#BUS_LOOKUP_INDEX">BUS_LOOKUP_INDEX</a></code>
+                    and an alternator index.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL_ENG_MASTER_ALTERNATOR"></a><code
+                        class="inline">GENERAL ENG MASTER ALTERNATOR:index</code></td>
+                <td>The alternator (generator) switch position, <code class="inline">true</code> if the switch is ON.
+                    Requires an engine index, and the use of an alternator index when referencing.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="apu">APU</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 250px;">
+            <col style="width: 452px;">
+            <col style="width: 180.5px;">
+            <col style="width: 1px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="APU BLEED PRESSURE RECEIVED BY ENGINE"></a><code
+                        class="inline">APU BLEED PRESSURE RECEIVED BY ENGINE</code></td>
+                <td>Bleed air pressure received by the engine from the <a href="#"
+                        data-popovertext="This stands for 'Auxiliary Power Unit'  which is a device on an aircraft that provides energy for functions other than propulsion."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">APU</a>.</td>
+                <td>Pounds per square inch (<a href="#"
+                        data-popovertext="The 'Pound per Square Inch' is a unit of pressure or of stress based on the imperial measurement system. It is the pressure resulting from a one pound-force applied to an area of one square inch. In metric units, 1psi is approximately equal to 6895 newtons per meter squared."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">psi</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="APU_GENERATOR_ACTIVE"></a><code class="inline">APU GENERATOR ACTIVE:index</code></td>
+                <td>Set or get whether an <a href="#"
+                        data-popovertext="This stands for 'Auxiliary Power Unit'  which is a device on an aircraft that provides energy for functions other than propulsion."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">APU</a> is active (true) or not
+                    (false). Takes an index to be able to have multiple generators on a single <a href="#"
+                        data-popovertext="This stands for 'Auxiliary Power Unit'  which is a device on an aircraft that provides energy for functions other than propulsion."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">APU</a>.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="APU_GENERATOR_SWITCH"></a><code class="inline">APU GENERATOR SWITCH:index</code></td>
+                <td>
+                    <p>Enables or disables the <a href="#"
+                            data-popovertext="This stands for 'Auxiliary Power Unit'  which is a device on an aircraft that provides energy for functions other than propulsion."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">APU</a> for an engine. Takes
+                        an index to be able to have multiple generators on a single <a href="#"
+                            data-popovertext="This stands for 'Auxiliary Power Unit'  which is a device on an aircraft that provides energy for functions other than propulsion."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">APU</a></p>
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="APU_ON_FIRE_DETECTED"></a><code class="inline">APU ON FIRE DETECTED</code></td>
+                <td>Will return true if the <a href="#"
+                        data-popovertext="This stands for 'Auxiliary Power Unit'  which is a device on an aircraft that provides energy for functions other than propulsion."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">APU</a> is on fire, or false
+                    otherwise.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="APU_PCT_RPM"></a><code class="inline">APU PCT RPM</code></td>
+                <td>Auxiliary power unit <a href="#"
+                        data-popovertext="This stands for 'Revolutions Per Minute' and is used to measure engine speed and power."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RPM</a>, as a percentage</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="APU_PCT_STARTER"></a><code class="inline">APU PCT STARTER</code></td>
+                <td>Auxiliary power unit starter, as a percentage</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="APU_SWITCH"></a><code class="inline">APU SWITCH</code></td>
+                <td>Boolean, whether or not the <a href="#"
+                        data-popovertext="This stands for 'Auxiliary Power Unit'  which is a device on an aircraft that provides energy for functions other than propulsion."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">APU</a> is switched on.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="APU_VOLTS"></a><code class="inline">APU VOLTS:index</code></td>
+                <td>
+                    <p>The volts from the <a href="#"
+                            data-popovertext="This stands for 'Auxiliary Power Unit'  which is a device on an aircraft that provides energy for functions other than propulsion."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">APU</a> to the selected
+                        engine. Takes an index to be able to have multiple generators on a single <a href="#"
+                            data-popovertext="This stands for 'Auxiliary Power Unit'  which is a device on an aircraft that provides energy for functions other than propulsion."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">APU</a>.</p>
+                </td>
+                <td>Volts</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BLEED_AIR_APU"></a><code class="inline">BLEED AIR APU</code></td>
+                <td>Boolean, returns whether or not the <a href="#"
+                        data-popovertext="This stands for 'Auxiliary Power Unit'  which is a device on an aircraft that provides energy for functions other than propulsion."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">APU</a> attempts to provide Bleed
+                    Air.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="h2">Batteries</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="2" rowspan="1">Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="BATTERY_BREAKER_PULLED"></a><code class="inline">BATTERY BREAKER PULLED</code></td>
+                <td colspan="2">This will be <code class="inline">true</code> if the battery breaker is pulled. Requires
+                    a <code class="inline">BUS LOOKUP INDEX</code> and a battery index.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BATTERY_CONNECTION_ON"></a><code class="inline">BATTERY CONNECTION ON</code></td>
+                <td colspan="2">This will be <code class="inline">true</code> if the battery is connected. Requires a
+                    <code
+                        class="inline"><a href="Aircraft_SimVars/Aircraft_Electrics_Variables.htm#BUS_LOOKUP_INDEX">BUS_LOOKUP_INDEX</a></code>
+                    and a battery index.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_BATTERY_BUS_AMPS"></a><code class="inline">ELECTRICAL BATTERY BUS AMPS</code></td>
+                <td colspan="2">Battery bus current</td>
+                <td>Amperes</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_BATTERY_BUS_VOLTAGE"></a><code
+                        class="inline">ELECTRICAL BATTERY BUS VOLTAGE</code></td>
+                <td colspan="2">Battery bus voltage</td>
+                <td>Volts</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_BATTERY_ESTIMATED_CAPACITY_PCT"></a><code
+                        class="inline">ELECTRICAL BATTERY ESTIMATED CAPACITY PCT</code></td>
+                <td colspan="2">Battery capacity over max capacity, 100 is full.</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_BATTERY_LOAD"></a><code class="inline">ELECTRICAL BATTERY LOAD</code></td>
+                <td colspan="2">The load handled by the battery (negative values mean the battery is <em>receiving</em>
+                    current). Use a battery index when referencing.</td>
+                <td>Amperes</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_BATTERY_VOLTAGE"></a><code class="inline">ELECTRICAL BATTERY VOLTAGE</code></td>
+                <td colspan="2">
+                    <p>The battery voltage. Use a battery index when referencing.</p>
+                </td>
+                <td>Volts</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_HOT_BATTERY_BUS_AMPS"></a><code
+                        class="inline">ELECTRICAL HOT BATTERY BUS AMPS</code></td>
+                <td colspan="2">Current available when battery switch is turned off</td>
+                <td>Amperes</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_HOT_BATTERY_BUS_VOLTAGE"></a><code
+                        class="inline">ELECTRICAL HOT BATTERY BUS VOLTAGE</code></td>
+                <td colspan="2">Voltage available when battery switch is turned off</td>
+                <td>Volts</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ELECTRICAL_MASTER_BATTERY"></a><code class="inline">ELECTRICAL MASTER BATTERY</code></td>
+                <td colspan="2">The battery switch position, <code class="inline">true</code> if the switch is ON. Use a
+                    battery index when referencing.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="breakers">Breakers</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 345px;">
+            <col style="width: 408px;">
+            <col style="width: 96px;">
+            <col style="width: 23px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_ADF"></a><code class="inline">BREAKER ADF</code></td>
+                <td colspan="1" rowspan="17">
+                    <p>All these SimVars can be used to get or set the breaker state for the electrical system (either
+                        true or false).</p>
+                    <p>If the breaker is popped (set to false), then the associated circuit will not receive
+                        electricity.</p>
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_ALTFLD"></a><code class="inline">BREAKER ALTFLD</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_AUTOPILOT"></a><code class="inline">BREAKER AUTOPILOT</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_AVNBUS1"></a><code class="inline">BREAKER AVNBUS1</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_AVNBUS2"></a><code class="inline">BREAKER AVNBUS2</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_AVNFAN"></a><code class="inline">BREAKER AVNFAN</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_FLAP"></a><code class="inline">BREAKER FLAP</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_GPS"></a><code class="inline">BREAKER GPS</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_INST"></a><code class="inline">BREAKER INST</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_INSTLTS"></a><code class="inline">BREAKER INSTLTS</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.1);">
+                    <p><a id="BREAKER_LTS_PWR"></a><code class="inline">BREAKER LTS PWR</code><span
+                            class="deprecated"></span></p>
+                </td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)">Bool</td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_NAVCOM1"></a><code class="inline">BREAKER NAVCOM1</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_NAVCOM2"></a><code class="inline">BREAKER NAVCOM2</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_NAVCOM3"></a><code class="inline">BREAKER NAVCOM3</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_TURNCOORD"></a><code class="inline">BREAKER TURNCOORD</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_WARN"></a><code class="inline">BREAKER WARN</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BREAKER_XPNDR"></a><code class="inline">BREAKER XPNDR</code></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="h1">Circuits</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="1" rowspan="1">Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_AUTOPILOT_ON"></a><code class="inline">CIRCUIT AUTOPILOT ON</code></td>
+                <td colspan="1">Is electrical power available to this circuit</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_AUTO_BRAKES_ON"></a><code class="inline">CIRCUIT AUTO BRAKES ON</code></td>
+                <td colspan="1">Is electrical power available to this circuit</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT AUTO FEATHER ON"></a><code class="inline">CIRCUIT AUTO FEATHER ON</code></td>
+                <td colspan="1">
+                    <p>Is electrical power available to this circuit. Please see the&nbsp;<a
+                            href="../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#note_autofeather">Note
+                            On Autofeathering</a> for more information.</p>
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_AVIONICS_ON"></a><code class="inline">CIRCUIT AVIONICS ON</code></td>
+                <td colspan="1">Is electrical power available to this circuit</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_BREAKER_PULLED"></a><code class="inline">CIRCUIT BREAKER PULLED</code></td>
+                <td colspan="1">This will be <code class="inline">true</code> if the circuit breaker is pulled. Requires
+                    a <code
+                        class="inline"><a href="Aircraft_SimVars/Aircraft_Electrics_Variables.htm#BUS_LOOKUP_INDEX">BUS_LOOKUP_INDEX</a></code>
+                    and a circuit index.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_CONNECTION_ON"></a><code class="inline">CIRCUIT CONNECTION ON</code></td>
+                <td colspan="1">
+                    <p>This will be <code class="inline">true</code> if the circuit is connected. Requires a <code
+                            class="inline"><a href="Aircraft_SimVars/Aircraft_Electrics_Variables.htm#BUS_LOOKUP_INDEX">BUS_LOOKUP_INDEX</a></code>
+                        and a circuit index.</p>
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_FLAP_MOTOR_ON"></a><code class="inline">CIRCUIT FLAP MOTOR ON</code></td>
+                <td colspan="1">Is electrical power available to the flap motor circuit</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_GEAR_MOTOR_ON"></a><code class="inline">CIRCUIT GEAR MOTOR ON</code></td>
+                <td colspan="1">Is electrical power available to the gear motor circuit</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_GEAR_WARNING_ON"></a><code class="inline">CIRCUIT GEAR WARNING ON</code></td>
+                <td colspan="1">Is electrical power available to gear warning circuit</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_GENERAL_PANEL_ON"></a><code class="inline">CIRCUIT GENERAL PANEL ON</code></td>
+                <td colspan="1">Is electrical power available to the general panel circuit</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_HYDRAULIC_PUMP_ON"></a><code class="inline">CIRCUIT HYDRAULIC PUMP ON</code></td>
+                <td colspan="1">Is electrical power available to the hydraulic pump circuit</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_MARKER_BEACON_ON"></a><code class="inline">CIRCUIT MARKER BEACON ON</code></td>
+                <td colspan="1">Is electrical power available to the marker beacon circuit</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_NAVCOM_ON1"></a><code class="inline">CIRCUIT NAVCOM1 ON</code></td>
+                <td colspan="1" rowspan="1">Whether or not power is available to the NAVCOM1 circuit.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_NAVCOM_ON2"></a><code class="inline">CIRCUIT NAVCOM2 ON</code></td>
+                <td colspan="1" rowspan="1">Whether or not power is available to the NAVCOM2 circuit.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_NAVCOM_ON3"></a><code class="inline">CIRCUIT NAVCOM3 ON</code></td>
+                <td colspan="1" rowspan="1">Whether or not power is available to the NAVCOM3 circuit.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_ON"></a><code class="inline">CIRCUIT ON</code></td>
+                <td>This will be <code class="inline">true</code> if the given circuit is functioning. Use a circuit
+                    index when referencing.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_PITOT_HEAT_ON"></a><code class="inline">CIRCUIT PITOT HEAT ON</code></td>
+                <td colspan="1">Is electrical power available to the pitot heat circuit</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_POWER_SETTING"></a><code class="inline">CIRCUIT POWER SETTING</code></td>
+                <td colspan="1">This returns the percentage of use that the circuit is getting. This requires a circuit
+                    index when referencing.</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_PROP_SYNC_ON"></a><code class="inline">CIRCUIT PROP SYNC ON</code></td>
+                <td colspan="1">Is electrical power available to the propeller sync circuit</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_STANDBY_VACUUM_ON"></a><code class="inline">CIRCUIT STANDBY VACUUM ON</code></td>
+                <td>Is electrical power available to the vacuum circuit</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CIRCUIT_SWITCH_ON"></a><code class="inline">CIRCUIT SWITCH ON</code></td>
+                <td>The circuit switch position, <code class="inline">true</code> if the switch is ON. Use a circuit
+                    index when referencing.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="h4">External Power</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="1" rowspan="1">Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="EXTERNAL_POWER_AVAILABLE"></a><code class="inline">EXTERNAL POWER AVAILABLE</code></td>
+                <td>This will be <code class="inline">true</code> if the given external power source is available. Use
+                    an external power index when referencing.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="EXTERNAL_POWER_BREAKER_PULLED"></a><code class="inline">EXTERNAL POWER BREAKER PULLED</code>
+                </td>
+                <td colspan="1">Boolean, The state of the breaker of an external power source</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="EXTERNAL_POWER_CONNECTION_ON"></a><code class="inline">EXTERNAL POWER CONNECTION ON</code>
+                </td>
+                <td colspan="1">Boolean, The state of the connection between a bus and an external power source</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="EXTERNAL_POWER_ON"></a><code class="inline">EXTERNAL POWER ON</code></td>
+                <td>The external power switch position, <code class="inline">true</code> if the switch is ON. Use an
+                    external power index when referencing.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+</div>
