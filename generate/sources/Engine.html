@@ -1,0 +1,2144 @@
+<div>
+    <h2 id="aircraft_engine">AIRCRAFT ENGINE VARIABLES</h2>
+    <p>The table below indicates the properties for the <a href="../Simulation_Variables.htm">Simulation Variables</a>
+        that can be used to get and set properties related to the engines of an aircraft. For information on the units
+        listed for each variable, please see here: <a href="../Simulation_Variable_Units.htm">Simulation Variable
+            Units</a></p>
+    <p><span class="note"><strong>NOTE</strong>: When <span data-keyref="game_name">Microsoft Flight Simulator</span> is
+            running in multiplayer mode, only a small number of variables are communicated between aircraft. Those
+            variables that are available will say so in the description as being either for "All Aircraft" or for
+            "Shared Cockpit". Also note that in the multiplayer "Shared Cockpit" mode the only supported index is 1,
+            which means that the data is assumed to be identical for all engines.</span></p>
+    <p>&nbsp;</p>
+    <p>You can find a complete index of all available SimVars here: <a href="../Simulation_Variables.htm#h">SimVar
+            Index</a></p>
+    <p>&nbsp;</p>
+    <table style="table-layout: auto;">
+        <colgroup>
+            <col style="width: 265px;">
+            <col style="width: 594px;">
+            <col style="width: 104px;">
+            <col style="width: 1px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="BLEED AIR ENGINE"></a><code class="inline">BLEED AIR ENGINE:index</code></td>
+                <td>Returns whether or not the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>) attempts to provide bleed air.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BLEED AIR SOURCE CONTROL"></a><code class="inline">BLEED AIR SOURCE CONTROL:index</code></td>
+                <td>
+                    <p>The bleed air system source controller for an indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>). This will work as follows:</p>
+                    <ul>
+                        <li><span class="smallfont">When engines and APU are activated, it will return 0 because it is
+                                in Auto.</span></li>
+                        <li><span class="smallfont">If the APU is removed, it will return 3 for engines only.</span>
+                        </li>
+                        <li><span class="smallfont">If instead the engines are removed, it would return 2 for the APU
+                                only.</span></li>
+                        <li><span class="smallfont">If the APU and engines are removed, it would return 1 (so,
+                                off).</span></li>
+                    </ul>
+                </td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = auto</li>
+                        <li>1 = off</li>
+                        <li>2 = apu</li>
+                        <li>3 = engines</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><a id="COWL FLAPS"></a><code
+                        class="inline">COWL FLAPS</code><span class="deprecated"></span></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><strong>Deprecated, do not use!</strong></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center; background-color: rgba(255, 0, 0, 0.1);"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENGINE CONTROL SELECT"></a><code class="inline">ENGINE CONTROL SELECT</code></td>
+                <td>Selected engines (combination of bit flags)</td>
+                <td>
+                    <p>Flags:</p>
+                    <ol class="minitoc-list">
+                        <li>1 = Engine 1</li>
+                        <li>2 = Engine 2</li>
+                        <li>4 = Engine 3</li>
+                        <li>8 = Engine 4</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><a id="ENGINE MIXURE AVAILABLE"></a><code
+                        class="inline">ENGINE MIXURE AVAILABLE</code><span class="deprecated"></span></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);">
+                    <p>True if engine mixture is available for prop engines. <strong>Deprecated, do not use
+                            (</strong><strong>mixture is always available)!</strong></p>
+                </td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);">Bool</td>
+                <td style="text-align: center; background-color: rgba(255, 0, 0, 0.1);"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENGINE PRIMER"></a><code class="inline">ENGINE PRIMER</code></td>
+                <td>The engine primer position.</td>
+                <td>Position</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENGINE TYPE"></a><code class="inline">ENGINE TYPE</code></td>
+                <td>Engine type.</td>
+                <td>
+                    <p>Enum:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = Piston</li>
+                        <li>1 = Jet</li>
+                        <li>2 = None</li>
+                        <li>3 = Helo(Bell) turbine</li>
+                        <li>4 = Unsupported</li>
+                        <li>5 = Turboprop</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG ANTI ICE"></a><code class="inline">ENG ANTI ICE:index</code></td>
+                <td>Anti-ice switch for the indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>),
+                    true if enabled false otherwise.</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG COMBUSTION"></a><code class="inline">ENG COMBUSTION:index</code></td>
+                <td>True if the indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) is running,
+                    false otherwise.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG CYLINDER HEAD TEMPERATURE"></a><code
+                        class="inline">ENG CYLINDER HEAD TEMPERATURE:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) cylinder head
+                    temperature.</td>
+                <td>
+                    <p><a href="#"
+                            data-popovertext="The Rankine scale is used in engineering systems where heat computations are done using degrees Fahrenheit. The simple formula for calculating it is °F + 460."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Rankine</a></p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG EXHAUST GAS TEMPERATURE"></a><code
+                        class="inline">ENG EXHAUST GAS TEMPERATURE:index</code></td>
+                <td>Exhaust gas temperature for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p><a href="#"
+                            data-popovertext="The Rankine scale is used in engineering systems where heat computations are done using degrees Fahrenheit. The simple formula for calculating it is °F + 460."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Rankine</a></p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG EXHAUST GAS TEMPERATURE GES"></a><code
+                        class="inline">ENG EXHAUST GAS TEMPERATURE GES:index</code></td>
+                <td>Governed engine setting exhaust gas temperature for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p><a href="#"
+                            data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG FAILED"></a><code class="inline">ENG FAILED:index</code></td>
+                <td>Failure flag for the indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) that
+                    has failed.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG FUEL FLOW BUG POSITION"></a><code class="inline">ENG FUEL FLOW BUG POSITION:index</code>
+                </td>
+                <td>Fuel flow reference in pounds per hour for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Pounds per hour</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG FUEL FLOW GPH"></a><code class="inline">ENG FUEL FLOW GPH:index</code></td>
+                <td>Engine fuel flow in gallons per hour for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p><a href="#"
+                            data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s per hour</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG FUEL FLOW PPH"></a><code class="inline">ENG FUEL FLOW PPH:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) fuel flow in pounds
+                    per hour.</td>
+                <td>Pounds per hour</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><a id="ENG FUEL FLOW PPH SSL"></a><code
+                        class="inline">ENG FUEL FLOW PPH SSL:index</code><span class="deprecated"></span></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);">
+                    <p>Engine fuel flow in pounds per hour.</p>
+                    <p><strong>Deprecated in favour of <code class="inline">ENG FUEL FLOW PPH</code>.</strong></p>
+                </td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);">Pounds per hour</td>
+                <td style="text-align: center; background-color: rgba(255, 0, 0, 0.1);"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG HYDRAULIC PRESSURE"></a><code class="inline">ENG HYDRAULIC PRESSURE:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) hydraulic pressure.
+                </td>
+                <td>
+                    <p>Pounds per square foot (<a href="#"
+                            data-popovertext="Stands for 'Pound per Square Foot' which is a unit of pressure or of stress based on imperial units. It is the pressure resulting from a force of one pound-force applied to an area of one square foot. 1 pound per square foot equals 47.8803 pascals in metric units."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">psf</a>)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG HYDRAULIC QUANTITY"></a><code class="inline">ENG HYDRAULIC QUANTITY:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>)hydraulic fluid
+                    quantity, as a percentage of total capacity</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG MANIFOLD PRESSURE"></a><code class="inline">ENG MANIFOLD PRESSURE:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) manifold pressure.
+                </td>
+                <td>
+                    <p>Inches of mercury (<a href="#"
+                            data-popovertext="This means 'Inch of Mercury', which is a unit of measurement for pressure. It is the pressure exerted by a column of mercury 1 inch (25.4 mm) in height at the standard acceleration of gravity. "
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">inHg</a>)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG MAX RPM"></a><code class="inline">ENG MAX RPM</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) Maximum rpm.</td>
+                <td><a href="#"
+                        data-popovertext="This stands for 'Revolutions Per Minute' and is used to measure engine speed and power."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RPM</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG N1 RPM"></a><code class="inline">ENG N1 RPM:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) N1 rpm.</td>
+                <td>
+                    <p><a href="#"
+                            data-popovertext="This stands for 'Revolutions Per Minute' and is used to measure engine speed and power."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RPM</a></p>
+                    <p>(0 to 16384 = 0 to 100%)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG N2 RPM"></a><code class="inline">ENG N2 RPM:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) N2 rpm.</td>
+                <td>
+                    <p><a href="#"
+                            data-popovertext="This stands for 'Revolutions Per Minute' and is used to measure engine speed and power."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RPM</a></p>
+                    <p>(0 to 16384 = 0 to 100%)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG OIL PRESSURE"></a><code class="inline">ENG OIL PRESSURE:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) oil pressure.</td>
+                <td>
+                    <p>pounds per square foot (<a href="#"
+                            data-popovertext="Stands for 'Pound per Square Foot' which is a unit of pressure or of stress based on imperial units. It is the pressure resulting from a force of one pound-force applied to an area of one square foot. 1 pound per square foot equals 47.8803 pascals in metric units."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">psf</a>)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG OIL QUANTITY"></a><code class="inline">ENG OIL QUANTITY:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) oil quantity as a
+                    percentage of full capacity.</td>
+                <td>
+                    <p><a href="#"
+                            data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG OIL TEMPERATURE"></a><code class="inline">ENG OIL TEMPERATURE:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) oil temperature.</td>
+                <td>
+                    <p><a href="#"
+                            data-popovertext="The Rankine scale is used in engineering systems where heat computations are done using degrees Fahrenheit. The simple formula for calculating it is °F + 460."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Rankine</a></p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG ON FIRE"></a><code class="inline">ENG ON FIRE:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) on fire state.</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG PRESSURE RATIO"></a><code class="inline">ENG PRESSURE RATIO:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) pressure ratio.</td>
+                <td>
+                    <p>Ratio<br>
+                        (0-16384)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><a id="ENG PRESSURE RATIO GES"></a><code
+                        class="inline">ENG PRESSURE RATIO GES:index</code><span class="deprecated"></span></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);">Engine pressure ratio. <strong>Deprecated, do not
+                        use!</strong></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);">Scalar</td>
+                <td style="text-align: center; background-color: rgba(255, 0, 0, 0.1);"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG RPM ANIMATION PERCENT"></a><code class="inline">ENG RPM ANIMATION PERCENT:index</code>
+                </td>
+                <td>
+                    <p>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) percentage maximum
+                        rated rpm - used for visual animation.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer<span> to
+                                all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See here for more
+                            information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><a id="ENG RPM SCALER"></a><code
+                        class="inline">ENG RPM SCALER:index</code><span class="deprecated"></span></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);">RPM scalar value. <strong>Deprecated, do not
+                        use!</strong></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);">
+                    <p>Scalar</p>
+                </td>
+                <td style="text-align: center; background-color: rgba(255, 0, 0, 0.1);"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG TORQUE"></a><code class="inline">ENG TORQUE:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) torque.</td>
+                <td>
+                    <p>Foot pounds</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ENG VIBRATION"></a><code class="inline">ENG VIBRATION:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) vibration.</td>
+                <td>
+                    <p>Number</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ESTIMATED FUEL FLOW"></a><code class="inline">ESTIMATED FUEL FLOW:index</code></td>
+                <td>Estimated fuel flow to the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>) at cruise speed.</td>
+                <td>Pounds per hour</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FULL THROTTLE THRUST TO WEIGHT RATIO"></a><code
+                        class="inline">FULL THROTTLE THRUST TO WEIGHT RATIO</code></td>
+                <td>Full throttle thrust to weight ratio</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG ANTI ICE POSITION"></a><code
+                        class="inline">GENERAL ENG ANTI ICE POSITION:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) anti-ice switch state
+                    - 0 (FALSE) is off and 1 (TRUE) is on.</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG COMBUSTION"></a><code class="inline">GENERAL ENG COMBUSTION:index</code></td>
+                <td>
+                    <p>Set the indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) combustion
+                        flag to TRUE or FALSE. Note that this will not only stop all combustion, but it will also set
+                        the engine <a href="#"
+                            data-popovertext="This stands for 'Revolutions Per Minute' and is used to measure engine speed and power."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RPM</a> to 0, regardless of
+                        the actual state of the simulation.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer&nbsp;to all
+                            <strong>far</strong> aircraft. See here for more information:&nbsp;<a
+                                href="../../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG COMBUSTION EX1"></a><code class="inline">GENERAL ENG COMBUSTION EX1:index</code>
+                </td>
+                <td>This SimVar is similar to <code class="inline">GENERAL ENG COMBUSTION</code>, in that it can also be
+                    used to enable or disable engine combustion. However this SimVar will <em>not</em> interfere with
+                    the current state of ths simulation. For example, if the aircraft has a turbine engine with <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#auto_ignition">auto_ignition</a></code>
+                    enabled or it's a propeller engine with magnetos, then in the subsequent simulation frames this
+                    SimVar may be set to 1 (TRUE) again as the engine restarts automatically.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG COMBUSTION SOUND PERCENT"></a><code
+                        class="inline">GENERAL ENG COMBUSTION SOUND PERCENT:index</code></td>
+                <td>
+                    <p>Percent of maximum sound being created by the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>).</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer&nbsp;to all
+                            <strong>far</strong> aircraft. See here for more information:&nbsp;<a
+                                href="../../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG DAMAGE PERCENT"></a><code class="inline">GENERAL ENG DAMAGE PERCENT:index</code>
+                </td>
+                <td>Percent of total damage to the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG ELAPSED TIME"></a><code class="inline">GENERAL ENG ELAPSED TIME:index</code></td>
+                <td>Total elapsed time since the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>) was started.</td>
+                <td>
+                    <p>Hours</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG EXHAUST GAS TEMPERATURE"></a><code
+                        class="inline">GENERAL ENG EXHAUST GAS TEMPERATURE:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) exhaust gas
+                    temperature.</td>
+                <td>
+                    <p><a href="#"
+                            data-popovertext="The Rankine scale is used in engineering systems where heat computations are done using degrees Fahrenheit. The simple formula for calculating it is °F + 460."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Rankine</a></p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG FAILED"></a><code class="inline">GENERAL ENG FAILED:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) fail flag.</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG FIRE DETECTED"></a><code class="inline">GENERAL ENG FIRE DETECTED:index</code>
+                </td>
+                <td>Detects if a fire has been detected in an indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>) or not. If 0 (FALSE) no fire has been
+                    detected and if 1 (TRUE) then it has.</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG FUEL PRESSURE"></a><code class="inline">GENERAL ENG FUEL PRESSURE:index</code>
+                </td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) fuel pressure.</td>
+                <td>
+                    <p>Pounds per square inch (<a href="#"
+                            data-popovertext="The 'Pound per Square Inch' is a unit of pressure or of stress based on the imperial measurement system. It is the pressure resulting from a one pound-force applied to an area of one square inch. In metric units, 1psi is approximately equal to 6895 newtons per meter squared."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">psi</a></p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG FUEL PUMP ON"></a><code class="inline">GENERAL ENG FUEL PUMP ON:index</code></td>
+                <td>Whether the indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) fuel pump on
+                    (1, TRUE) or off (0, FALSE).</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG FUEL PUMP SWITCH"></a><code
+                        class="inline">GENERAL ENG FUEL PUMP SWITCH:index</code></td>
+                <td>
+                    <p>Fuel pump switch state the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>). If 0 (FALSE) the pump is off and if 1
+                        (TRUE) then it is on.</p>
+                </td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td>
+                    <p><a id="GENERAL ENG FUEL PUMP SWITCH EX1"></a><code
+                            class="inline">GENERAL ENG FUEL PUMP SWITCH EX1:index</code></p>
+                </td>
+                <td>Equivalent to <code class="inline">GENERAL ENG FUEL PUMP SWITCH</code> but differentiates between ON
+                    and AUTO</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG FUEL USED SINCE START"></a><code
+                        class="inline">GENERAL ENG FUEL USED SINCE START:index</code></td>
+                <td>Fuel used since the indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) was
+                    last started.</td>
+                <td>Pounds</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG FUEL VALVE"></a><code class="inline">GENERAL ENG FUEL VALVE:index</code></td>
+                <td>
+                    <p>Fuel valve state for the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>). If 0 (FALSE) then the valve is closed
+                        and if 1 (TRUE) then it is open.</p>
+                </td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG GENERATOR ACTIVE"></a><code
+                        class="inline">GENERAL ENG GENERATOR ACTIVE:index</code></td>
+                <td>Settable alternator (generator) on/off switch for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG GENERATOR SWITCH"></a><code
+                        class="inline">GENERAL ENG GENERATOR SWITCH:index</code></td>
+                <td>Alternator (generator) on/off switch state for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG HOBBS ELAPSED TIME"></a><code
+                        class="inline">GENERAL ENG HOBBS ELAPSED TIME:index</code></td>
+                <td>This can be used to find the time since the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>) started running. Similar to <code
+                        class="inline">ElapsedTachometerTime</code>, this records the time the engine has been running,
+                    but instead of taking a % of the time based on the Pct/RPM this takes the full time, but only if a
+                    threshold RPM/speed is reached. You can set the thresholds using the <code
+                        class="inline">accumulated_time_hobbs_min_pct_rpm</code><br>
+                    and <code class="inline">accumulated_time_hobbs_min_knots</code> parameters in the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#GENERALENGINEDATA">[GENERALENGINEDATA]</a></code>
+                    section of the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm">engines.cfg</a></code>
+                    file.</td>
+                <td>Seconds</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG MASTER ALTERNATOR"></a><code class="inline">GENERAL ENG MASTER ALTERNATOR</code>
+                </td>
+                <td>The alternator switch for a specific engine. Requires an engine index (1 - 4) when used.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG MAX REACHED RPM"></a><code
+                        class="inline">GENERAL ENG MAX REACHED RPM:index</code></td>
+                <td>Maximum attained rpm for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td><a href="#"
+                        data-popovertext="This stands for 'Revolutions Per Minute' and is used to measure engine speed and power."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RPM</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG MIXTURE LEVER POSITION"></a><code
+                        class="inline">GENERAL ENG MIXTURE LEVER POSITION:index</code></td>
+                <td>
+                    <p>Percent of max mixture lever position for the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>).</p>
+                </td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG OIL LEAKED PERCENT"></a><code
+                        class="inline">GENERAL ENG OIL LEAKED PERCENT:index</code></td>
+                <td>Percent of max oil capacity leaked for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG OIL PRESSURE"></a><code class="inline">GENERAL ENG OIL PRESSURE:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) oil pressure.</td>
+                <td>
+                    <p>Psf</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG OIL TEMPERATURE"></a><code
+                        class="inline">GENERAL ENG OIL TEMPERATURE:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) oil temperature.</td>
+                <td><a href="#"
+                        data-popovertext="The Rankine scale is used in engineering systems where heat computations are done using degrees Fahrenheit. The simple formula for calculating it is °F + 460."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Rankine</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG PCT MAX RPM"></a><code class="inline">GENERAL ENG PCT MAX RPM:index</code></td>
+                <td>
+                    <p>Percent of max rated rpm for the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>).</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer&nbsp;to all
+                            <strong>far</strong> aircraft. See here for more information:&nbsp;<a
+                                href="../../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG PROPELLER LEVER POSITION"></a><code
+                        class="inline">GENERAL ENG PROPELLER LEVER POSITION:index</code></td>
+                <td>
+                    <p>Percent of max prop lever position for the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>).</p>
+                </td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG REVERSE THRUST ENGAGED"></a><code
+                        class="inline">GENERAL ENG REVERSE THRUST ENGAGED</code></td>
+                <td>This will return 1 (TRUE) if the reverse thruster is engaged, or 0 (FALSE) otherwise.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG RPM"></a><code class="inline">GENERAL ENG RPM:index</code></td>
+                <td>
+                    <p>The RPM for an indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>).</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer&nbsp;to all
+                            <strong>far</strong> aircraft. See here for more information:&nbsp;<a
+                                href="../../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="This stands for 'Revolutions Per Minute' and is used to measure engine speed and power."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RPM</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG STARTER"></a><code class="inline">GENERAL ENG STARTER:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) starter on/off state.
+                </td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG STARTER ACTIVE"></a><code class="inline">GENERAL ENG STARTER ACTIVE:index</code>
+                </td>
+                <td>
+                    <p>True if the indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) starter is
+                        active.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer<span> to
+                                all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See here for more
+                            information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG THROTTLE LEVER POSITION"></a><code
+                        class="inline">GENERAL ENG THROTTLE LEVER POSITION:index</code></td>
+                <td>
+                    <p>Percent of max throttle position for the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>).</p>
+                </td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GENERAL ENG THROTTLE MANAGED MODE"></a><code
+                        class="inline">GENERAL ENG THROTTLE MANAGED MODE:index</code></td>
+                <td>Current mode of the managed throttle for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Number</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MASTER_IGNITION_SWITCH"></a><code class="inline">MASTER IGNITION SWITCH</code></td>
+                <td>Aircraft master ignition switch (grounds all engines magnetos).</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MAX EGT"></a><code class="inline">MAX EGT</code></td>
+                <td>The maximum <a href="#"
+                        data-popovertext="This stands for 'Exhaust Gas Temperature'. In a piston engine, EGT is a measurement of the temperature of the exhaust gases at the exhaust manifold. In a turbine engine it is the temperature of the turbine exhaust gases as they leave the turbine unit. EGT gauges can be found on some aircraft for the pilot to monitor the vehicle's air-fuel ratio. "
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">EGT</a>, as set using the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#egt_peak_temperature">egt_peak_temperature</a></code>
+                    parameter in the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm">engines.cfg</a></code>
+                    file.</td>
+                <td><a href="#"
+                        data-popovertext="The Rankine scale is used in engineering systems where heat computations are done using degrees Fahrenheit. The simple formula for calculating it is °F + 460."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Rankine</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MAX OIL TEMPERATURE"></a><code class="inline">MAX OIL TEMPERATURE</code></td>
+                <td>The maximum oil temperature, as set using the parameter <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#oil_temp_heating_constant">oil_temp_heating_constant</a></code>
+                    in the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm">engines.cfg</a></code>
+                    file.</td>
+                <td><a href="#"
+                        data-popovertext="The Rankine scale is used in engineering systems where heat computations are done using degrees Fahrenheit. The simple formula for calculating it is °F + 460."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Rankine</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MAX RATED ENGINE RPM"></a><code class="inline">MAX RATED ENGINE RPM</code></td>
+                <td>Maximum rated rpm for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td><a href="#"
+                        data-popovertext="This stands for 'Revolutions Per Minute' and is used to measure engine speed and power."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RPM</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NUMBER_OF_ENGINES"></a><code class="inline">NUMBER OF ENGINES</code></td>
+                <td>Number of engines (minimum 0, maximum 4)</td>
+                <td>
+                    <p>Number</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><a id="OIL_AMOUNT"></a><code
+                        class="inline">OIL AMOUNT</code></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><strong>Deprecated, do not use!</strong></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);">FS7 Oil Quantity<br>
+                    (<strong>Deprecated</strong>)</td>
+                <td style="text-align: center; background-color: rgba(255, 0, 0, 0.1);"><span class="checkmark"> <span
+                            class="checkmark_circle"></span> <span class="checkmark_stem"></span> <span
+                            class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PANEL AUTO FEATHER SWITCH"></a><code class="inline">PANEL AUTO FEATHER SWITCH:index</code>
+                </td>
+                <td>Auto-feather arming switch for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>). Please see the <a
+                        href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#note_autofeather">Note
+                        On Autofeathering</a> for more information.</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_AUTO_CRUISE_ACTIVE"></a><code class="inline">PROP AUTO CRUISE ACTIVE</code></td>
+                <td>True if prop auto cruise active</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_AUTO_FEATHER_ARMED"></a><code class="inline">PROP AUTO FEATHER ARMED:index</code></td>
+                <td>Auto-feather armed state for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_BETA"></a><code class="inline">PROP BETA:index</code></td>
+                <td>The "prop beta" is the pitch of the blades of the propeller, and this can be used to retrieve the
+                    current pitch setting, per indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Radians</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP BETA FORCED ACTIVE"></a><code class="inline">PROP BETA FORCED ACTIVE</code></td>
+                <td>This can be used to enable the propeller forced beta mode (1, TRUE) or disable it (0, FALSE), when
+                    being written to. When being read from, it will return TRUE (1) if the forced beta mode is enabled
+                    or FALSE (0) if it isn't. When enabled, the <code
+                        class="inline"><a href="Aircraft_Engine_Variables.htm#PROP BETA FORCED POSITION">PROP BETA FORCED POSITION</a></code>
+                    value will be used to drive the prop beta, while the internal coded simulation logic is used when
+                    this is disabled.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP BETA FORCED POSITION"></a><code class="inline">PROP BETA FORCED POSITION</code></td>
+                <td>Get or set the beta at which the prop is forced. Only valid when <code
+                        class="inline"><a href="Aircraft_Engine_Variables.htm#PROP BETA FORCED ACTIVE">PROP BETA FORCED ACTIVE</a></code>
+                    is TRUE (1).</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_BETA_MAX"></a><code class="inline">PROP BETA MAX</code></td>
+                <td>The "prop beta" is the pitch of the blades of the propeller. This retrieves the maximum possible
+                    pitch value for <em>all </em>engines.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_BETA_MIN"></a><code class="inline">PROP BETA MIN</code></td>
+                <td>The "prop beta" is the pitch of the blades of the propeller. This retrieves the minimum possible
+                    pitch value for <em>all </em>engines.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_BETA_MIN_REVERSE"></a><code class="inline">PROP BETA MIN REVERSE</code></td>
+                <td>The "prop beta" is the pitch of the blades of the propeller. This retrieves the minimum possible
+                    pitch value when the propeller is in reverse for <em>all </em>engines.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_DEICE_SWITCH"></a><code class="inline">PROP DEICE SWITCH:index</code></td>
+                <td>True if prop deice switch on for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_FEATHERED"></a><code class="inline">PROP FEATHERED:index</code></td>
+                <td>This will return the feathered state of the propeller for an indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>). The state is either feathered (true) or not
+                    (false).</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_FEATHERING_INHIBIT"></a><code class="inline">PROP FEATHERING INHIBIT:index</code></td>
+                <td>Feathering inhibit flag for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_FEATHER_SWITCH"></a><code class="inline">PROP FEATHER SWITCH:index</code></td>
+                <td>Prop feather switch for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_MAX_RPM_PERCENT"></a><code class="inline">PROP MAX RPM PERCENT:index</code></td>
+                <td>
+                    <p>Percent of max rated rpm for the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>).</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer<span> to
+                                all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See here for more
+                            information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_ROTATION_ANGLE"></a><code class="inline">PROP ROTATION ANGLE</code></td>
+                <td>
+                    <p>Prop rotation angle.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer<span> to
+                                all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See here for more
+                            information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_RPM"></a><code class="inline">PROP RPM:index</code></td>
+                <td>Propeller rpm for the indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>).
+                </td>
+                <td><a href="#"
+                        data-popovertext="This stands for 'Revolutions Per Minute' and is used to measure engine speed and power."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RPM</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_SYNC_ACTIVE"></a><code class="inline">PROP SYNC ACTIVE:index</code></td>
+                <td>True if prop sync is active the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_SYNC_DELTA_LEVER"></a><code class="inline">PROP SYNC DELTA LEVER:index</code></td>
+                <td>Corrected prop correction input on slaved engine for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Position</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PROP_THRUST"></a><code class="inline">PROP THRUST:index</code></td>
+                <td>
+                    <p>Propeller thrust for the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>).</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer<span> to
+                                all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See here for more
+                            information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>
+                    <p>Pounds</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><a id="PROPELLER_ADVANCED_SELECTION"></a><code
+                        class="inline">PROPELLER ADVANCED SELECTION</code><span class="deprecated"></span></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><strong>Deprecated, do not use!</strong></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);">
+                    <p>Enum</p>
+                    <p>(<strong>Deprecated</strong>)</p>
+                </td>
+                <td style="text-align: center; background-color: rgba(255, 0, 0, 0.1);"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="SHUTOFF_VALVE_PULLED"></a><code class="inline">SHUTOFF VALVE PULLED</code></td>
+                <td>This checks if the shutoff valve to the engine has been pulled (true) or not (false). When pulled
+                    piston engines will be blocked from getting any fuel.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="THROTTLE_LOWER_LIMIT"></a><code class="inline">THROTTLE LOWER LIMIT</code></td>
+                <td>Percent throttle defining lower limit (negative for reverse thrust equipped airplanes).</td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_AFTERBURNER"></a><code class="inline">TURB ENG AFTERBURNER:index</code></td>
+                <td>
+                    <p>Afterburner state for the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>).</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer<span> to
+                                all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See here for more
+                            information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_AFTERBURNER_PCT_ACTIVE"></a><code
+                        class="inline">TURB ENG AFTERBURNER PCT ACTIVE:index</code></td>
+                <td>
+                    <p>The percentage that the afterburner is running at.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer<span> to
+                                all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See here for more
+                            information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_AFTERBURNER_STAGE_ACTIVE"></a><code
+                        class="inline">TURB ENG AFTERBURNER STAGE ACTIVE:index</code></td>
+                <td>
+                    <p>The stage of the afterburner, or 0 if the afterburner is not active.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer<span> to
+                                all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See here for more
+                            information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>
+                    <p>Number</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_BLEED_AIR"></a><code class="inline">TURB ENG BLEED AIR:index</code></td>
+                <td>Bleed air pressure for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>Pounds per square inch (<a href="#"
+                        data-popovertext="The 'Pound per Square Inch' is a unit of pressure or of stress based on the imperial measurement system. It is the pressure resulting from a one pound-force applied to an area of one square inch. In metric units, 1psi is approximately equal to 6895 newtons per meter squared."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">psi</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_COMMANDED_N1"></a><code class="inline">TURB ENG COMMANDED N1:index</code></td>
+                <td>
+                    <p>Effective commanded N1 for the indexed turbine engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>).</p>
+                </td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_CONDITION_LEVER_POSITION"></a><code
+                        class="inline">TURB ENG CONDITION LEVER POSITION:index</code></td>
+                <td>
+                    <p>When the throttle is on idle position, this sets the condition levers to one of 3 positions to
+                        define the idle N1 target for the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>):</p>
+                    <ul>
+                        <li>Down position is the cut-off position that cuts the fuel to the engine, effectively shutting
+                            down the engine.</li>
+                        <li>Middle position requires N1 to reach the low idle value when throttle is in idle position
+                            (low idle value can be checked using the <code
+                                class="inline"><a href="Aircraft_Engine_Variables.htm#TURB_ENG_LOW_IDLE">TURB_ENG_LOW_IDLE</a></code>
+                            SimVar).</li>
+                        <li>High position requires N1 to reach the high idle value when throttle is in idle position
+                            (high idle value can be checked using the <code
+                                class="inline"><a href="Aircraft_Engine_Variables.htm#TURB_ENG_HIGH_IDLE">TURB_ENG_HIGH_IDLE</a></code>
+                            SimVar).</li>
+                    </ul>
+                    <p>Note that this option requires several settings from the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm">engines.cfg</a>
+                        file to be set to specific values before working correctly:</p>
+                    <ul>
+                        <li><code
+                                class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#DisableMixtureControls">DisableMixtureControls</a></code>
+                            needs to be set to 1 (TRUE).</li>
+                        <li><code
+                                class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#tp_idle_range">tp_idle_range</a></code>
+                            should be set to 0 (since there is no mixture setting).</li>
+                        <li><code
+                                class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#idle_fuel_flow">idle_fuel_flow</a></code>
+                            and <code
+                                class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#idle_high_fuel_flow">idle_high_fuel_flow</a></code>
+                            must be set to the same value (since there is no mixture setting to induce a variation
+                            between the 2).</li>
+                        <li><code
+                                class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#low_idle_n1">low_idle_n1</a></code>
+                            and <code
+                                class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#high_idle_n1">high_idle_n1</a></code>
+                            to be correctly set.</li>
+                    </ul>
+                </td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = fuel cut-off</li>
+                        <li>1 = low idle</li>
+                        <li>2 = high idle</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_CORRECTED_FF"></a><code class="inline">TURB ENG CORRECTED FF:index</code></td>
+                <td>Corrected fuel flow for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Pounds per hour</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_CORRECTED_N1"></a><code class="inline">TURB ENG CORRECTED N1:index</code></td>
+                <td>
+                    <p>The indexed turbine engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) corrected
+                        N1.</p>
+                </td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_CORRECTED_N2"></a><code class="inline">TURB ENG CORRECTED N2:index</code></td>
+                <td>
+                    <p>The indexed turbine engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) corrected
+                        N2.</p>
+                </td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_FREE_TURBINE_TORQUE"></a><code
+                        class="inline">TURB ENG FREE TURBINE TORQUE:index</code></td>
+                <td>The amount of free torque for the indexed turbine engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Foot Pound</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_FUEL_AVAILABLE"></a><code class="inline">TURB ENG FUEL AVAILABLE:index</code></td>
+                <td>True if fuel is available for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><span><a id="TURB ENG FUEL EFFICIENCY LOSS"></a><code
+                            class="inline">TURB ENG FUEL EFFICIENCY LOSS:index</code></span></td>
+                <td>This is used to control the fuel efficiency loss of the indexed engine, from 0 - no fuel efficiency
+                    loss - to 100 - double the fuel consumption.</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_FUEL_FLOW_PPH"></a><code class="inline">TURB ENG FUEL FLOW PPH:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) fuel flow rate.</td>
+                <td>
+                    <p>Pounds per hour</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_HIGH_IDLE"></a><code class="inline">TURB ENG HIGH IDLE:index</code></td>
+                <td>Retrieves the high idle N1 value to be reached by the the indexed turboprop engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>) with throttle in idle position and condition
+                    lever in high idle position (condition lever position can be checked or set using the <code
+                        class="inline"><a href="Aircraft_Engine_Variables.htm#TURB_ENG_CONDITION_LEVER_POSITION">TURB_ENG_CONDITION_LEVER_POSITION</a></code>
+                    SimVar).</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_IGNITION_SWITCH"></a><code class="inline">TURB ENG IGNITION SWITCH:index</code></td>
+                <td>True if the the indexed turbine engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>)
+                    ignition switch is on.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_IGNITION_SWITCH_EX1"></a><code
+                        class="inline">TURB ENG IGNITION SWITCH EX1:index</code></td>
+                <td>Position of the the indexed turbine engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>) Ignition Switch. Similar to <code
+                        class="inline">TURB_ENG_IGNITION_SWITCH</code> but differentiates between ON and AUTO.</td>
+                <td>
+                    <p>Enum:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = OFF</li>
+                        <li>1 = AUTO</li>
+                        <li>2 = ON</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_IS_IGNITING"></a><code class="inline">TURB ENG IS IGNITING:index</code></td>
+                <td>Whether or not the ignition system is currently running for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>). Depends on <code
+                        class="inline">TURB_ENG_IGNITION_SWITCH_EX1</code> Enum, the <a
+                        href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm">cfg</a> var <code
+                        class="inline">ignition_auto_type</code> and current state of the plane.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_ITT"></a><code class="inline">TURB ENG ITT:index</code></td>
+                <td>Retrieve or set the <a href="#"
+                        data-popovertext="The 'Interstage Turbine Temperature' is the temperature of the exhaust gases between the high pressure and the low pressure turbines. The gas temperature is measured by a number of thermocouples mounted in the exhaust stream and is presented on a flight deck gauge in either degrees Fahrenheit or degrees Celcius."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ITT</a> for the indexed engine
+                    (see <a href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td><a href="#"
+                        data-popovertext="The Rankine scale is used in engineering systems where heat computations are done using degrees Fahrenheit. The simple formula for calculating it is °F + 460."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Rankine</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB ENG ITT COOLING EFFICIENCY LOSS"></a><code
+                        class="inline">TURB ENG ITT COOLING EFFICIENCY LOSS:index</code></td>
+                <td>This is used to control the ITT cooling efficiency loss of the indexed engine, from 0 - no cooling
+                    efficiency loss - to 100 -engine recieves no ITT cooling.</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_JET_THRUST"></a><code class="inline">TURB ENG JET THRUST:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) jet thrust.</td>
+                <td>
+                    <p>Pounds</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_LOW_IDLE"></a><code class="inline">TURB ENG LOW IDLE:index</code></td>
+                <td>Retrieves the low idle N1 value to be reached by the the indexed turboprop engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>) with throttle in idle position and condition
+                    lever in low idle position (condition lever position can be checked or set using the <code
+                        class="inline"><a href="Aircraft_Engine_Variables.htm#TURB_ENG_CONDITION_LEVER_POSITION">TURB_ENG_CONDITION_LEVER_POSITION</a></code>
+                    SimVar).</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_MASTER_STARTER_SWITCH"></a><code
+                        class="inline">TURB ENG MASTER STARTER SWITCH</code></td>
+                <td>True if the turbine engine master starter switch is on, false otherwise.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_MAX_TORQUE_PERCENT"></a><code
+                        class="inline">TURB ENG MAX TORQUE PERCENT:index</code></td>
+                <td>Percent of max rated torque for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_N1"></a><code class="inline">TURB ENG N1:index</code></td>
+                <td>
+                    <p>The indexed turbine engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) N1 value.
+                    </p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer&nbsp;to all
+                            <strong>far</strong> aircraft. See here for more information:&nbsp;<a
+                                href="../../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB ENG N1 LOSS"></a><code class="inline">TURB ENG N1 LOSS:index</code></td>
+                <td>This is used to control the N1 loss of the indexed engine, from 0 - no N1 loss - to 100 - 100% N1
+                    loss.</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_N2"></a><code class="inline">TURB ENG N2:index</code></td>
+                <td>
+                    <p>The indexed turbine engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) N2 value.
+                    </p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer&nbsp;to all
+                            <strong>far</strong> aircraft. See here for more information:&nbsp;<a
+                                href="../../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_NUM_TANKS_USED"></a><code class="inline">TURB ENG NUM TANKS USED:index</code></td>
+                <td>Number of tanks currently being used by the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Number</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_PRESSURE_RATIO"></a><code class="inline">TURB ENG PRESSURE RATIO:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) pressure ratio.</td>
+                <td>
+                    <p>Ratio</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_PRIMARY_NOZZLE_PERCENT"></a><code
+                        class="inline">TURB ENG PRIMARY NOZZLE PERCENT:index</code></td>
+                <td>Percent thrust of primary nozzle for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p><a href="#"
+                            data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_REVERSE_NOZZLE_PERCENT"></a><code
+                        class="inline">TURB ENG REVERSE NOZZLE PERCENT:index</code></td>
+                <td>
+                    <p>Percent thrust reverser nozzles deployed for the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>).</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer&nbsp;to all
+                            <strong>far</strong> aircraft. See here for more information:&nbsp;<a
+                                href="../../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_TANKS_USED"></a><code class="inline">TURB ENG TANKS USED:index</code></td>
+                <td>Fuel tanks used by the indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>),
+                    one or more of the following bit flags:
+                    <ol class="minitoc-list">
+                        <li>Center 1 Bit 0</li>
+                        <li>Center 2 Bit 1</li>
+                        <li>Center 3 Bit 2</li>
+                        <li>Left Main Bit 3</li>
+                        <li>Left Aux Bit 4</li>
+                        <li>Left Tip Bit 5</li>
+                        <li>Right Main Bit 6</li>
+                        <li>Right Aux Bit 7</li>
+                        <li>Right Tip Bit 8</li>
+                        <li>External 1 Bit 9</li>
+                        <li>External 2 Bit 10</li>
+                    </ol>
+                </td>
+                <td>
+                    <p>Mask</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_TANK_SELECTOR"></a><code class="inline">TURB ENG TANK SELECTOR:index</code></td>
+                <td>Fuel tank selected for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>). See <a
+                        href="Aircraft_Engine_Variables.htm#fuel-tank-selection">Fuel Tank Selection</a> for a list of
+                    values.</td>
+                <td>
+                    <p>Enum</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_THROTTLE_COMMANDED_N1"></a><code
+                        class="inline">TURB ENG THROTTLE COMMANDED N1:index</code></td>
+                <td>
+                    <p>The indexed turbine engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) commanded
+                        N1 for current throttle position.</p>
+                </td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB ENG THRUST EFFICIENCY LOSS"></a><code
+                        class="inline">TURB ENG THRUST EFFICIENCY LOSS:index</code></td>
+                <td>This can be used to control the thrust efficiency loss of the indexed engine, where a value of 0 is
+                    100% of available thrust, and 100 is 0% available thrust.</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB_ENG_VIBRATION"></a><code class="inline">TURB ENG VIBRATION:index</code></td>
+                <td>The indexed turbine engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) vibration
+                    value.</td>
+                <td>
+                    <p>Number</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TURB MAX ITT"></a><code class="inline">TURB MAX ITT</code></td>
+                <td>Retrieve the <a
+                        href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#itt_peak_temperature">itt_peak_temperature</a>
+                    as set in the <a
+                        href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm">engines.cfg</a>
+                    file.</td>
+                <td><a href="#"
+                        data-popovertext="The Rankine scale is used in engineering systems where heat computations are done using degrees Fahrenheit. The simple formula for calculating it is °F + 460."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Rankine</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p><span class="note"><strong><a id="note"></a>NOTE</strong>: Many of the SimVars listed above require an
+            <strong>engine index</strong>. This is a value between 1 and 16 that signals which of the engines on the
+            aircraft is being targeted to get or set the value for the SimVar.</span></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="piston">Reciprical (Piston) Engine Vars</h3>
+    <p>The following SimVars are <strong>only valid for piston engines</strong>:</p>
+    <p>&nbsp;</p>
+    <table style="table-layout: auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="RECIP_CARBURETOR_TEMPERATURE"></a><code
+                        class="inline">RECIP CARBURETOR TEMPERATURE:index</code></td>
+                <td>Carburetor temperature the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>Celsius</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td>
+                    <p><a id="RECIP_ENG_ALTERNATE_AIR_POSITION"></a><code
+                            class="inline">RECIP ENG ALTERNATE AIR POSITION:index</code></p>
+                </td>
+                <td>Alternate air control the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Position</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_ANTIDETONATION_TANK_MAX_QUANTITY"></a><code
+                        class="inline">RECIP ENG ANTIDETONATION TANK MAX QUANTITY:index</code></td>
+                <td>The maximum quantity of water/methanol mixture in the <a href="#"
+                        data-popovertext="This stands for &quot;Anti-Detonation Injection&quot; system, which is a system that uses a water/methanol mix to cool the combustion event in an engine and slow the propagation of the flame front, preventing explosive detonation when the fuel/air mixture encounters the hot surfaces of cylinder walls, valves and pistons."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ADI</a> tank for the indexed
+                    engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>). This value is set as part of the
+                    <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#ANTIDETONATION">[ANTIDETONATION_SYSTEM.N]</a></code>
+                    section in the aircraft configuration files.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_ANTIDETONATION_TANK_QUANTITY"></a><code
+                        class="inline">RECIP ENG ANTIDETONATION TANK QUANTITY:index</code></td>
+                <td>The quantity of water/methanol mixture currently in the <a href="#"
+                        data-popovertext="This stands for &quot;Anti-Detonation Injection&quot; system, which is a system that uses a water/methanol mix to cool the combustion event in an engine and slow the propagation of the flame front, preventing explosive detonation when the fuel/air mixture encounters the hot surfaces of cylinder walls, valves and pistons."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ADI</a> tank for the indexed
+                    engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_ANTIDETONATION_TANK_VALVE"></a><code
+                        class="inline">RECIP ENG ANTIDETONATION TANK VALVE:index</code></td>
+                <td>The status of the <a href="#"
+                        data-popovertext="This stands for &quot;Anti-Detonation Injection&quot; system, which is a system that uses a water/methanol mix to cool the combustion event in an engine and slow the propagation of the flame front, preventing explosive detonation when the fuel/air mixture encounters the hot surfaces of cylinder walls, valves and pistons."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ADI</a> tank valve for the
+                    indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_ANTIDETONATION_FLOW_RATE"></a><code
+                        class="inline">RECIP ENG ANTIDETONATION FLOW RATE:index</code></td>
+                <td>This gives the actual flow rate of the Anti Detonation system for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s per hour</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_BRAKE_POWER"></a><code class="inline">RECIP ENG BRAKE POWER:index</code></td>
+                <td>Brake power produced by the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Foot pounds (<a href="#"
+                            data-popovertext="This is the 'foot-pound force' and is a unit of energy in the imperial unit of measure. It is the energy transferred upon applying a force of one pound-force (lbf) through a linear displacement of one foot. The corresponding metric unit is the joule, where 1ftlbs is equal to approximately 1.355J."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ftlbs</a>) per second</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_COOLANT_RESERVOIR_PERCENT"></a><code
+                        class="inline">RECIP ENG COOLANT RESERVOIR PERCENT:index</code></td>
+                <td>Percent coolant available for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_COWL_FLAP_POSITION"></a><code
+                        class="inline">RECIP ENG COWL FLAP POSITION:index</code></td>
+                <td>
+                    <p>Percent cowl flap opened for the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>).</p>
+                </td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_CYLINDER_HEAD_TEMPERATURE"></a><code
+                        class="inline">RECIP ENG CYLINDER HEAD TEMPERATURE:index</code></td>
+                <td>Engine cylinder head temperature for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Celsius</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_CYLINDER_HEALTH"></a><code class="inline">RECIP ENG CYLINDER HEALTH:index</code>
+                </td>
+                <td>Index high 16 bits is engine number, low16 cylinder number, both indexed from 1.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_DETONATING"></a><code class="inline">RECIP ENG DETONATING:index</code></td>
+                <td>Set to 1 (TRUE) if the indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) is
+                    detonating.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_EMERGENCY_BOOST_ACTIVE"></a><code
+                        class="inline">RECIP ENG EMERGENCY BOOST ACTIVE:index</code></td>
+                <td>Whether emergency boost is active (1, TRUE) or not (0, FALSE) for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_EMERGENCY_BOOST_ELAPSED_TIME"></a><code
+                        class="inline">RECIP ENG EMERGENCY BOOST ELAPSED TIME:index</code></td>
+                <td>
+                    <p>The elapsed time that emergency boost has been active on the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>). The timer will start when boost is
+                        first activated.</p>
+                    <p><span class="note"><strong>IMPORTANT!</strong> This timer does not reset. So if you set your time
+                            limit in the <code
+                                class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm">engines.cfg</a></code>
+                            file to 315s and you spend 2 minutes with boost active, then pull back on the throttle for 1
+                            minute, then engage boost again for 2 minutes, the simulation will consider that you spent
+                            <strong>4</strong> minutes with boost active. The 1 minute pause is not taken into
+                            account.</span></p>
+                </td>
+                <td>
+                    <p>Hours</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_ENGINE_MASTER_SWITCH"></a><code
+                        class="inline">RECIP ENG ENGINE MASTER SWITCH:index</code></td>
+                <td>Whether or not the Engine Master switch is active on an indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_FUEL_AVAILABLE"></a><code class="inline">RECIP ENG FUEL AVAILABLE:index</code></td>
+                <td>True if fuel is available for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_FUEL_FLOW"></a><code class="inline">RECIP ENG FUEL FLOW:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) fuel flow.</td>
+                <td>
+                    <p>Pounds per hour</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_FUEL_NUMBER_TANKS_USED"></a><code
+                        class="inline">RECIP ENG FUEL NUMBER TANKS USED:index</code></td>
+                <td>Number of tanks currently being used by the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>
+                    <p>Number</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_FUEL_TANKS_USED"></a><code class="inline">RECIP ENG FUEL TANKS USED:index</code>
+                </td>
+                <td>Fuel tanks used by the indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>),
+                    one or more of the following bit flags:
+                    <ol class="minitoc-list">
+                        <li>Center 1 Bit 0</li>
+                        <li>Center 2 Bit 1</li>
+                        <li>Center 3 Bit 2</li>
+                        <li>Left Main Bit 3</li>
+                        <li>Left Aux Bit 4</li>
+                        <li>Left Tip Bit 5</li>
+                        <li>Right Main Bit 6</li>
+                        <li>Right Aux Bit 7</li>
+                        <li>Right Tip Bit 8</li>
+                        <li>External 1 Bit 9</li>
+                        <li>External 2 Bit 10</li>
+                    </ol>
+                </td>
+                <td>
+                    <p>Mask</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_FUEL_TANK_SELECTOR"></a><code
+                        class="inline">RECIP ENG FUEL TANK SELECTOR:index</code></td>
+                <td>Fuel tank selected for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>). See <a
+                        href="Aircraft_Engine_Variables.htm#fuel-tank-selection">Fuel Tank Selection</a> for a list of
+                    values.</td>
+                <td>
+                    <p>Enum</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_GLOW_PLUG_ACTIVE"></a><code class="inline">RECIP ENG GLOW PLUG ACTIVE:index</code>
+                </td>
+                <td>Whether or not the Glow Plug is active on the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>)..</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_LEFT_MAGNETO"></a><code class="inline">RECIP ENG LEFT MAGNETO:index</code></td>
+                <td>
+                    <p>Left magneto state for the indexed engine (see <a
+                            href="Aircraft_Engine_Variables.htm#note">note</a>).</p>
+                </td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_MANIFOLD_PRESSURE"></a><code
+                        class="inline">RECIP ENG MANIFOLD PRESSURE:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) manifold pressure.
+                </td>
+                <td>Pounds per square inch (<a href="#"
+                        data-popovertext="The 'Pound per Square Inch' is a unit of pressure or of stress based on the imperial measurement system. It is the pressure resulting from a one pound-force applied to an area of one square inch. In metric units, 1psi is approximately equal to 6895 newtons per meter squared."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">psi</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_NITROUS_TANK_MAX_QUANTITY"></a><code
+                        class="inline">RECIP ENG NITROUS TANK MAX QUANTITY:index</code></td>
+                <td>The maximum quantity of nitrous permitted per indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_NITROUS_TANK_QUANTITY"></a><code
+                        class="inline">RECIP ENG NITROUS TANK QUANTITY:index</code></td>
+                <td>The quantity of nitrous per indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_NITROUS_TANK_VALVE"></a><code class="inline">RECIP ENG NITROUS TANK VALVE</code>
+                </td>
+                <td>The statte of the nitrous tank valve for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>). Either 1 (TRUE) for open or 0 (FALSE) for
+                    closed.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_NUM_CYLINDERS"></a><code class="inline">RECIP ENG NUM CYLINDERS:index</code></td>
+                <td>The number of cylinders for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_NUM_CYLINDERS_FAILED"></a><code
+                        class="inline">RECIP ENG NUM CYLINDERS FAILED:index</code></td>
+                <td>The number of cylinders that have failed in the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_PRIMER"></a><code class="inline">RECIP ENG PRIMER:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) primer state.</td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_RADIATOR_TEMPERATURE"></a><code
+                        class="inline">RECIP ENG RADIATOR TEMPERATURE:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) radiator temperature.
+                </td>
+                <td>
+                    <p>Celsius</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_RIGHT_MAGNETO"></a><code class="inline">RECIP ENG RIGHT MAGNETO:index</code></td>
+                <td>
+                    <p>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) right magneto
+                        state.</p>
+                </td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_STARTER_TORQUE"></a><code class="inline">RECIP ENG STARTER TORQUE:index</code></td>
+                <td>Torque produced by the indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>).
+                </td>
+                <td>
+                    <p>Foot pound</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_SUPERCHARGER_ACTIVE_GEAR"></a><code
+                        class="inline">RECIP ENG SUPERCHARGER ACTIVE GEAR:index</code></td>
+                <td>Returns which of the supercharger gears is engaged for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_TURBINE_INLET_TEMPERATURE"></a><code
+                        class="inline">RECIP ENG TURBINE INLET TEMPERATURE:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) turbine inlet
+                    temperature.</td>
+                <td>
+                    <p>Celsius</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_TURBOCHARGER_FAILED"></a><code
+                        class="inline">RECIP ENG TURBOCHARGER FAILED:index</code></td>
+                <td>The indexed engine (see <a href="Aircraft_Engine_Variables.htm#note">note</a>) turbo failed state.
+                </td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_ENG_WASTEGATE_POSITION"></a><code
+                        class="inline">RECIP ENG WASTEGATE POSITION:index</code></td>
+                <td>When the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm">engines.cfg</a></code>
+                    parameter <code class="inline">turbocharged</code> is TRUE, this SimVar will return the percentage
+                    that the turbo waste gate is closed for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>). If the turbocharged variable is FALSE
+                    <em>and</em> the <code class="inline">manifold_pressure_regulator</code> parameter is TRUE, then
+                    this will return the percentage that the manifold pressure regulator is closed for the indexed
+                    engine.</td>
+                <td>
+                    <p>Percent</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP MAX CHT"></a><code class="inline">RECIP MAX CHT</code></td>
+                <td>This will return the cylinder head temperature value set by the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm#cht_heating_constant">cht_heating_constant</a></code>
+                    parameter in the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/engines_cfg.htm">engines.cfg</a></code>
+                    file.</td>
+                <td><a href="#"
+                        data-popovertext="The Rankine scale is used in engineering systems where heat computations are done using degrees Fahrenheit. The simple formula for calculating it is °F + 460."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Rankine</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RECIP_MIXTURE_RATIO"></a><code class="inline">RECIP MIXTURE RATIO:index</code></td>
+                <td>Fuel / Air mixture ratio for the indexed engine (see <a
+                        href="Aircraft_Engine_Variables.htm#note">note</a>).</td>
+                <td>Ratio</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h4 id="fuel-tank-selection">Fuel Tank Selection</h4>
+    <table style="table-layout:auto;width:50%;">
+        <tbody>
+            <tr>
+                <th>Number</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code class="inline">0</code></td>
+                <td>Off</td>
+            </tr>
+            <tr>
+                <td><code class="inline">1</code></td>
+                <td>All</td>
+            </tr>
+            <tr>
+                <td><code class="inline">2</code></td>
+                <td>Left</td>
+            </tr>
+            <tr>
+                <td><code class="inline">3</code></td>
+                <td>Right</td>
+            </tr>
+            <tr>
+                <td><code class="inline">4</code></td>
+                <td>Left auxiliary</td>
+            </tr>
+            <tr>
+                <td><code class="inline">5</code></td>
+                <td>Right auxiliary</td>
+            </tr>
+            <tr>
+                <td><code class="inline">6</code></td>
+                <td>Center</td>
+            </tr>
+            <tr>
+                <td><code class="inline">7</code></td>
+                <td>Center2</td>
+            </tr>
+            <tr>
+                <td><code class="inline">8</code></td>
+                <td>Center3</td>
+            </tr>
+            <tr>
+                <td><code class="inline">9</code></td>
+                <td>External1</td>
+            </tr>
+            <tr>
+                <td><code class="inline">10</code></td>
+                <td>External2</td>
+            </tr>
+            <tr>
+                <td><code class="inline">11</code></td>
+                <td>Right tip</td>
+            </tr>
+            <tr>
+                <td><code class="inline">12</code></td>
+                <td>Left tip</td>
+            </tr>
+            <tr>
+                <td><code class="inline">13</code></td>
+                <td>Crossfeed</td>
+            </tr>
+            <tr>
+                <td><code class="inline">14</code></td>
+                <td>Crossfeed left to right</td>
+            </tr>
+            <tr>
+                <td><code class="inline">15</code></td>
+                <td>Crossfeed right to left</td>
+            </tr>
+            <tr>
+                <td><code class="inline">16</code></td>
+                <td>Both</td>
+            </tr>
+            <tr>
+                <td><code class="inline">17</code></td>
+                <td>External</td>
+            </tr>
+            <tr>
+                <td><code class="inline">18</code></td>
+                <td>Isolate</td>
+            </tr>
+            <tr>
+                <td><code class="inline">19</code></td>
+                <td>Left main</td>
+            </tr>
+            <tr>
+                <td><code class="inline">20</code></td>
+                <td>Right main</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+</div>

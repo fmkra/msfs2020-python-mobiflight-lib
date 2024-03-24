@@ -1,0 +1,787 @@
+<div>
+    <h2 id="aircraft_fuel_v">AIRCRAFT FUEL VARIABLES</h2>
+    <p>The tables below indicate the properties for the <a href="../Simulation_Variables.htm">Simulation Variables</a>
+        that can be used to get and set variables related to the fuel system of the aircraft. For information on the
+        units listed for each variable, please see here: <a href="../Simulation_Variable_Units.htm">Simulation Variable
+            Units</a></p>
+    <p><span class="note"><strong>NOTE</strong>: When <span data-keyref="game_name">Microsoft Flight Simulator</span> is
+            running in multiplayer mode, only a small number of variables are communicated between aircraft. Those
+            variables that are available will say so in the description as being either for "All Aircraft" or for
+            "Shared Cockpit".</span></p>
+    <p>You can find a complete index of all available SimVars here: <a href="../Simulation_Variables.htm#h">SimVar
+            Index</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="general">General</h3>
+    <p>The majority of these SimVars are only valid for <strong>legacy</strong> aircraft that have set up their fuel
+        using the <code
+            class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h4">[FUEL]</a></code>
+        section of the <a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">flight
+            model CFG file</a>. Aircraft in <span data-keyref="game_name">Microsoft Flight Simulator</span> should not
+        be using this fuel method nor these SimVars, and should instead be defining things using the <code
+            class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h6">[FUEL_SYSTEM]</a></code>
+        section of the CFG file and the <a href="Aircraft_Fuel_Variables.htm#fuel_system">Fuel System</a> SimVars.</p>
+    <p>&nbsp;</p>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 102px;">
+            <col style="width: 584px;">
+            <col style="width: 187px;">
+            <col style="width: 11px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="FUEL_CROSS_FEED"></a><code class="inline">FUEL CROSS FEED:index</code></td>
+                <td>Cross feed valve setting. This will return the current setting for the fuel crossfeed for the
+                    indexed engine, based on the current status of the simulation and the <a
+                        href="../../Event_IDs/Aircraft_Fuel_System_Events.htm#cross-feed">Cross Feed</a> key events.
+                </td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = Closed</li>
+                        <li>1 = Open</li>
+                        <li>2 = Left to Right</li>
+                        <li>3 = Right to Left</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_DUMP_ACTIVE"></a><code class="inline">FUEL DUMP ACTIVE</code></td>
+                <td>If 1 (TRUE) then the aircraft can dump fuel.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_DUMP_SWITCH"></a><code class="inline">FUEL DUMP SWITCH</code></td>
+                <td>If set to 1 (TRUE) then the aircraft will dump fuel at the rate set by <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#fuel_dump_rate">fuel_dump_rate</a></code>
+                    parameter in the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">flight_model.cfg</a></code>&nbsp;file.
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_LEFT_CAPACITY"></a><code class="inline">FUEL LEFT CAPACITY</code></td>
+                <td>Maximum capacity in volume of <em>all</em> the tanks on the left side of the aircraft.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_LEFT_QUANTITY"></a><code class="inline">FUEL LEFT QUANTITY</code></td>
+                <td>Current quantity in volume of <em>all</em> the tanks on the left side of the aircraft.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_PUMP"></a><code class="inline">FUEL PUMP</code></td>
+                <td><em>Currently not used within the simulation.</em></td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_RIGHT_CAPACITY"></a><code class="inline">FUEL RIGHT CAPACITY</code></td>
+                <td>Maximum capacity in volume of <em>all</em> the tanks on the right side of the aircraft.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_RIGHT_QUANTITY"></a><code class="inline">FUEL RIGHT QUANTITY</code></td>
+                <td>Current quantity in volume of <em>all</em> the tanks on the right side of the aircraft.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_SELECTED_QUANTITY"></a><code class="inline">FUEL SELECTED QUANTITY:index</code></td>
+                <td>Quantity of fuel in the tank referenced by the indexed selector.&nbsp;When using the legacy fuel
+                    system, this SimVar will return the quantity of fuel in the tank pointed to by the selector you
+                    chose with the index. If passing an index higher than the number of selectors - or when using the
+                    modern fuel system - it will return the total fuel quantity available.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_SELECTED_QUANTITY_PERCENT"></a><code
+                        class="inline">FUEL SELECTED QUANTITY PERCENT:index</code></td>
+                <td>Percent or capacity for the tank referenced by the indexed selector.&nbsp;When using the legacy fuel
+                    system, this SimVar will return the percentage of fuel in the tank pointed to by the selector you
+                    chose with the index. If passing an index higher than the number of selectors available - or when
+                    using the modern fuel system - it will return the percentage of total fuel quantity available.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_SELECTED_TRANSFER_MODE"></a><code class="inline">FUEL SELECTED TRANSFER MODE</code></td>
+                <td>
+                    <p>The method of transfer for the fuel. Each of the available transfer options are explained below:
+                    </p>
+                    <ul>
+                        <li><strong>off</strong> - Fuel transfer is switched off.</li>
+                        <li><strong>auto</strong> - Automatically balance the fuel between the Center1 and Center2 tanks
+                            to maintain the center of gravity.</li>
+                        <li><strong>forward</strong> - Fuel will be transferred forwards from the Center1 tank to the
+                            Center2 tank.</li>
+                        <li><strong>aft</strong> - Fuel will be transferred aftwards from the Center2 tank to the
+                            Center1 tank.</li>
+                        <li><strong>manual</strong> - Fuel will be transferred for 1 second from the Center1 tank to the
+                            Center2 tank at a rate of 1<a href="#"
+                                data-popovertext="This stands for 'pounds' and is a way of measuring the mass of an object using the Imperial system. In metric it is aproximately 0.45 kilograms."
+                                data-rhwidget="TextPopOver" aria-haspopup="true" role="button">lbs</a>/s.</li>
+                        <li><strong>custom</strong> - This requires one or more pumps to have been defined using the
+                            <code
+                                class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#fuel_transfer_pump.N">fuel_transfer_pump.N</a></code>
+                            parameter in the <code
+                                class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">flight_model.cfg</a></code>
+                            file, as well as their associated electrical circuits.
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <p>Enum:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = off</li>
+                        <li>1 = auto</li>
+                        <li>2 = forward</li>
+                        <li>3 = aft</li>
+                        <li>4 = manual</li>
+                        <li>5 = custom</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"><span class="checkmark_circle_red"></span> <span
+                            class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TOTAL_CAPACITY"></a><code class="inline">FUEL TOTAL CAPACITY</code></td>
+                <td>Total fuel capacity of the aircraft for <em>all</em> tanks.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TOTAL_QUANTITY"></a><code class="inline">FUEL TOTAL QUANTITY</code></td>
+                <td>Current total quantity of fuel in volume for <em>all</em> tanks of the aircraft.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TOTAL_QUANTITY_WEIGHT"></a><code class="inline">FUEL TOTAL QUANTITY WEIGHT</code></td>
+                <td>Current total fuel weight for <em>all</em> tanks of the aircraft</td>
+                <td>Pounds</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TRANSFER_PUMP_ON"></a><code class="inline">FUEL TRANSFER PUMP ON:index</code></td>
+                <td>Returns 1 (TRUE) if the indexed pump is active.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_WEIGHT_PER_GALLON"></a><code class="inline">FUEL WEIGHT PER GALLON</code></td>
+                <td>The weight of the fuel, per gallon.</td>
+                <td>Pounds</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NEW_FUEL_SYSTEM"></a><code class="inline">NEW FUEL SYSTEM</code></td>
+                <td>Will return 1 (TRUE) if the aircraft is using the modern <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h6">[FUEL_SYSTEM]</a></code>
+                    or 0 (FALSE) for the legacy <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h4">[FUEL]</a></code>.
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NUM_FUEL_SELECTORS"></a><code class="inline">NUM FUEL SELECTORS</code></td>
+                <td>The number of fuel selectors on the aircraft.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="UNLIMITED_FUEL"></a><code class="inline">UNLIMITED FUEL</code></td>
+                <td>Will return 1 (TRUE) if the unlimited fuel flag has been enabled, or 0 (FALSE) otherwise.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="UNUSABLE_FUEL_TOTAL_QUANTITY"></a><code class="inline">UNUSABLE FUEL TOTAL QUANTITY</code>
+                </td>
+                <td>The total amount of fuel in <em>all</em> tanks of the aircraft which is not usable.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="fuel_system">Fuel System</h3>
+    <p>These SimVars are dedicated to controlling the modern <em>component</em> fuel system, which you can set up in the
+        <code
+            class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h6">[FUEL_SYSTEM]</a></code>
+        section of the <code
+            class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">flight_model.cfg</a></code>.
+        All aircraft made for <span data-keyref="game_name">Microsoft Flight Simulator</span> should be using this
+        system and these SimVars, and only <strong>legacy</strong> aircraft should be using the <a
+            href="Aircraft_Fuel_Variables.htm#general">General</a> SimVars and the <code
+            class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h4">[FUEL]</a></code>
+        section of the <code
+            class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">flight_model.cfg</a></code>&nbsp;file.
+    </p>
+    <p>&nbsp;</p>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col style="width: 493px;">
+            <col style="width: 175px;">
+            <col style="width: 13px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_ENGINE_PRESSURE"></a><code class="inline">FUELSYSTEM ENGINE PRESSURE:index</code>
+                </td>
+                <td>The pressure of the fuel coming to the indexed engine. The index is the number of the engine
+                    <em>N</em> component as defined by the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Engine.N">Engine.N</a></code>
+                    parameter.
+                </td>
+                <td>Kilo pascal</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_JUNCTION_SETTING"></a><code
+                        class="inline">FUELSYSTEM JUNCTION SETTING:index</code></td>
+                <td>This will return the current <em>Option</em> for the indexed junction. The index is the number of
+                    the line <em>N</em> component as defined by the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Junction.N">Junction.N</a></code>
+                    parameter.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_LINE_FUEL_FLOW"></a><code class="inline">FUELSYSTEM LINE FUEL FLOW:index</code>
+                </td>
+                <td>The fuel flowing through the indexed line in <a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s per Hour. The index
+                    is the number of the line <em>N</em> component as defined by the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Line.N">Line.N</a></code>
+                    parameter.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s per hour</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_LINE_FUEL_LEVEL"></a><code class="inline">FUELSYSTEM LINE FUEL LEVEL:index</code>
+                </td>
+                <td>The level of fuel in the indexed line in <a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s. The index is the
+                    number of the line <em>N</em> component as defined by the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Line.N">Line.N</a></code>
+                    parameter.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_LINE_FUEL_PRESSURE"></a><code
+                        class="inline">FUELSYSTEM LINE FUEL PRESSURE:index</code></td>
+                <td>The pressure in the indexed fuel line, measured in KiloPascal. The index is the number of the line
+                    <em>N</em> component as defined by the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Line.N">Line.N</a></code>
+                    parameter.
+                </td>
+                <td>Kilo pascal</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_PUMP_ACTIVE"></a><code class="inline">FUELSYSTEM PUMP ACTIVE:index</code></td>
+                <td>Whether or not the indexed pump is actually active. The index is the number of the pump <em>N</em>
+                    component as defined by the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Pump.N">Pump.N</a></code>
+                    parameter.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_PUMP_SWITCH"></a><code class="inline">FUELSYSTEM PUMP SWITCH:index</code></td>
+                <td>Whether or not the indexed pump is enabled. The index is the number of the pump <em>N</em> component
+                    as defined by the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Pump.N">Pump.N</a></code>
+                    parameter.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_TANK_CAPACITY"></a><code class="inline">FUELSYSTEM TANK CAPACITY:index</code></td>
+                <td>
+                    <p>Total capacity of the indexed fuel tank. The index is the number of the tank <em>N</em> component
+                        as defined by the <code
+                            class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Tank.N">Tank.N</a></code>
+                        parameter.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This SimVar can only be used with the modern <a
+                                href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm">Fuel
+                                System</a>.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_TANK_LEVEL"></a><code class="inline">FUELSYSTEM TANK LEVEL:index</code></td>
+                <td>
+                    <p>Quantity of fuel available in the indexed fuel tank. The index is the number of the tank
+                        <em>N</em> component as defined by the <code
+                            class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Tank.N">Tank.N</a></code>
+                        parameter.
+                    </p>
+                    <p><span class="note"><strong>NOTE</strong>: This SimVar can only be used with the modern <a
+                                href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm">Fuel
+                                System</a>.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_TANK_QUANTITY"></a><code class="inline">FUELSYSTEM TANK QUANTITY:index</code></td>
+                <td>
+                    <p>Quantity of fuel currently available in the indexed fuel tank. The index is the number of the
+                        tank <em>N</em> component as defined by the <code
+                            class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Tank.N">Tank.N</a></code>
+                        parameter.</p>
+                    <p><span class="note"><strong>NOTE</strong>: If the fuel system&nbsp;<a
+                                href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Version">Version</a>&nbsp;is
+                            2 or below, the index value will be one of the&nbsp;<a
+                                href="Aircraft_Fuel_Variables.htm#fuel-tank-selection">Fuel Tank
+                                Selection</a>&nbsp;indices.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_TANK_TOTAL_QUANTITY"></a><code
+                        class="inline">FUELSYSTEM TANK TOTAL QUANTITY:index</code></td>
+                <td>
+                    <p>Total quantity of fuel available in the indexed fuel tank, including any unusable fuel. The index
+                        is the number of the tank <em>N</em> component as defined by the <code
+                            class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Tank.N">Tank.N</a></code>
+                        parameter.</p>
+                    <p><span class="note"><strong>NOTE</strong>: If the fuel system&nbsp;<a
+                                href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Version">Version</a>&nbsp;is
+                            2 or below, the index value will be one of the&nbsp;<a
+                                href="Aircraft_Fuel_Variables.htm#fuel-tank-selection">Fuel Tank
+                                Selection</a>&nbsp;indices.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_TANK_WEIGHT"></a><code class="inline">FUELSYSTEM TANK WEIGHT:index</code></td>
+                <td>
+                    <p>Weight of fuel available in the indexed fuel tank. The index is the number of the tank <em>N</em>
+                        component as defined by the <code
+                            class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Tank.N">Tank.N</a></code>
+                        parameter.</p>
+                    <p><span class="note"><strong>NOTE</strong>: If the fuel system&nbsp;<a
+                                href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Version">Version</a>&nbsp;is
+                            2 or below, the index value will be one of the&nbsp;<a
+                                href="Aircraft_Fuel_Variables.htm#fuel-tank-selection">Fuel Tank
+                                Selection</a>&nbsp;indices.</span></p>
+                </td>
+                <td>Pounds</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_TRIGGER_STATUS"></a><code class="inline">FUELSYSTEM TRIGGER STATUS:index</code>
+                </td>
+                <td>Whether or not the indexed trigger is active. The index is the number of the trigger <em>N</em>
+                    component as defined by the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Trigger.N">Trigger.N</a></code>
+                    parameter.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_VALVE_OPEN"></a><code class="inline">FUELSYSTEM VALVE OPEN:index</code></td>
+                <td>Whether or not the indexed valve is actually fully opened. The index is the number of the valve
+                    <em>N</em> component as defined by the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Valve.N">Valve.N</a></code>
+                    parameter.
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUELSYSTEM_VALVE_SWITCH"></a><code class="inline">FUELSYSTEM VALVE SWITCH:index</code></td>
+                <td>Whether or not the indexed valve is set to be opened. The index is the number of the valve
+                    <em>N</em> component as defined by the <code
+                        class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model/fuel_system.htm#Valve.N">Valve.N</a></code>
+                    parameter.
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="fuel_tanks">Fuel Tanks</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 139px;">
+            <col style="width: 334px;">
+            <col style="width: 92px;">
+            <col style="width: 1px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td>
+                    <p><a id="FUEL_TANK_CENTER_CAPACITY"></a><code class="inline">FUEL TANK CENTER CAPACITY</code></p>
+                    <p><a id="FUEL_TANK_CENTER2_CAPACITY"></a><code class="inline">FUEL TANK CENTER2 CAPACITY</code></p>
+                    <p><a id="FUEL_TANK_CENTER3_CAPACITY"></a><code class="inline">FUEL TANK CENTER3 CAPACITY</code></p>
+                </td>
+                <td>Maximum capacity in volume of&nbsp;center tank 1/2/3.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td>
+                    <p><a id="FUEL_TANK_CENTER_LEVEL"></a><code class="inline">FUEL TANK CENTER LEVEL</code></p>
+                    <p><a id="FUEL_TANK_CENTER2_LEVEL"></a><code class="inline">FUEL TANK CENTER2 LEVEL</code></p>
+                    <p><a id="FUEL_TANK_CENTER3_LEVEL"></a><code class="inline">FUEL TANK CENTER3 LEVEL</code></p>
+                </td>
+                <td>Percent of maximum capacity of center tank 1/2/3.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td>
+                    <p><a id="FUEL_TANK_CENTER_QUANTITY"></a><code class="inline">FUEL TANK CENTER QUANTITY</code></p>
+                    <p><a id="FUEL_TANK_CENTER2_QUANTITY"></a><code class="inline">FUEL TANK CENTER2 QUANTITY</code></p>
+                    <p><a id="FUEL_TANK_CENTER3_QUANTITY"></a><code class="inline">FUEL TANK CENTER3 QUANTITY</code></p>
+                </td>
+                <td>Current quantity in volume of center tank 1/2/3.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td>
+                    <p><a id="FUEL_TANK_EXTERNAL1_CAPACITY"></a><code class="inline">FUEL TANK EXTERNAL1 CAPACITY</code>
+                    </p>
+                    <p><a id="FUEL_TANK_EXTERNAL2_CAPACITY"></a><code class="inline">FUEL TANK EXTERNAL2 CAPACITY</code>
+                    </p>
+                </td>
+                <td>Maximum capacity in volume of external tank 1/2.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td>
+                    <p><a id="FUEL_TANK_EXTERNAL1_LEVEL"></a><code class="inline">FUEL TANK EXTERNAL1 LEVEL</code></p>
+                    <p><a id="FUEL_TANK_EXTERNAL2_LEVEL"></a><code class="inline">FUEL TANK EXTERNAL2 LEVEL</code></p>
+                </td>
+                <td>Percent of maximum capacity of texternal tank 1/2.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td>
+                    <p><a id="FUEL_TANK_EXTERNAL1_QUANTITY"></a><code class="inline">FUEL TANK EXTERNAL1 QUANTITY</code>
+                    </p>
+                    <p><a id="FUEL_TANK_EXTERNAL2_QUANTITY"></a><code class="inline">FUEL TANK EXTERNAL2 QUANTITY</code>
+                    </p>
+                </td>
+                <td>Current quantity in volume of external tank 1/2.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_LEFT_AUX_CAPACITY"></a><code class="inline">FUEL TANK LEFT AUX CAPACITY</code></td>
+                <td>Maximum capacity in volume of the left auxiliary tank.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_LEFT_AUX_LEVEL"></a><code class="inline">FUEL TANK LEFT AUX LEVEL</code></td>
+                <td>Percent of maximum capacity of the left auxiliary tank.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_LEFT_AUX_QUANTITY"></a><code class="inline">FUEL TANK LEFT AUX QUANTITY</code></td>
+                <td>Current quantity in volume of the left auxiliary tank.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_LEFT_MAIN_CAPACITY"></a><code class="inline">FUEL TANK LEFT MAIN CAPACITY</code>
+                </td>
+                <td>Maximum capacity in volume of the left main tank.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_LEFT_MAIN_LEVEL"></a><code class="inline">FUEL TANK LEFT MAIN LEVEL</code></td>
+                <td>Percent of maximum capacity of the left main tank.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_LEFT_MAIN_QUANTITY"></a><code class="inline">FUEL TANK LEFT MAIN QUANTITY</code>
+                </td>
+                <td>Current quantity in volume of the left main tank.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_LEFT_TIP_CAPACITY"></a><code class="inline">FUEL TANK LEFT TIP CAPACITY</code></td>
+                <td>Maximum capacity in volume of the left tip tank.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_LEFT_TIP_LEVEL"></a><code class="inline">FUEL TANK LEFT TIP LEVEL</code></td>
+                <td>Percent of maximum capacity of the left tip tank.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_LEFT_TIP_QUANTITY"></a><code class="inline">FUEL TANK LEFT TIP QUANTITY</code></td>
+                <td>Current quantity in volume of the left tip tank.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_RIGHT_AUX_CAPACITY"></a><code class="inline">FUEL TANK RIGHT AUX CAPACITY</code>
+                </td>
+                <td>Maximum capacity in volume of the right auxiliary tank.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_RIGHT_AUX_LEVEL"></a><code class="inline">FUEL TANK RIGHT AUX LEVEL</code></td>
+                <td>Percent of maximum capacity of the right auxiliary tank.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_RIGHT_AUX_QUANTITY"></a><code class="inline">FUEL TANK RIGHT AUX QUANTITY</code>
+                </td>
+                <td>Current quantity in volume of the right auxiliary tank.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_RIGHT_MAIN_CAPACITY"></a><code class="inline">FUEL TANK RIGHT MAIN CAPACITY</code>
+                </td>
+                <td>Maximum capacity in volume of the right main tank.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_RIGHT_MAIN_LEVEL"></a><code class="inline">FUEL TANK RIGHT MAIN LEVEL</code></td>
+                <td>Percent of maximum capacity of the right main tank.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_RIGHT_MAIN_QUANTITY"></a><code class="inline">FUEL TANK RIGHT MAIN QUANTITY</code>
+                </td>
+                <td>Current quantity in volume of the right main tank.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_RIGHT_TIP_CAPACITY"></a><code class="inline">FUEL TANK RIGHT TIP CAPACITY</code>
+                </td>
+                <td>Maximum capacity in volume of the right tip tank.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_RIGHT_TIP_LEVEL"></a><code class="inline">FUEL TANK RIGHT TIP LEVEL</code></td>
+                <td>Percent of maximum capacity of the right tip tank.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_RIGHT_TIP_QUANTITY"></a><code class="inline">FUEL TANK RIGHT TIP QUANTITY</code>
+                </td>
+                <td>Current quantity in volume of the right tip tank.</td>
+                <td><a href="#"
+                        data-popovertext="This is an imperial unit of measurement for volume, equivalent to 3785 cubic centimetres in the metric system."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Gallon</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FUEL_TANK_SELECTOR"></a><code class="inline">FUEL TANK SELECTOR:index</code><span
+                        class="legacy"></span></td>
+                <td>
+                    <p>Which tank the indexed selector is set to. The index is the selector to check (from 1 to 4), and
+                        the return value will be the&nbsp;<a href="Aircraft_Fuel_Variables.htm#fuel-tank-selection">Fuel
+                            Tank Selection</a> index.</p>
+                    <p><span class="note">NOTE: This SimVar is only valid for the legacy <a
+                                href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h4">[FUEL]</a>&nbsp;setup.</span>
+                    </p>
+                </td>
+                <td>Enum</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+</div>

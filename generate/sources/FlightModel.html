@@ -1,0 +1,913 @@
+<div>
+    <h2 id="aircraft_flight">AIRCRAFT FLIGHT MODEL VARIABLES</h2>
+    <p>The tables below indicate the properties for the <a href="../Simulation_Variables.htm">Simulation Variables</a>
+        that can be used to get and set properties related to the physical properties and flight model of an aircraft.
+        For information on the units listed for each variable, please see here: <a
+            href="../Simulation_Variable_Units.htm">Simulation Variable Units</a></p>
+    <p><span class="note"><strong>NOTE</strong>: When <span data-keyref="game_name">Microsoft Flight Simulator</span> is
+            running in multiplayer mode, only a small number of variables are communicated between aircraft. Those
+            variables that are available will say so in the description as being either for "All Aircraft" or for
+            "Shared Cockpit".</span></p>
+    <p>You can find a complete index of all available SimVars here: <a href="../Simulation_Variables.htm#h">SimVar
+            Index</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="general">General</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 125px;">
+            <col style="width: 337px;">
+            <col style="width: 92px;">
+            <col style="width: 50px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="BETA_DOT"></a><code class="inline">BETA DOT</code></td>
+                <td>Beta dot</td>
+                <td>Radians per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="DECISION_ALTITUDE_MSL"></a><code class="inline">DECISION ALTITUDE MSL</code></td>
+                <td>Design decision altitude above mean sea level</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="DECISION_HEIGHT"></a><code class="inline">DECISION HEIGHT</code></td>
+                <td>Design decision height</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="DESIGN_CRUISE_ALT"></a><code class="inline">DESIGN CRUISE ALT</code></td>
+                <td><span>This design constant represents the optimal altitude the aircraft should maintain when in
+                        cruise. It is derived from the <code class="inline">cruise_alt</code> setting in the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h2">[REFERENCE
+                            SPEEDS]</a> section of the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">flightmodel.cfg</a>.
+                        Default is 1500ft.</span></td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="DESIGN_SPAWN_ALTITUDE_CRUISE"></a><code class="inline">DESIGN SPAWN ALTITUDE CRUISE</code>
+                </td>
+                <td><span>This design constant represents the spawn altitude for the aircraft when spawning in cruise.
+                        It is derived from the <code class="inline">spawn_cruise_altitude</code> setting in the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h2">[REFERENCE
+                            SPEEDS]</a> section of the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">flightmodel.cfg</a>.
+                        Default is 1500ft.</span></td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="DESIGN_SPAWN_ALTITUDE_DESCENT"></a><code class="inline">DESIGN SPAWN ALTITUDE DESCENT</code>
+                </td>
+                <td><span>This design constant represents the spawn altitude for the aircraft when spawning in descent.
+                        It is derived from the <code class="inline">spawn_descent_altitude</code> setting in the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h2">[REFERENCE
+                            SPEEDS]</a> section of the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">flightmodel.cfg</a>.
+                        Default is 500ft.</span></td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="DESIGN_SPEED_CLIMB"></a><code class="inline">DESIGN SPEED CLIMB</code></td>
+                <td><span>This design constant represents the optimal climb speed for the aircraft. It is derived from
+                        the <code class="inline">climb_speed</code> setting in the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h2">[REFERENCE
+                            SPEEDS]</a> section of the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">flightmodel.cfg</a>.
+                        Default value is -1.</span></td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="DESIGN_SPEED_MIN_ROTATION"></a><code class="inline">DESIGN SPEED MIN ROTATION</code></td>
+                <td><span>This design constant represents the minimum speed required for aircraft rotation. It is
+                        derived from the <code class="inline">rotation_speed_min</code> setting in the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h2">[REFERENCE
+                            SPEEDS]</a> section of the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">flightmodel.cfg</a>.
+                        Default value is -1.</span></td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="DESIGN_SPEED_VC"></a><code class="inline">DESIGN SPEED VC</code></td>
+                <td><span>This design constant represents the aircraft ideal cruising speed. It is derived from the
+                        <code class="inline">cruise_speed</code> setting in the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h2">[REFERENCE
+                            SPEEDS]</a> section of the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">flightmodel.cfg</a>.
+                        The default value is computed an internal function that uses the estimated cruise altitude and
+                        estimated cruise percent power, according of the engine type, the number of engines, the
+                        density, the wing area and some drag parameters. Normally this value is set in the CFG file and
+                        the default value is never used.</span></td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="DESIGN_SPEED_VS0"></a><code class="inline">DESIGN SPEED VS0</code></td>
+                <td><span>This design constant represents the the stall speed when flaps are fully extended. It is
+                        derived from the <code class="inline">full_flaps_stall_speed</code> setting in the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h2">[REFERENCE
+                            SPEEDS]</a> section of the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">flightmodel.cfg</a>.
+                        Default value is 0.8 x VS.</span></td>
+                <td><a href="#"
+                        data-popovertext="This stands for 'Knots Indicated AirSpeed' and is a unit of measurement for aircraft speed based on the 'knot'. This value can vary depending on multiple factors and is not as good an indicator of speed as Knots Calibrated AirSpeed (KCAS)."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">kias</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="DESIGN_SPEED_VS1"></a><code class="inline">DESIGN SPEED VS1</code></td>
+                <td><span>This design constant represents the stall speed when flaps are fully retracted. It is derived
+                        from the <code class="inline">flaps_up_stall_speed</code> setting in the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h2">[REFERENCE
+                            SPEEDS]</a> section of the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">flightmodel.cfg</a>.
+                        Default value is 0.</span></td>
+                <td><a href="#"
+                        data-popovertext="This stands for 'Knots Indicated AirSpeed' and is a unit of measurement for aircraft speed based on the 'knot'. This value can vary depending on multiple factors and is not as good an indicator of speed as Knots Calibrated AirSpeed (KCAS)."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">kias</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="DESIGN_TAKEOFF_SPEED"></a><code class="inline">DESIGN TAKEOFF SPEED</code></td>
+                <td><span>This design constant represents the aircraft ideal takoff speed. It is derived from the <code
+                            class="inline">takeoff_speed</code> setting in the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm#h2">[REFERENCE
+                            SPEEDS]</a> section of the <a
+                            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/flight_model_cfg.htm">flightmodel.cfg</a>.</span>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="DYNAMIC_PRESSURE"></a><code class="inline">DYNAMIC PRESSURE</code></td>
+                <td>Dynamic pressure</td>
+                <td>Pounds per square foot (<a href="#"
+                        data-popovertext="Stands for 'Pound per Square Foot' which is a unit of pressure or of stress based on imperial units. It is the pressure resulting from a force of one pound-force applied to an area of one square foot. 1 pound per square foot equals 47.8803 pascals in metric units."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">psf</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ESTIMATED_CRUISE_SPEED"></a><code class="inline">ESTIMATED CRUISE SPEED</code></td>
+                <td>Estimated cruise speed</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="G_FORCE"></a><code class="inline">G FORCE</code></td>
+                <td>Current g force</td>
+                <td>GForce</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="G_LIMITER_SETTING"></a><code class="inline">G LIMITER SETTING</code></td>
+                <td>This returns the setting of the G-limiter, as set using the <code
+                        class="inline"><a href="../../../Content_Configuration/Flights_And_Missions/Flight_Definitions.htm#GLimiterSetting">GLimiterSetting</a></code>
+                    parameter.</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = Off</li>
+                        <li>1 = On</li>
+                        <li>2 = Override</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INCIDENCE_ALPHA"></a><code class="inline">INCIDENCE ALPHA</code></td>
+                <td>Angle of attack</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INCIDENCE_BETA"></a><code class="inline">INCIDENCE BETA</code></td>
+                <td>Sideslip angle</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="IS_TAIL_DRAGGER"></a><code class="inline">IS TAIL DRAGGER</code></td>
+                <td>True if the aircraft is a taildragger</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="LINEAR_CL_ALPHA"></a><code class="inline">LINEAR CL ALPHA</code></td>
+                <td>Linear CL alpha</td>
+                <td>Per radian</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MACH_MAX_OPERATE"></a><code class="inline">MACH MAX OPERATE</code></td>
+                <td>Maximum design mach</td>
+                <td><a href="#"
+                        data-popovertext="A mach number is the ratio of an aircraft's speed relative to the speed of sound. So, an aircraft travelling at the speed of sound is travelling at 'mach 1'."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Mach</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MAX_G_FORCE"></a><code class="inline">MAX G FORCE</code></td>
+                <td>Maximum G force attained</td>
+                <td>Gforce</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MIN_DRAG_VELOCITY"></a><code class="inline">MIN DRAG VELOCITY</code></td>
+                <td>Minimum drag velocity,&nbsp;<span>in clean, with no input and no gears, when at 10000ft.</span></td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MIN_G_FORCE"></a><code class="inline">MIN G FORCE</code></td>
+                <td>Minimum G force attained</td>
+                <td>Gforce</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><a id="SEMIBODY_LOADFACTOR_X"></a><code
+                        class="inline">SEMIBODY LOADFACTOR X</code><span class="deprecated"></span></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><strong>Deprecated, do not use!</strong></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);">Number</td>
+                <td style="text-align: center; background-color: rgba(255, 0, 0, 0.1);"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="SEMIBODY_LOADFACTOR_Y"></a><code class="inline">SEMIBODY LOADFACTOR Y</code></td>
+                <td>Acceleration along the axis Y divided by the gravity constant g (usually around 9.81m.s²)</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="SEMIBODY_LOADFACTOR_YDOT"></a><code class="inline">SEMIBODY LOADFACTOR YDOT</code></td>
+                <td>Derivative of <code class="inline">SEMIBODY LOADFACTOR Y</code> in relation to time.</td>
+                <td>Per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><a id="SEMIBODY_LOADFACTOR_Z"></a><code
+                        class="inline">SEMIBODY LOADFACTOR Z</code><span class="deprecated"></span></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><strong>Deprecated, do not use!</strong></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);">Number</td>
+                <td style="text-align: center; background-color: rgba(255, 0, 0, 0.1);"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="SIGMA_SQRT"></a><code class="inline">SIGMA SQRT</code></td>
+                <td>Sigma sqrt</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="SIMULATED_RADIUS"></a><code class="inline">SIMULATED RADIUS</code></td>
+                <td>Simulated radius</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STALL_ALPHA"></a><code class="inline">STALL ALPHA</code></td>
+                <td>The angle of attack which produces the maximum lift coefficient before entering into stall
+                    conditions.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STATIC_PITCH"></a><code class="inline">STATIC PITCH</code></td>
+                <td>The angle at which static pitch stability is achieved.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TYPICAL_DESCENT_RATE"></a><code class="inline">TYPICAL DESCENT RATE</code></td>
+                <td>the typical (normal) descent rate for the aircraft.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per minute</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="WING_AREA"></a><code class="inline">WING AREA</code></td>
+                <td>Total wing area</td>
+                <td>Square feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="WING_FLEX_PCT"></a><code class="inline">WING FLEX PCT:index</code></td>
+                <td>The current wing flex. Different values can be set for each wing (for example, during banking). Set
+                    an index of 1 for the left wing, and 2 for the right wing.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="WING_SPAN"></a><code class="inline">WING SPAN</code></td>
+                <td>Total wing span</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="YAW_STRING_ANGLE"></a><code class="inline">YAW STRING ANGLE</code></td>
+                <td>The yaw string angle. Yaw strings are attached to gliders as visible indicators of the yaw angle. An
+                    animation of this is not implemented in ESP.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="YAW_STRING_PCT_EXTENDED"></a><code class="inline">YAW STRING PCT EXTENDED</code></td>
+                <td>Yaw string angle as a percentage</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ZERO_LIFT_ALPHA"></a><code class="inline">ZERO LIFT ALPHA</code></td>
+                <td>The angle of attack at which the wing has zero lift.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="center_of_gravi">Center Of Gravity</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 243px;">
+            <col style="width: 428px;">
+            <col style="width: 176px;">
+            <col style="width: 7px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="CG_AFT_LIMIT"></a><code class="inline">CG AFT LIMIT</code></td>
+                <td>
+                    <p>Most backward authorized position of the <a href="#"
+                            data-popovertext="This stands for the 'Center Of Gravity'. The CG of an aircraft is the point over which the aircraft would balance. The center of gravity affects the stability of the aircraft and must fall within specified limits established by the aircraft manufacturer."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">CG</a> according to the <a
+                            href="#"
+                            data-popovertext="Stands for 'Pilots Operating Handbook' and is a manual that explains everything about the aircraft it is for. It usually includes the Aircraft Flight Manual (AFM), as well as other technical and operational information and is FAA (Federal Aviation Administration) approved."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">POH</a>.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is only valid for
+                            <strong>airplanes</strong>.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CG FEET"></a><code class="inline">CG FEET</code></td>
+                <td>
+                    <p>The longitudinal <a href="#"
+                            data-popovertext="This stands for the 'Center Of Gravity'. The CG of an aircraft is the point over which the aircraft would balance. The center of gravity affects the stability of the aircraft and must fall within specified limits established by the aircraft manufacturer."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">CG</a> position relative to
+                        the <a
+                            href="../../../Developer_Mode/Aircraft_Editor/Tabs/The_Flight_Model_Tab.htm#Reference Datum Position">Reference
+                            Datum Position</a>.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is only valid for
+                            <strong>helicopters</strong>.</span></p>
+                </td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CG FEET AFT LIMIT"></a><code class="inline">CG FEET AFT LIMIT</code></td>
+                <td>
+                    <p>The aft&nbsp;<a href="#"
+                            data-popovertext="This stands for the 'Center Of Gravity'. The CG of an aircraft is the point over which the aircraft would balance. The center of gravity affects the stability of the aircraft and must fall within specified limits established by the aircraft manufacturer."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">CG</a>&nbsp;limit position
+                        relative to the <a
+                            href="../../../Developer_Mode/Aircraft_Editor/Tabs/The_Flight_Model_Tab.htm#Reference Datum Position">Reference
+                            Datum Position</a>.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is only valid for
+                            <strong>helicopters</strong>.</span></p>
+                </td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CG FEET LATERAL"></a><code class="inline">CG FEET LATERAL</code></td>
+                <td>
+                    <p>The lateral&nbsp;<a href="#"
+                            data-popovertext="This stands for the 'Center Of Gravity'. The CG of an aircraft is the point over which the aircraft would balance. The center of gravity affects the stability of the aircraft and must fall within specified limits established by the aircraft manufacturer."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">CG</a> position relative to
+                        the <a
+                            href="../../../Developer_Mode/Aircraft_Editor/Tabs/The_Flight_Model_Tab.htm#Reference Datum Position">Reference
+                            Datum Position</a>.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is only valid for
+                            <strong>helicopters</strong>.</span></p>
+                </td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CG FEET LATERAL LEFT LIMIT"></a><code class="inline">CG FEET LATERAL LEFT LIMIT</code></td>
+                <td>
+                    <p>The left hand lateral&nbsp;<a href="#"
+                            data-popovertext="This stands for the 'Center Of Gravity'. The CG of an aircraft is the point over which the aircraft would balance. The center of gravity affects the stability of the aircraft and must fall within specified limits established by the aircraft manufacturer."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">CG</a> position relative to
+                        the <a
+                            href="../../../Developer_Mode/Aircraft_Editor/Tabs/The_Flight_Model_Tab.htm#Reference Datum Position">Reference
+                            Datum Position</a>.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is only valid for
+                            <strong>helicopters</strong>.</span></p>
+                </td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CG FEET LATERAL RIGHT LIMIT"></a><code class="inline">CG FEET LATERAL RIGHT LIMIT</code></td>
+                <td>
+                    <p>The right hand lateral&nbsp;<a href="#"
+                            data-popovertext="This stands for the 'Center Of Gravity'. The CG of an aircraft is the point over which the aircraft would balance. The center of gravity affects the stability of the aircraft and must fall within specified limits established by the aircraft manufacturer."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">CG</a> position relative to
+                        the <a
+                            href="../../../Developer_Mode/Aircraft_Editor/Tabs/The_Flight_Model_Tab.htm#Reference Datum Position">Reference
+                            Datum Position</a>.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is only valid for
+                            <strong>helicopters</strong>.</span></p>
+                </td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CG FEET FWD LIMIT"></a><code class="inline">CG FEET FWD LIMIT</code></td>
+                <td>
+                    <p>The forward&nbsp;<a href="#"
+                            data-popovertext="This stands for the 'Center Of Gravity'. The CG of an aircraft is the point over which the aircraft would balance. The center of gravity affects the stability of the aircraft and must fall within specified limits established by the aircraft manufacturer."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">CG</a>&nbsp;limit position
+                        relative to the <a
+                            href="../../../Developer_Mode/Aircraft_Editor/Tabs/The_Flight_Model_Tab.htm#Reference Datum Position">Reference
+                            Datum Position</a>.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is only valid for
+                            <strong>helicopters</strong>.</span></p>
+                </td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CG_FWD_LIMIT"></a><code class="inline">CG FWD LIMIT</code></td>
+                <td>
+                    <p>Most forward authorized position of the <a href="#"
+                            data-popovertext="This stands for the 'Center Of Gravity'. The CG of an aircraft is the point over which the aircraft would balance. The center of gravity affects the stability of the aircraft and must fall within specified limits established by the aircraft manufacturer."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">CG</a> according to the <a
+                            href="#"
+                            data-popovertext="Stands for 'Pilots Operating Handbook' and is a manual that explains everything about the aircraft it is for. It usually includes the Aircraft Flight Manual (AFM), as well as other technical and operational information and is FAA (Federal Aviation Administration) approved."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">POH</a>.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is only valid for
+                            <strong>airplanes</strong>.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><a id="CG_MAX_MACH"></a><code
+                        class="inline">CG MAX MACH</code><span class="deprecated"></span></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><strong>Deprecated, do not use!</strong></td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a href="#"
+                        data-popovertext="A mach number is the ratio of an aircraft's speed relative to the speed of sound. So, an aircraft travelling at the speed of sound is travelling at 'mach 1'."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Mach</a></td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><a id="CG_MIN_MACH"></a><code
+                        class="inline">CG MIN MACH</code><span class="deprecated"></span></td>
+                <td style="background-color: rgba(255, 0, 0, 0.1);"><strong>Deprecated, do not use!</strong></td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a href="#"
+                        data-popovertext="A mach number is the ratio of an aircraft's speed relative to the speed of sound. So, an aircraft travelling at the speed of sound is travelling at 'mach 1'."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Mach</a></td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CG_PERCENT"></a><code class="inline">CG PERCENT</code></td>
+                <td>
+                    <p>Longitudinal <a href="#"
+                            data-popovertext="This stands for the 'Center Of Gravity'. The CG of an aircraft is the point over which the aircraft would balance. The center of gravity affects the stability of the aircraft and must fall within specified limits established by the aircraft manufacturer."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">CG</a> position as a percent
+                        of reference <a href="#"
+                            data-popovertext="The Chord is the line stretching from the leading edge of the wing to the trailing edge, parallel to the centerline."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Chord</a>.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is only valid for
+                            <strong>airplanes</strong>.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CG_PERCENT_LATERAL"></a><code class="inline">CG PERCENT LATERAL</code></td>
+                <td>
+                    <p>Lateral <a href="#"
+                            data-popovertext="This stands for the 'Center Of Gravity'. The CG of an aircraft is the point over which the aircraft would balance. The center of gravity affects the stability of the aircraft and must fall within specified limits established by the aircraft manufacturer."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">CG</a> position as a percent
+                        of reference <a href="#"
+                            data-popovertext="The Chord is the line stretching from the leading edge of the wing to the trailing edge, parallel to the centerline."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Chord</a>.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is only valid for
+                            <strong>airplanes</strong>.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STATIC_CG_TO_GROUND"></a><code class="inline">STATIC CG TO GROUND</code></td>
+                <td>
+                    <p>Static <a href="#"
+                            data-popovertext="This stands for the 'Center Of Gravity'. The CG of an aircraft is the point over which the aircraft would balance. The center of gravity affects the stability of the aircraft and must fall within specified limits established by the aircraft manufacturer."
+                            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">CG</a> position with
+                        reference to the ground.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is only valid for
+                            <strong>airplanes</strong>.</span></p>
+                </td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="points">Interactive Points</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 250px;">
+            <col style="width: 460px;">
+            <col style="width: 249px;">
+            <col style="width: 1px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_BANK"></a><code class="inline">INTERACTIVE POINT BANK</code></td>
+                <td>Interactive Point orientation: Bank</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_HEADING"></a><code class="inline">INTERACTIVE POINT HEADING</code></td>
+                <td>Interactive Point orientation: Heading</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_JETWAY_LEFT_BEND"></a><code
+                        class="inline">INTERACTIVE POINT JETWAY LEFT BEND</code></td>
+                <td>Interactive Point Jetway constant, determining the desired left bend ratio of jetway hood</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_JETWAY_LEFT_DEPLOYMENT"></a><code
+                        class="inline">INTERACTIVE POINT JETWAY LEFT DEPLOYMENT</code></td>
+                <td>Interactive Point Jetway constant, determining the desired left deployment angle of jetway hood</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_JETWAY_RIGHT_BEND"></a><code
+                        class="inline">INTERACTIVE POINT JETWAY RIGHT BEND</code></td>
+                <td>Interactive Point Jetway constant, determining the desired right bend ratio of jetway hood</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_JETWAY_RIGHT_DEPLOYMENT"></a><code
+                        class="inline">INTERACTIVE POINT JETWAY RIGHT DEPLOYMENT</code></td>
+                <td>Interactive Point Jetway constant, determining the desired right deployment angle of jetway hood
+                </td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_JETWAY_TOP_HORIZONTAL"></a><code
+                        class="inline">INTERACTIVE POINT JETWAY TOP HORIZONTAL</code></td>
+                <td>Interactive Point Jetway constant, determining the desired top horizontal ratio of displacement of
+                    jetway hood</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_JETWAY_TOP_VERTICAL"></a><code
+                        class="inline">INTERACTIVE POINT JETWAY TOP VERTICAL</code></td>
+                <td>Interactive Point Jetway constant, determining the desired top vertical ratio of displacement of
+                    jetway hood</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_GOAL"></a><code class="inline">INTERACTIVE POINT GOAL</code></td>
+                <td>The Interactive Point goal percentage of opening (if it's for a door) or percentage of deployment
+                    (if it's for a hose or cable).</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_OPEN"></a><code class="inline">INTERACTIVE POINT OPEN</code></td>
+                <td>Interactive Point current percentage of opening (if door) or deployment (if hose/cable)</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_PITCH"></a><code class="inline">INTERACTIVE POINT PITCH</code></td>
+                <td>Interactive Point orientation: Pitch</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_POSX"></a><code class="inline">INTERACTIVE POINT POSX</code></td>
+                <td>Interactive Point X position relative to datum reference point</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_POSY"></a><code class="inline">INTERACTIVE POINT POSY</code></td>
+                <td>Interactive Point Y position relative to datum reference point</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_POSZ"></a><code class="inline">INTERACTIVE POINT POSZ</code></td>
+                <td>Interactive Point Z position relative to datum reference point</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INTERACTIVE_POINT_TYPE"></a><code class="inline">INTERACTIVE POINT TYPE</code></td>
+                <td>The type of interactive point</td>
+                <td>
+                    <p>Enum:</p>
+                    <ol class="minitoc-list">
+                        <li>0: Main exit</li>
+                        <li>1: Cargo exit</li>
+                        <li>2: Emergency exit</li>
+                        <li>3: Fuel hose</li>
+                        <li>4: Ground Power cable</li>
+                        <li>99: Unknown (for error handling)</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="weight">Weight</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 241px;">
+            <col style="width: 438px;">
+            <col style="width: 142px;">
+            <col style="width: 39px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="EMPTY_WEIGHT"></a><code class="inline">EMPTY WEIGHT</code></td>
+                <td>Empty weight of the aircraft</td>
+                <td>Pounds</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="EMPTY_WEIGHT_CROSS_COUPLED_MOI"></a><code
+                        class="inline">EMPTY WEIGHT CROSS COUPLED MOI</code></td>
+                <td>Empty weight cross coupled moment of inertia</td>
+                <td>Slugs per feet squared (<a href="#"
+                        data-popovertext="This stands for the 'Slug Square Foot' which is a unit of moment of inertia in the Imperial unit system (1 Slug sqft is equal to approximately 1.35582 kilogram square meters)."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Slug sqft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="EMPTY_WEIGHT_PITCH_MOI"></a><code class="inline">EMPTY WEIGHT PITCH MOI</code></td>
+                <td>Empty weight pitch moment of inertia</td>
+                <td>Slugs per feet squared (<a href="#"
+                        data-popovertext="This stands for the 'Slug Square Foot' which is a unit of moment of inertia in the Imperial unit system (1 Slug sqft is equal to approximately 1.35582 kilogram square meters)."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Slug sqft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="EMPTY_WEIGHT_ROLL_MOI"></a><code class="inline">EMPTY WEIGHT ROLL MOI</code></td>
+                <td>Empty weight roll moment of inertia</td>
+                <td>Slugs per feet squared (<a href="#"
+                        data-popovertext="This stands for the 'Slug Square Foot' which is a unit of moment of inertia in the Imperial unit system (1 Slug sqft is equal to approximately 1.35582 kilogram square meters)."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Slug sqft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="EMPTY_WEIGHT_YAW_MOI"></a><code class="inline">EMPTY WEIGHT YAW MOI</code></td>
+                <td>Empty weight yaw moment of inertia</td>
+                <td>Slugs per feet squared (<a href="#"
+                        data-popovertext="This stands for the 'Slug Square Foot' which is a unit of moment of inertia in the Imperial unit system (1 Slug sqft is equal to approximately 1.35582 kilogram square meters)."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Slug sqft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MAX_GROSS_WEIGHT"></a><code class="inline">MAX GROSS WEIGHT</code></td>
+                <td>Maximum gross weight of the aircaft</td>
+                <td>Pounds</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TOTAL_WEIGHT"></a><code class="inline">TOTAL WEIGHT</code></td>
+                <td>Total weight of the aircraft</td>
+                <td>Pounds</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TOTAL_WEIGHT_CROSS_COUPLED_MOI"></a><code
+                        class="inline">TOTAL WEIGHT CROSS COUPLED MOI</code></td>
+                <td>Total weight cross coupled moment of inertia</td>
+                <td>Slugs per feet squared</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TOTAL_WEIGHT_PITCH_MOI"></a><code class="inline">TOTAL WEIGHT PITCH MOI</code></td>
+                <td>Total weight pitch moment of inertia</td>
+                <td>Slugs per feet squared</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TOTAL_WEIGHT_ROLL_MOI"></a><code class="inline">TOTAL WEIGHT ROLL MOI</code></td>
+                <td>Total weight roll moment of inertia</td>
+                <td>Slugs per feet squared</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TOTAL_WEIGHT_YAW_MOI"></a><code class="inline">TOTAL WEIGHT YAW MOI</code></td>
+                <td>Total weight yaw moment of inertia</td>
+                <td>Slugs per feet squared</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+</div>

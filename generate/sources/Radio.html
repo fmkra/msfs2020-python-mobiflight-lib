@@ -1,0 +1,2401 @@
+<div>
+    <h2 id="aircraft_radio_">AIRCRAFT RADIO NAVIGATION VARIABLES</h2>
+    <p>The tables below indicate the properties for the <a href="../Simulation_Variables.htm">Simulation Variables</a>
+        that can be used to get and set properties related to the various radio navigation systems of an aircraft and
+        Air Traffic Control. For information on the units listed for each variable, please see here: <a
+            href="../Simulation_Variable_Units.htm">Simulation Variable Units</a></p>
+    <p><span class="note"><strong>NOTE</strong>: When <span data-keyref="game_name">Microsoft Flight Simulator</span> is
+            running in multiplayer mode, only a small number of variables are communicated between aircraft. Those
+            variables that are available will say so in the description as being either for "All Aircraft" or for
+            "Shared Cockpit".</span></p>
+    <p>You can find a complete index of all available SimVars here: <a href="../Simulation_Variables.htm#h">SimVar
+            Index</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="adf">ADF</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 246px;">
+            <col style="width: 425px;">
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="ADF ACTIVE FREQUENCY"></a><code class="inline">ADF ACTIVE FREQUENCY:index</code></td>
+                <td><a href="#"
+                        data-popovertext="'Automatic Direction Finding' is an electronic aid to navigation that identifies the relative bearing of an aircraft from a radio beacon transmitting in the MF or LF bandwidth, such as an Non-Directional Beacon or commercial radio broadcast station."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ADF</a> frequency. Index of 1 or
+                    2.</td>
+                <td>Frequency ADF BCD32</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ADF AVAILABLE"></a><code class="inline">ADF AVAILABLE:index</code></td>
+                <td>True if ADF is available</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ADF CARD"></a><code class="inline">ADF CARD</code></td>
+                <td>ADF compass rose setting</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a id="ADF EXT FREQUENCY"></a><code
+                        class="inline">ADF EXT FREQUENCY</code><span class="deprecated"></span></td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)">Deprecated, use <code
+                        class="inline">ADF ACTIVE FREQUENCY</code></td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)">Frequency BCD16</td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a id="ADF FREQUENCY"></a><code
+                        class="inline">ADF FREQUENCY</code><span class="deprecated"></span></td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)">Deprecated, use <code
+                        class="inline">ADF ACTIVE FREQUENCY</code></td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)">Frequency BCD16</td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ADF IDENT"></a><code class="inline">ADF IDENT</code></td>
+                <td><a href="#" data-popovertext="The 'International Civil Aviation Organization' code is a four digit code used to designate aerodromes around the world. These codes are used by air traffic control and airline operations for things such as flight planning.
+  
+  " data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ICAO code</a></td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ADF LATLONALT"></a><code class="inline">ADF LATLONALT:index</code></td>
+                <td>Returns the latitude, longitude and altitude of the station the radio equipment is currently tuned
+                    to, or zeros if the radio is not tuned to any ADF station. Index of 1 or 2 for ADF 1 and ADF 2.</td>
+                <td>
+                    <p><a
+                            href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_LATLONALT.htm"><code
+                                class="inline">SIMCONNECT_DATA_LATLONALT</code></a></p>
+                    <p>structure</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ADF NAME"></a><code class="inline">ADF NAME:index</code></td>
+                <td>Descriptive name</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ADF RADIAL"></a><code class="inline">ADF RADIAL:index</code></td>
+                <td>Current direction from <a href="#"
+                        data-popovertext="This stands for 'Non Directional Beacon' which is a radio transmitter at a known location, used as an aviation navigational aid. As the name implies, the signal transmitted does not include inherent directional information, in contrast to other navigational aids, like VOR."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">NDB</a> station</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ADF RADIAL MAG"></a><code class="inline">ADF RADIAL MAG:index</code></td>
+                <td>Returns the magnetic bearing to the currently tuned ADF transmitter.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ADF SIGNAL"></a><code class="inline">ADF SIGNAL:index</code></td>
+                <td>Signal strength</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ADF SOUND"></a><code class="inline">ADF SOUND:index</code></td>
+                <td><a href="#"
+                        data-popovertext="'Automatic Direction Finding' is an electronic aid to navigation that identifies the relative bearing of an aircraft from a radio beacon transmitting in the MF or LF bandwidth, such as an Non-Directional Beacon or commercial radio broadcast station."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ADF</a> audio flag. Index of 0 or
+                    1.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ADF STANDBY AVAILABLE"></a><code class="inline">ADF STANDBY AVAILABLE:index</code></td>
+                <td>True if <a href="#"
+                        data-popovertext="'Automatic Direction Finding' is an electronic aid to navigation that identifies the relative bearing of an aircraft from a radio beacon transmitting in the MF or LF bandwidth, such as an Non-Directional Beacon or commercial radio broadcast station."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ADF</a> Standby is available</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ADF STANDBY FREQUENCY"></a><code class="inline">ADF STANDBY FREQUENCY:index</code></td>
+                <td><a href="#"
+                        data-popovertext="'Automatic Direction Finding' is an electronic aid to navigation that identifies the relative bearing of an aircraft from a radio beacon transmitting in the MF or LF bandwidth, such as an Non-Directional Beacon or commercial radio broadcast station."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ADF</a> standby frequency</td>
+                <td>Hz</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ADF VOLUME"></a><code class="inline">ADF VOLUME</code></td>
+                <td>Returns the volume of the <a href="#"
+                        data-popovertext="'Automatic Direction Finding' is an electronic aid to navigation that identifies the relative bearing of an aircraft from a radio beacon transmitting in the MF or LF bandwidth, such as an Non-Directional Beacon or commercial radio broadcast station."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ADF</a></td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="atc">ATC</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 246px;">
+            <col style="width: 474px;">
+            <col style="width: 112px;">
+            <col style="width: 39px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="ATC AIRLINE"></a><code class="inline">ATC AIRLINE</code></td>
+                <td>The name of the Airline used by ATC, as a string with a maximum length of 50 characters.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC AIRPORT IS TOWERED"></a><code class="inline">ATC AIRPORT IS TOWERED</code></td>
+                <td>If the airport is controlled, this boolean is true.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC CLEARED IFR"></a><code class="inline">ATC CLEARED IFR</code></td>
+                <td>Returns whether or not the user has filed an IFR flightplan that has been cleared by the sim ATC
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC CLEARED LANDING"></a><code class="inline">ATC CLEARED LANDING</code></td>
+                <td>Whether the ATC has cleared the plane for landing.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC CLEARED TAKEOFF"></a><code class="inline">ATC CLEARED TAKEOFF</code></td>
+                <td>Whether the ATC has cleared the plane for takeoff.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC CLEARED TAXI"></a><code class="inline">ATC CLEARED TAXI</code></td>
+                <td>Whether the ATC has cleared the plane for taxi.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC CURRENT WAYPOINT ALTITUDE"></a><code class="inline">ATC CURRENT WAYPOINT ALTITUDE</code>
+                </td>
+                <td>Returns the target altitude for the current ATC flightplan waypoint.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC FLIGHT NUMBER"></a><code class="inline">ATC FLIGHT NUMBER</code></td>
+                <td>Flight Number used by ATC, as a string with a maximum number of 6 characters.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC FLIGHTPLAN DIFF ALT"></a><code class="inline">ATC FLIGHTPLAN DIFF ALT</code></td>
+                <td>Altitude between the position of the aircraft and his closest waypoints in the flightplan.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC FLIGHTPLAN DIFF DISTANCE"></a><code class="inline">ATC FLIGHTPLAN DIFF DISTANCE</code>
+                </td>
+                <td><span>Returns the lateral distance the user's plane is from the ATC flight plan track.</span></td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC FLIGHTPLAN DIFF HEADING"></a><code class="inline">ATC FLIGHTPLAN DIFF HEADING</code></td>
+                <td>Heading between the position of the aircraft and his closest waypoints in the flightplan.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC HEAVY"></a><code class="inline">ATC HEAVY</code></td>
+                <td>Is this aircraft recognized by ATC as heavy.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC ID"></a><code class="inline">ATC ID</code></td>
+                <td>ID used by ATC, as a string with a maximum number of 10 characters.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC IFR FP TO REQUEST"></a><code class="inline">ATC IFR FP TO REQUEST</code></td>
+                <td><span>Returns true if the user has a valid IFR flight plan they can as for clearance for with ATC at
+                        the airport they are currently at.</span></td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC MODEL"></a><code class="inline">ATC MODEL</code></td>
+                <td>Model used by ATC, as a string with a maximum number of 10 characters.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC ON PARKING SPOT"></a><code class="inline">ATC ON PARKING SPOT</code></td>
+                <td>Is ATC aircraft on parking spot.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC_PREVIOUS_WAYPOINT_ALTITUDE"></a><code
+                        class="inline">ATC PREVIOUS WAYPOINT ALTITUDE</code></td>
+                <td>Returns the target altitude for the previous ATC flightplan waypoint.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC RUNWAY AIRPORT NAME"></a><code class="inline">ATC RUNWAY AIRPORT NAME</code></td>
+                <td>The name of the airport of the runway assigned by the ATC. Returns "" if no runway is assigned.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC RUNWAY DISTANCE"></a><code class="inline">ATC RUNWAY DISTANCE</code></td>
+                <td>This float represents the distance between the player's plane and the center of the runway selected
+                    by the ATC.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC RUNWAY END DISTANCE"></a><code class="inline">ATC RUNWAY END DISTANCE</code></td>
+                <td>This is a float corresponding to the horizontal distance between the player's plane and the end of
+                    the runway selected by the ATC.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC RUNWAY HEADING DEGREES TRUE"></a><code
+                        class="inline">ATC RUNWAY HEADING DEGREES TRUE</code></td>
+                <td>This float represents the true heading of the runway selected by the ATC.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC RUNWAY LENGTH"></a><code class="inline">ATC RUNWAY LENGTH</code></td>
+                <td>The length of the runway assigned by the ATC. Returns -1 if no runway is assigned.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC RUNWAY RELATIVE POSITION X"></a><code
+                        class="inline">ATC RUNWAY RELATIVE POSITION X</code></td>
+                <td>This is a float corresponding to the player's main gear relative X (transverse) position on the
+                    runway selected by the ATC.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC RUNWAY RELATIVE POSITION Y"></a><code
+                        class="inline">ATC RUNWAY RELATIVE POSITION Y</code></td>
+                <td>This is a float corresponding to the player's main gear relative Y (height) position on the runway
+                    selected by the ATC.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC RUNWAY RELATIVE POSITION Z"></a><code
+                        class="inline">ATC RUNWAY RELATIVE POSITION Z</code></td>
+                <td>This is a float corresponding to the player's main gear relative Z (longitudinal) position on the
+                    runway selected by the ATC.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC RUNWAY SELECTED"></a><code class="inline">ATC RUNWAY SELECTED</code></td>
+                <td>This is a boolean corresponding to whether or not the ATC has pre-selected a runway for the player's
+                    plane. If this is false, every other <code class="inline">ATC RUNWAY&nbsp;*</code>&nbsp;SimVar will
+                    return default values.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC RUNWAY START DISTANCE"></a><code class="inline">ATC RUNWAY START DISTANCE</code></td>
+                <td>This is a float corresponding to the horizontal distance between the player's plane and the start of
+                    the runway selected by the ATC.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC RUNWAY TDPOINT RELATIVE POSITION X"></a><code
+                        class="inline">ATC RUNWAY TDPOINT RELATIVE POSITION X</code></td>
+                <td>This float represents the player's main gear relative X (transverse) position according to the
+                    aiming point of the runway selected by the ATC.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC RUNWAY TDPOINT RELATIVE POSITION Y"></a><code
+                        class="inline">ATC RUNWAY TDPOINT RELATIVE POSITION Y</code></td>
+                <td>This float represents the player's main gear relative Y (height) position according to the aiming
+                    point of the runway selected by the ATC.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC RUNWAY TDPOINT RELATIVE POSITION Z"></a><code
+                        class="inline">ATC RUNWAY TDPOINT RELATIVE POSITION Z</code></td>
+                <td>This float represents the player's main relative Z (longitudinal) position according to the aiming
+                    point of the runway selected by the ATC.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC RUNWAY WIDTH"></a><code class="inline">ATC RUNWAY WIDTH</code></td>
+                <td>The width of the runway assigned by the ATC. Returns -1 if no runway is assigned.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC SUGGESTED MIN RWY LANDING"></a><code class="inline">ATC SUGGESTED MIN RWY LANDING</code>
+                </td>
+                <td>Suggested minimum runway length for landing. Used by ATC.</td>
+                <td>Feet</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC SUGGESTED MIN RWY TAKEOFF"></a><code class="inline">ATC SUGGESTED MIN RWY TAKEOFF</code>
+                </td>
+                <td>Suggested minimum runway length for takeoff. Used by ATC.</td>
+                <td>Feet</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC TAXIPATH DISTANCE"></a><code class="inline">ATC TAXIPATH DISTANCE</code></td>
+                <td><span>Returns the lateral distance the user's plane is from the path of the currently issued ATC
+                        taxi instructions.</span></td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ATC TYPE"></a><code class="inline">ATC TYPE</code></td>
+                <td>Type used by ATC.</td>
+                <td>String (30)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="com">COM</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 246px;">
+            <col style="width: 425px;">
+            <col style="width: 164px;">
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td>
+                    <p><a id="COM1 STORED FREQUENCY"></a><code class="inline">COM1 STORED FREQUENCY</code></p>
+                    <p><a id="COM2 STORED FREQUENCY"></a><code class="inline">COM2 STORED FREQUENCY</code></p>
+                    <p><a id="COM3 STORED FREQUENCY"></a><code class="inline">COM3 STORED FREQUENCY</code></p>
+                </td>
+                <td>The stored COM 1/2/3 frequency value.</td>
+                <td>Frequency BCD16</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM ACTIVE BEARING"></a><code class="inline">COM ACTIVE BEARING:index</code></td>
+                <td>Gives the bearing (in degrees) of the active COM station (airport) or a value less than 0 if the
+                    station <span>does not belong to an </span>airport. Index is 1, 2 or 3.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM ACTIVE DISTANCE"></a><code class="inline">COM ACTIVE DISTANCE:index</code></td>
+                <td><span>Gives the distance (in meters) to the active COM station (airport) or a value less than -180°
+                        if the station does not belong to an airport. Index is 1, 2 or 3.</span></td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM ACTIVE FREQUENCY"></a><code class="inline">COM ACTIVE FREQUENCY:index</code></td>
+                <td>Com frequency. Index is 1, 2 or 3.</td>
+                <td>Frequency BCD16</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM ACTIVE FREQ IDENT"></a><code class="inline">COM ACTIVE FREQ IDENT:index</code></td>
+                <td>The identity of the station that is tuned on the indexed active COM radio. Index is 1, 2, or 3.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM ACTIVE FREQ TYPE"></a><code class="inline">COM ACTIVE FREQ TYPE:index</code></td>
+                <td>The type of COM frequency for the active indexed COM system. Index is 1, 2, or 3.</td>
+                <td>
+                    <p>String:</p>
+                    <ol class="minitoc-list">
+                        <li>"ATIS" - Atis</li>
+                        <li>"UNI" - Unicom</li>
+                        <li>"CTAF" - CTAF</li>
+                        <li>"GND" - Ground</li>
+                        <li>"TWR" - Tower</li>
+                        <li>"CLR" - Clearance<br>
+                            <br>
+                            Delivery
+                        </li>
+                        <li>"APPR" - Approach</li>
+                        <li>"DEP" - Departure</li>
+                        <li>"FSS" - FSS</li>
+                        <li>"AWS" - AWOS</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM ACTIVE LATLONALT"></a><code class="inline">COM ACTIVE LATLONALT:index</code></td>
+                <td>
+                    <p>This will return the latitude, longitude and altitude corresponding to the indexed COM station
+                        associated with the active COM frequency. If the station is not associated with an airport, then
+                        the lat/lon/alt values returned will be <code class="inline">-15943°, 80°, -10000</code> (this
+                        means that you can simply check that the altitude value is greater than 0 to assure the validity
+                        of the returned struct).</p>
+                    <p>Index is 1, 2 or 3.</p>
+                </td>
+                <td>
+                    <p>Struct:</p>
+                    <p><code
+                            class="inline"><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_LATLONALT.htm">SIMCONNECT_DATA_LATLONALT</a></code>
+                    </p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM AVAILABLE"></a><code class="inline">COM AVAILABLE:index</code></td>
+                <td>True if COM1, COM2 or COM3 is available (depending on the index, either 1, 2, or 3)</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a id="COM LATLONALT"></a><code
+                        class="inline">COM LATLONALT:index</code></td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><em>Not currently used in the simulation.</em></td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)">
+                    <p>Struct:</p>
+                    <p><code
+                            class="inline"><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_LATLONALT.htm">SIMCONNECT_DATA_LATLONALT</a></code>
+                    </p>
+                </td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM RECEIVE"></a><code class="inline">COM RECEIVE:index</code></td>
+                <td>Whether or not the plane is receiving on the indexed com channel or not (either 1, 2, or 3 for the
+                    index).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM RECEIVE ALL"></a><code class="inline">COM RECEIVE ALL</code></td>
+                <td>Toggles all COM radios to receive on</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM RECEIVE EX1"></a><code class="inline">COM RECEIVE EX1:index</code></td>
+                <td>Whether or not the plane is receiving on the indexed com channel. Index is 1, 2 or 3.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM SPACING MODE"></a><code class="inline">COM SPACING MODE:index</code></td>
+                <td>The COM radio frequency step. Index is 1, 2 or 3.</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = 25kHz</li>
+                        <li>1 = 8.33kHz</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM STANDBY FREQUENCY"></a><code class="inline">COM STANDBY FREQUENCY:index</code></td>
+                <td>Com standby frequency. Index is 1, 2 or 3.</td>
+                <td>Frequency BCD16</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM STANDBY FREQ IDENT"></a><code class="inline">COM STANDBY FREQ IDENT:index</code></td>
+                <td>The identity of the station that is tuned on the indexed standby COM radio. Index is 1, 2, or 3.
+                </td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM STANDBY FREQ TYPE"></a><code class="inline">COM STANDBY FREQ TYPE:index</code></td>
+                <td>The type of COM frequency for the standby indexed COM system. Index is 1, 2, or 3.</td>
+                <td>
+                    <p>String:</p>
+                    <ol class="minitoc-list">
+                        <li>"ATIS" - Atis</li>
+                        <li>"UNI" - Unicom</li>
+                        <li>"CTAF" - CTAF</li>
+                        <li>"GND" - Ground</li>
+                        <li>"TWR" - Tower</li>
+                        <li>"CLR" - Clearance<br>
+                            <br>
+                            Delivery
+                        </li>
+                        <li>"APPR" - Approach</li>
+                        <li>"DEP" - Departure</li>
+                        <li>"FSS" - FSS</li>
+                        <li>"AWS" - AWOS</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM STATUS"></a><code class="inline">COM STATUS:index</code></td>
+                <td>Radio status flag for the indexed com channel. Index is 1, 2 or 3.</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>-1 = Invalid</li>
+                        <li>0 = OK</li>
+                        <li>1 = Does not exist</li>
+                        <li>2 = No electricity</li>
+                        <li>3 = Failed</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM TEST"></a><code class="inline">COM TEST:index</code></td>
+                <td>Enter an index of 1, 2 or 3. Will return <code class="inline">TRUE</code> if the COM system is
+                    working, <code class="inline">FALSE</code> otherwise.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM TRANSMIT"></a><code class="inline">COM TRANSMIT:index</code></td>
+                <td>Audio panel com transmit state. Index of 1, 2 or 3.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COM VOLUME"></a><code class="inline">COM VOLUME</code></td>
+                <td>The volume of the COM Radio.</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="flarm">FLARM</h3>
+    <table style="table-layout: auto;">
+        <colgroup>
+            <col style="width: 252px;">
+            <col style="width: 475px;">
+            <col style="width: 97px;">
+            <col style="width: 49px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="FLARM AVAILABLE"></a><code class="inline">FLARM AVAILABLE</code></td>
+                <td>Whether the FLARM is available (TRUE, 1) or not (FALSE, 0).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLARM THREAT BEARING"></a><code class="inline">FLARM THREAT BEARING</code></td>
+                <td>The bearing of the FLARM threat aircraft, relative to track.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLARM THREAT DATA"></a><code class="inline">FLARM THREAT DATA</code></td>
+                <td>
+                    <p>The FLARM threat aircraft data structure, which contains data about the perceived threat,
+                        returned as a struct. Struct member variables are as follows:</p>
+                    <ol class="minitoc-list">
+                        <li><code class="inline">id</code>&nbsp;(U62): the network id of the intruding plane so that
+                            they are remembered in order to compute their trajectory.</li>
+                        <li><code class="inline">bearing</code>&nbsp;(FLOAT64): The threat bearing, in degrees (this is
+                            bearing from track axis and not bearing from the airplane axis).</li>
+                        <li><code class="inline">heading</code>&nbsp;(FLOAT64): The threat heading.</li>
+                        <li><code class="inline">distance</code>&nbsp;(FLOAT64):&nbsp;The distance between the aircraft
+                            and the threat, in meters.</li>
+                        <li><code class="inline">verticalBearing</code>&nbsp;(FLOAT64):&nbsp;The vertical bearing
+                            between the aircraft and the threat, in degrees.</li>
+                        <li><code class="inline">relativeAltitude</code>&nbsp;(FLOAT64):&nbsp;The relative altitude of
+                            the threat to the aircraft, in meters.</li>
+                        <li><code class="inline">timeToCollision</code>&nbsp;(FLOAT64):&nbsp;The estimated time to a
+                            collision, in seconds.</li>
+                    </ol>
+                </td>
+                <td>
+                    <p>Struct</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLARM THREAT DISTANCE"></a><code class="inline">FLARM THREAT DISTANCE</code></td>
+                <td>The distance to the FLARM threat object.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLARM THREAT HEADING"></a><code class="inline">FLARM THREAT HEADING</code></td>
+                <td>The heading to the FLARM threat object.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLARM THREAT RELATIVE ALTITUDE"></a><code
+                        class="inline">FLARM THREAT RELATIVE ALTITUDE</code></td>
+                <td>The relative altitude of the threat object.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLARM THREAT TIME TO COLLISION"></a><code
+                        class="inline">FLARM THREAT TIME TO COLLISION</code></td>
+                <td>The estimated time to a collision.</td>
+                <td>Seconds</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="FLARM THREAT VERTICAL BEARING"></a><code class="inline">FLARM THREAT VERTICAL BEARING</code>
+                </td>
+                <td>The vertical bearing towards the threat.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="gps">GPS</h3>
+    <p>When using these SimVars, it is worth noting that to correctly set those that can be set, you should first use
+        the SimVar <code class="inline">GPS OVERRIDEN</code> and set it to <code class="inline">TRUE</code>. If you
+        don't set this SimVar, then any changes that are made to the other GPS variables will be overriden by the
+        simulation GPS system moments after you set them.</p>
+    <p>&nbsp;</p>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 222px;">
+            <col style="width: 342px;">
+            <col style="width: 180px;">
+            <col style="width: 89px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_AIRPORT_ID"></a><code class="inline">GPS APPROACH AIRPORT ID</code></td>
+                <td>ID of airport.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_APPROACH_ID"></a><code class="inline">GPS APPROACH APPROACH ID</code></td>
+                <td>ID of approach.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_APPROACH_INDEX"></a><code class="inline">GPS APPROACH APPROACH INDEX</code></td>
+                <td>Index of approach for given airport.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_APPROACH_TYPE"></a><code class="inline">GPS APPROACH APPROACH TYPE</code></td>
+                <td>Approach type.</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = None</li>
+                        <li>1 = <a href="#"
+                                data-popovertext="This is a shortened version of 'Global Positioning System' which is a satellite-based radionavigation system that provides geolocation and time information to a GPS receiver anywhere on or near the Earth where there is an unobstructed line of sight to four or more GPS satellites."
+                                data-rhwidget="TextPopOver" aria-haspopup="true" role="button">GPS</a></li>
+                        <li>2 = <a href="#"
+                                data-popovertext="This means 'Very high frequency Omni-directional Range', which is a type of short-range radio navigation system for aircraft, enabling aircraft with a receiving unit to determine their position and stay on course by receiving radio signals transmitted by a network of fixed ground radio beacons."
+                                data-rhwidget="TextPopOver" aria-haspopup="true" role="button">VOR</a></li>
+                        <li>3 = <a href="#"
+                                data-popovertext="This stands for 'Non Directional Beacon' which is a radio transmitter at a known location, used as an aviation navigational aid. As the name implies, the signal transmitted does not include inherent directional information, in contrast to other navigational aids, like VOR."
+                                data-rhwidget="TextPopOver" aria-haspopup="true" role="button">NDB</a></li>
+                        <li>4 = <a href="#"
+                                data-popovertext="ILS stands for 'Instrument Landing System' which is a system that works by sending radio waves downrange from the runway end, which aircraft then intercept and use to guide them onto the runway."
+                                data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ILS</a></li>
+                        <li>5 = Localizer</li>
+                        <li>6 = <a href="#"
+                                data-popovertext="The term stands for 'Simplified Directional Facility', which is a localizer-based instrument non-precision approach to an airport, which provides final approach course similar to instrument landing system (ILS) and localizer type directional aid (LDA) approaches, although not as precise."
+                                data-rhwidget="TextPopOver" aria-haspopup="true" role="button">SDF</a></li>
+                        <li>7 = <a href="#"
+                                data-popovertext="This stands for 'Localizer type Directional Aid', which is a type of localizer-based instrument approach to an airport. It is used in places where, due to terrain and other factors, the localizer antenna array is not aligned with the runway it serves."
+                                data-rhwidget="TextPopOver" aria-haspopup="true" role="button">LDA</a></li>
+                        <li>8 = <a href="#"
+                                data-popovertext="This means 'Very high frequency Omni-directional Range', which is a type of short-range radio navigation system for aircraft, enabling aircraft with a receiving unit to determine their position and stay on course by receiving radio signals transmitted by a network of fixed ground radio beacons."
+                                data-rhwidget="TextPopOver" aria-haspopup="true" role="button">VOR</a>/ <a href="#"
+                                data-popovertext="This stands for 'Distance Measuring Equipment' and is a type of navigation beacon - usually coupled with VOR or ILS - to enable aircraft to measure their position relative to that beacon.  A 'DME arc' would then be a circle defined around the beacon at a given distance."
+                                data-rhwidget="TextPopOver" aria-haspopup="true" role="button">DME</a></li>
+                        <li>9 = <a href="#"
+                                data-popovertext="This stands for 'Non Directional Beacon' which is a radio transmitter at a known location, used as an aviation navigational aid. As the name implies, the signal transmitted does not include inherent directional information, in contrast to other navigational aids, like VOR."
+                                data-rhwidget="TextPopOver" aria-haspopup="true" role="button">NDB</a>/ <a href="#"
+                                data-popovertext="This stands for 'Distance Measuring Equipment' and is a type of navigation beacon - usually coupled with VOR or ILS - to enable aircraft to measure their position relative to that beacon.  A 'DME arc' would then be a circle defined around the beacon at a given distance."
+                                data-rhwidget="TextPopOver" aria-haspopup="true" role="button">DME</a></li>
+                        <li>10 = <a href="#"
+                                data-popovertext="This term stands for 'Area Navigation', which is a method of navigation that permits aircraft to operate on any desired flight path within the coverage of ground or space-based navigation aids, or within the limits of the capability of self-contained aids, or a combination of these."
+                                data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RNAV</a></li>
+                        <li>11 = Backcourse</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_IS_FINAL"></a><code class="inline">GPS APPROACH IS FINAL</code></td>
+                <td>Is approach transition final approach segment.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_IS_MISSED"></a><code class="inline">GPS APPROACH IS MISSED</code></td>
+                <td>Is approach segment missed approach segment.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_IS_WP_RUNWAY"></a><code class="inline">GPS APPROACH IS WP RUNWAY</code></td>
+                <td>Waypoint is the runway.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_MODE"></a><code class="inline">GPS APPROACH MODE</code></td>
+                <td>Sub mode within approach mode.</td>
+                <td>
+                    <p>Enum:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = None</li>
+                        <li>1 = Transition</li>
+                        <li>2 = Final</li>
+                        <li>3 = Missed</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_SEGMENT_TYPE"></a><code class="inline">GPS APPROACH SEGMENT TYPE</code></td>
+                <td>Segment type within approach.</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = Line</li>
+                        <li>1 = Arc clockwise</li>
+                        <li>2 = Arc counter-clockwise</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_TIMEZONE_DEVIATION"></a><code
+                        class="inline">GPS APPROACH TIMEZONE DEVIATION</code></td>
+                <td>Deviation of local time from GMT.</td>
+                <td>Seconds</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_TRANSITION_ID"></a><code class="inline">GPS APPROACH TRANSITION ID</code></td>
+                <td>ID of approach transition.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_TRANSITION_INDEX"></a><code class="inline">GPS APPROACH TRANSITION INDEX</code>
+                </td>
+                <td>Index of approach transition.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_WP_COUNT"></a><code class="inline">GPS APPROACH WP COUNT</code></td>
+                <td>Number of waypoints.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_WP_INDEX"></a><code class="inline">GPS APPROACH WP INDEX</code></td>
+                <td>Index of current waypoint.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_APPROACH_WP_TYPE"></a><code class="inline">GPS APPROACH WP TYPE</code></td>
+                <td>Waypoint type within approach mode.</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = None</li>
+                        <li>1 = Fix</li>
+                        <li>2 = Procedure turn left</li>
+                        <li>3 = Procedure turn right</li>
+                        <li>4 = Dme arc left</li>
+                        <li>5 = Dme arc right</li>
+                        <li>6 = Holding left</li>
+                        <li>7 = Holding right</li>
+                        <li>8 = Distance</li>
+                        <li>9 = Altitude</li>
+                        <li>10 = Manual sequence</li>
+                        <li>11 = Vector to final</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS CDI NEEDLE"></a><code class="inline">GPS CDI NEEDLE</code></td>
+                <td>The course deviation of the needle for a CDI instrument. The SimVar displays the deviation from -127
+                    to +127. It returns a value if a flight plan is set (otherwise it will return 0) even if the
+                    autopilot isn't on GPS mode. Scaling can also be set through the <code
+                        class="inline"><a href="Aircraft_RadioNavigation_Variables.htm#GPS CDI SCALING">GPS CDI SCALING</a></code>
+                    simvar.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS CDI SCALING"></a><code class="inline">GPS CDI SCALING</code></td>
+                <td>The full scale deflection of the CDI due to GPS cross-track error, in meters.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_COURSE_TO_STEER"></a><code class="inline">GPS COURSE TO STEER</code></td>
+                <td>Suggested heading to steer (for autopilot).</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_DRIVES_NAV1"></a><code class="inline">GPS DRIVES NAV1</code></td>
+                <td>GPS is driving Nav 1 indicator. Note this setting will also affect the SimVars <code
+                        class="inline"><a href="Aircraft_RadioNavigation_Variables.htm#HSI_STATION_IDENT">HSI_STATION_IDENT</a></code>
+                    and <code
+                        class="inline"><a href="Aircraft_RadioNavigation_Variables.htm#HSI_BEARING">HSI_BEARING</a></code>.
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_ETA"></a><code class="inline">GPS ETA</code></td>
+                <td>Estimated time of arrival at destination.</td>
+                <td>Seconds</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_ETE"></a><code class="inline">GPS ETE</code></td>
+                <td>Estimated time en route to destination.</td>
+                <td>Seconds</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_FLIGHTPLAN_TOTAL_DISTANCE"></a><code class="inline">GPS FLIGHTPLAN TOTAL DISTANCE</code>
+                </td>
+                <td>This is the complete flightplan length from start to end. Essentially the cumulative length of all
+                    the flight plan legs added together.</td>
+                <td>
+                    <p>Meters</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_FLIGHT_PLAN_WP_COUNT"></a><code class="inline">GPS FLIGHT PLAN WP COUNT</code></td>
+                <td>Number of waypoints.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_FLIGHT_PLAN_WP_INDEX"></a><code class="inline">GPS FLIGHT PLAN WP INDEX</code></td>
+                <td>Index of waypoint.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_GROUND_MAGNETIC_TRACK"></a><code class="inline">GPS GROUND MAGNETIC TRACK</code></td>
+                <td>Current magnetic ground track.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_GROUND_SPEED"></a><code class="inline">GPS GROUND SPEED</code></td>
+                <td>Current ground speed.</td>
+                <td>Meters per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_GROUND_TRUE_HEADING"></a><code class="inline">GPS GROUND TRUE HEADING</code></td>
+                <td>Current true heading.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS GROUND TRUE TRACK"></a><code class="inline">GPS GROUND TRUE TRACK</code></td>
+                <td>Current true ground track.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS GSI SCALING"></a><code class="inline">GPS GSI SCALING</code></td>
+                <td>The full scale deflection of the vertical GSI due to GPS glidepath deviation, in meters.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS HAS GLIDEPATH"></a><code class="inline">GPS HAS GLIDEPATH</code></td>
+                <td>Whether or not the GPS system has a presently available glidepath for guidance. Only applicable with
+                    <code
+                        class="inline"><a href="Aircraft_RadioNavigation_Variables.htm#GPS_OVERRIDDEN">GPS_OVERRIDDEN</a></code>.
+                    When true and in <code class="inline">GPS OVERRIDDEN</code>, <code
+                        class="inline"><a href="Aircraft_RadioNavigation_Variables.htm#HSI_GSI_NEEDLE_VALID">HSI_GSI_NEEDLE_VALID</a></code>
+                    will also be true.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS HSI NEEDLE"></a><code class="inline">GPS HSI NEEDLE</code></td>
+                <td>The glide deviation of the needle for a CDI instrument. The simvar displays the deviation from -127
+                    to +127. It returns a value if a flight plan is set (otherwise it will return 0) even if the
+                    autopilot isn't on GPS mode. Scaling can also be set through the <code
+                        class="inline"><a href="Aircraft_RadioNavigation_Variables.htm#GPS CDI SCALING">GPS CDI SCALING</a></code>
+                    simvar.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_IS_ACTIVE_FLIGHT_PLAN"></a><code class="inline">GPS IS ACTIVE FLIGHT PLAN</code></td>
+                <td>Flight plan mode active.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_IS_ACTIVE_WAY_POINT"></a><code class="inline">GPS IS ACTIVE WAY POINT</code></td>
+                <td>Waypoint mode active.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_IS_ACTIVE_WP_LOCKED"></a><code class="inline">GPS IS ACTIVE WP LOCKED</code></td>
+                <td>Is switching to next waypoint locked.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_IS_APPROACH_ACTIVE"></a><code class="inline">GPS IS APPROACH ACTIVE</code></td>
+                <td>Is approach mode active.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_IS_APPROACH_LOADED"></a><code class="inline">GPS IS APPROACH LOADED</code></td>
+                <td>Is approach loaded.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_IS_ARRIVED"></a><code class="inline">GPS IS ARRIVED</code></td>
+                <td>Is flight plan destination reached.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_IS_DIRECTTO_FLIGHTPLAN"></a><code class="inline">GPS IS DIRECTTO FLIGHTPLAN</code></td>
+                <td>Is Direct To Waypoint mode active.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_MAGVAR"></a><code class="inline">GPS MAGVAR</code></td>
+                <td>Current GPS magnetic variation.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_OBS_ACTIVE"></a><code class="inline">GPS OBS ACTIVE</code></td>
+                <td>Whether or not the OBS mode is currently active (disable the automatic sequencing of waypoints in
+                    GPS flight plan).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_OBS_VALUE"></a><code class="inline">GPS OBS VALUE</code></td>
+                <td>This is the currently selected OBS course in degrees, from 0 to 360.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_OVERRIDDEN"></a><code class="inline">GPS OVERRIDDEN</code></td>
+                <td>When it is active, all sim GPS system updates are suspended. This must be set to TRUE to be able to
+                    correctly set to any other GPS SimVar.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_POSITION_ALT"></a><code class="inline">GPS POSITION ALT</code></td>
+                <td>Current GPS altitude.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_POSITION_LAT"></a><code class="inline">GPS POSITION LAT</code></td>
+                <td>Current GPS latitude.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_POSITION_LON"></a><code class="inline">GPS POSITION LON</code></td>
+                <td>Current GPS longitude.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_TARGET_ALTITUDE"></a><code class="inline">GPS TARGET ALTITUDE</code></td>
+                <td>Altitude of GPS target.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_TARGET_DISTANCE"></a><code class="inline">GPS TARGET DISTANCE</code></td>
+                <td>Distance to target.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_VERTICAL_ANGLE"></a><code class="inline">GPS VERTICAL ANGLE</code></td>
+                <td>Glidepath in degrees.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_VERTICAL_ANGLE_ERROR"></a><code class="inline">GPS VERTICAL ANGLE ERROR</code></td>
+                <td>Vertical error in degrees from GlidePath.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_VERTICAL_ERROR"></a><code class="inline">GPS VERTICAL ERROR</code></td>
+                <td>Vertical deviation in meters from GlidePath.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_BEARING"></a><code class="inline">GPS WP BEARING</code></td>
+                <td>Magnetic bearing to waypoint.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_CROSS_TRK"></a><code class="inline">GPS WP CROSS TRK</code></td>
+                <td>Cross track distance.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_DESIRED_TRACK"></a><code class="inline">GPS WP DESIRED TRACK</code></td>
+                <td>The required heading (magnetic) from the previous waypoint to the next waypoint.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_DISTANCE"></a><code class="inline">GPS WP DISTANCE</code></td>
+                <td>Distance to waypoint.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_ETA"></a><code class="inline">GPS WP ETA</code></td>
+                <td>Estimated time of arrival at waypoint.</td>
+                <td>Seconds</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_ETE"></a><code class="inline">GPS WP ETE</code></td>
+                <td>Estimated time en route to waypoint.</td>
+                <td>Seconds</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_NEXT_ALT"></a><code class="inline">GPS WP NEXT ALT</code></td>
+                <td>Altitude of next waypoint.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_NEXT_ID"></a><code class="inline">GPS WP NEXT ID</code></td>
+                <td>ID of next GPS waypoint.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_NEXT_LAT"></a><code class="inline">GPS WP NEXT LAT</code></td>
+                <td>Latitude of next waypoint.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_NEXT_LON"></a><code class="inline">GPS WP NEXT LON</code></td>
+                <td>Longitude of next waypoint.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_PREV_ALT"></a><code class="inline">GPS WP PREV ALT</code></td>
+                <td>Altitude of previous waypoint.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_PREV_ID"></a><code class="inline">GPS WP PREV ID</code></td>
+                <td>ID of previous GPS waypoint.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_PREV_LAT"></a><code class="inline">GPS WP PREV LAT</code></td>
+                <td>Latitude of previous waypoint.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_PREV_LON"></a><code class="inline">GPS WP PREV LON</code></td>
+                <td>Longitude of previous waypoint.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_PREV_VALID"></a><code class="inline">GPS WP PREV VALID</code></td>
+                <td>Is previous waypoint valid (i.e. current waypoint is not the first waypoint).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_TRACK_ANGLE_ERROR"></a><code class="inline">GPS WP TRACK ANGLE ERROR</code></td>
+                <td>Tracking angle error to waypoint.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_TRUE_BEARING"></a><code class="inline">GPS WP TRUE BEARING</code></td>
+                <td>True bearing to waypoint.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_TRUE_REQ_HDG"></a><code class="inline">GPS WP TRUE REQ HDG</code></td>
+                <td>Required true heading to waypoint.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GPS_WP_VERTICAL_SPEED"></a><code class="inline">GPS WP VERTICAL SPEED</code></td>
+                <td>Vertical speed to waypoint.</td>
+                <td>Meters per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="hsi">HSI</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 246px;">
+            <col style="width: 533px;">
+            <col style="width: 129px;">
+            <col style="width: 1px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="HSI_BEARING"></a><code class="inline">HSI BEARING</code></td>
+                <td>If the <code
+                        class="inline"><a href="Aircraft_RadioNavigation_Variables.htm#GPS_DRIVES_NAV1">GPS_DRIVES_NAV1</a></code>
+                    variable is true and the <code class="inline">HSI BEARING VALID</code> variable is true, this
+                    variable contains the HSI needle bearing. If the <code class="inline">GPS DRIVES NAV1</code>
+                    variable is false and the <code class="inline">HSI BEARING VALID</code> variable is true, this
+                    variable contains the ADF1 frequency.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="HSI_BEARING_VALID"></a><code class="inline">HSI BEARING VALID</code></td>
+                <td>This will return true if the <code class="inline">HSI BEARING</code> variable contains valid data.
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="HSI_CDI_NEEDLE"></a><code class="inline">HSI CDI NEEDLE</code></td>
+                <td>Needle deflection (+/- 127).</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="HSI_CDI_NEEDLE_VALID"></a><code class="inline">HSI CDI NEEDLE VALID</code></td>
+                <td>Signal valid.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="HSI_DISTANCE"></a><code class="inline">HSI DISTANCE</code></td>
+                <td>DME/GPS distance.</td>
+                <td>Nautical miles</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="HSI_GSI_NEEDLE"></a><code class="inline">HSI GSI NEEDLE</code></td>
+                <td>Needle deflection (+/- 119).</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="HSI_GSI_NEEDLE_VALID"></a><code class="inline">HSI GSI NEEDLE VALID</code></td>
+                <td>Signal valid.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="HSI_HAS_LOCALIZER"></a><code class="inline">HSI HAS LOCALIZER</code></td>
+                <td>Station is a localizer.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="HSI_SPEED"></a><code class="inline">HSI SPEED</code></td>
+                <td>DME/GPS speed.</td>
+                <td>Knots</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="HSI_STATION_IDENT"></a><code class="inline">HSI STATION IDENT</code></td>
+                <td>Returns the ident of the the next GPS waypoint, if <code
+                        class="inline"><a href="Aircraft_RadioNavigation_Variables.htm#GPS_DRIVES_NAV1">GPS_DRIVES_NAV1</a></code>
+                    is true. If <code class="inline">GPS DRIVES NAV1</code> is false, it returns the identity of the
+                    station that is tuned on nav radio 1.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="HSI_TF_FLAGS"></a><code class="inline">HSI TF FLAGS</code></td>
+                <td>Nav TO/FROM flag.</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = Off</li>
+                        <li>1 = TO</li>
+                        <li>2 = FROM</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="markers">MARKERS</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 246px;">
+            <col style="width: 425px;">
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="INNER_MARKER"></a><code class="inline">INNER MARKER</code></td>
+                <td>Inner marker state.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="INNER_MARKER_LATLONALT"></a><code class="inline">INNER MARKER LATLONALT</code></td>
+                <td>Returns the latitude, longitude and altitude of the inner marker of an approach to a runway, if the
+                    aircraft is within the required proximity, otherwise it will return zeros.</td>
+                <td>
+                    <p><a
+                            href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_LATLONALT.htm"><code
+                                class="inline">SIMCONNECT_DATA_LATLONALT</code></a></p>
+                    <p>structure</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MARKER_AVAILABLE"></a><code class="inline">MARKER AVAILABLE</code></td>
+                <td>True if Marker is available.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MARKER_BEACON_SENSITIVITY_HIGH"></a><code
+                        class="inline">MARKER BEACON SENSITIVITY HIGH</code></td>
+                <td>Whether or not the Marker Beacon is in High Sensitivity mode.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MARKER_BEACON_STATE"></a><code class="inline">MARKER BEACON STATE</code></td>
+                <td>Marker beacon state.</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = None</li>
+                        <li>1 = Outer</li>
+                        <li>2 = Middle</li>
+                        <li>3 = Inner</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MARKER_BEACON_TEST_MUTE"></a><code class="inline">MARKER BEACON TEST MUTE</code></td>
+                <td>Whether or not the Marker Beacon is in Test/Mute mode.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MARKER_SOUND"></a><code class="inline">MARKER SOUND</code></td>
+                <td>Marker audio flag.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MIDDLE_MARKER"></a><code class="inline">MIDDLE MARKER</code></td>
+                <td>Middle marker state.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="MIDDLE_MARKER_LATLONALT"></a><code class="inline">MIDDLE MARKER LATLONALT</code></td>
+                <td>Returns the latitude, longitude and altitude of the middle marker.</td>
+                <td>
+                    <p><a
+                            href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_LATLONALT.htm"><code
+                                class="inline">SIMCONNECT_DATA_LATLONALT</code></a></p>
+                    <p>structure</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="OUTER_MARKER"></a><code class="inline">OUTER MARKER</code></td>
+                <td>Outer marker state.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="OUTER_MARKER_LATLONALT"></a><code class="inline">OUTER MARKER LATLONALT</code></td>
+                <td>Returns the latitude, longitude and altitude of the outer marker.</td>
+                <td>
+                    <p><a
+                            href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_LATLONALT.htm"><code
+                                class="inline">SIMCONNECT_DATA_LATLONALT</code></a></p>
+                    <p>structure</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="nav">NAV</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 246px;">
+            <col style="width: 437px;">
+            <col style="width: 295px;">
+            <col style="width: 1px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="NAV_ACTIVE_FREQUENCY"></a><code class="inline">NAV ACTIVE FREQUENCY:index</code></td>
+                <td>Nav active frequency. Index is 1 or 2.</td>
+                <td>MHz</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_AVAILABLE"></a><code class="inline">NAV AVAILABLE:index</code></td>
+                <td>Flag if Nav equipped on aircraft.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_BACK_COURSE_FLAGS"></a><code class="inline">NAV BACK COURSE FLAGS:index</code></td>
+                <td>Returns the listed bit flags.</td>
+                <td>
+                    <p><u>Flags</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>BIT0:[index] 1=back course available</li>
+                        <li>BIT1:[index] 1=localizer tuned in</li>
+                        <li>BIT2:[index] 1=on course</li>
+                        <li>BIT7:[index] 1=station active</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_CDI"></a><code class="inline">NAV CDI:index</code></td>
+                <td>CDI needle deflection (+/- 127).</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_CLOSE_DME"></a><code class="inline">NAV CLOSE DME:index</code></td>
+                <td>
+                    <p>Closest DME distance. Requires an index value from 1 to 4 to set which NAV to target.</p>
+                    <p>Note that this SimVar will only work if the <code
+                            class="inline"><a href="../../Event_IDs/Aircraft_Radio_Navigation_Events.htm#NAV1_CLOSE_FREQ_SET">NAV1_CLOSE_FREQ_SET</a></code>
+                        key event has been set to 1 (TRUE).</p>
+                </td>
+                <td>Nautical miles</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_CLOSE_FREQUENCY"></a><code class="inline">NAV CLOSE FREQUENCY:index</code></td>
+                <td>Closest Localizer course frequency. Requires an index value from 1 to 4 to set which NAV to target.
+                    <p>Note that this SimVar will only work if the <code
+                            class="inline"><a href="../../Event_IDs/Aircraft_Radio_Navigation_Events.htm#NAV1_CLOSE_FREQ_SET">NAV1_CLOSE_FREQ_SET</a></code>
+                        key event has been set to 1 (TRUE).</p>
+                </td>
+                <td>Hz</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_CLOSE_IDENT"></a><code class="inline">NAV CLOSE IDENT:index</code></td>
+                <td>ICAO code. Requires an index value from 1 to 4 to set which NAV to target.
+                    <p>Note that this SimVar will only work if the <code
+                            class="inline"><a href="../../Event_IDs/Aircraft_Radio_Navigation_Events.htm#NAV1_CLOSE_FREQ_SET">NAV1_CLOSE_FREQ_SET</a></code>
+                        key event has been set to 1 (TRUE).</p>
+                </td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_CLOSE_LOCALIZER"></a><code class="inline">NAV CLOSE LOCALIZER:index</code></td>
+                <td>Closest Localizer course heading. Requires an index value from 1 to 4 to set which NAV to target.
+                    <p>Note that this SimVar will only work if the <code
+                            class="inline"><a href="../../Event_IDs/Aircraft_Radio_Navigation_Events.htm#NAV1_CLOSE_FREQ_SET">NAV1_CLOSE_FREQ_SET</a></code>
+                        key event has been set to 1 (TRUE).</p>
+                </td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_CLOSE_NAME"></a><code class="inline">NAV CLOSE NAME:index</code></td>
+                <td>Descriptive name. Requires an index value from 1 to 4 to set which NAV to target.
+                    <p>Note that this SimVar will only work if the <code
+                            class="inline"><a href="../../Event_IDs/Aircraft_Radio_Navigation_Events.htm#NAV1_CLOSE_FREQ_SET">NAV1_CLOSE_FREQ_SET</a></code>
+                        key event has been set to 1 (TRUE).</p>
+                </td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_CODES"></a><code class="inline">NAV CODES</code></td>
+                <td>Returns bit flags with the listed meaning.</td>
+                <td>
+                    <p><u>Flags</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>BIT7:[index] 0= VOR 1= Localizer</li>
+                        <li>BIT6:[index] 1= glideslope available</li>
+                        <li>BIT5:[index] 1= no localizer backcourse</li>
+                        <li>BIT4:[index] 1= DME transmitter at glide slope<br>
+                            <br>
+                            transmitter
+                        </li>
+                        <li>BIT3:[index] 1= no nav signal available</li>
+                        <li>BIT2:[index] 1= voice available</li>
+                        <li>BIT1:[index] 1 = TACAN available</li>
+                        <li>BIT0:[index] 1= DME available</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_DME"></a><code class="inline">NAV DME</code></td>
+                <td>DME distance.</td>
+                <td>Nautical miles</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_DMESPEED"></a><code class="inline">NAV DMESPEED</code></td>
+                <td>DME speed.</td>
+                <td>Knots</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_DME_LATLONALT"></a><code class="inline">NAV DME LATLONALT:index</code></td>
+                <td>Returns the DME station.</td>
+                <td><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_LATLONALT.htm"><code
+                            class="inline">SIMCONNECT_DATA_LATLONALT</code></a> structure</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_FREQUENCY"></a><code class="inline">NAV FREQUENCY</code></td>
+                <td>Localizer course frequency</td>
+                <td>Hz</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_GLIDE_SLOPE"></a><code class="inline">NAV GLIDE SLOPE</code></td>
+                <td>
+                    <p>The glide slope gradient. The value returned is an integer value formed as follows:</p>
+                    <pre class="codeblock">sin(slope) * 65536 * 2</pre>
+                    <p>So, for example, a glide slope of 2.7º would return a value of 6174. TO get the value in degrees,
+                        then use&nbsp;<code
+                            class="inline"><a href="Aircraft_RadioNavigation_Variables.htm#NAV_RAW_GLIDE_SLOPE">NAV_RAW_GLIDE_SLOPE</a></code>
+                        instead.</p>
+                </td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_GLIDE_SLOPE_ERROR"></a><code class="inline">NAV GLIDE SLOPE ERROR</code></td>
+                <td>Difference between current position and glideslope angle. Note that this provides 32 bit floating
+                    point precision, rather than the 8 bit integer precision of NAV GSI.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_GLIDE_SLOPE_LENGTH"></a><code class="inline">NAV GLIDE SLOPE LENGTH</code></td>
+                <td>The distance between the plane and the Glide beacon.</td>
+                <td>Feet</td>
+                <td style="text-align: center;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td><a id="NAV_GSI"></a><code class="inline">NAV GSI</code></td>
+                <td>Glideslope needle deflection (+/- 119). Note that this provides only 8 bit precision, whereas NAV
+                    GLIDE SLOPE ERROR provides 32 bit floating point precision.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_GS_FLAG"></a><code class="inline">NAV GS FLAG</code></td>
+                <td>Glideslope flag.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_GS_LATLONALT"></a><code class="inline">NAV GS LATLONALT:index</code></td>
+                <td>Returns the glide slope.</td>
+                <td><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_LATLONALT.htm"><code
+                            class="inline">SIMCONNECT_DATA_LATLONALT</code></a> structure</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_GS_LLAF64"></a><code class="inline">NAV GS LLAF64</code></td>
+                <td>Nav GS latitude, longitude, altitude.</td>
+                <td><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_LATLONALT.htm"><code
+                            class="inline">SIMCONNECT_DATA_LATLONALT</code></a> structure</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_HAS_CLOSE_DM"></a><code class="inline">NAV HAS CLOSE DME</code></td>
+                <td>Flag if found a close station with a DME.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_HAS_CLOSE_LOCALIZER"></a><code class="inline">NAV HAS CLOSE LOCALIZER</code></td>
+                <td>Flag if found a close localizer station.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_HAS_DME"></a><code class="inline">NAV HAS DME</code></td>
+                <td>Flag if tuned station has a DME.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_HAS_GLIDE_SLOPE"></a><code class="inline">NAV HAS GLIDE SLOPE</code></td>
+                <td>Flag if tuned station has a glideslope.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_HAS_LOCALIZER"></a><code class="inline">NAV HAS LOCALIZER</code></td>
+                <td>Flag if tuned station is a localizer.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_HAS_NAV"></a><code class="inline">NAV HAS NAV</code></td>
+                <td>Flag if Nav has signal.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_HAS_TACAN"></a><code class="inline">NAV HAS TACAN</code></td>
+                <td>Flag if Nav has a <a href="#"
+                        data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a>.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_IDENT"></a><code class="inline">NAV IDENT</code></td>
+                <td>ICAO code.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_LOCALIZER"></a><code class="inline">NAV LOCALIZER</code></td>
+                <td>Localizer course heading.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_LOC_AIRPORT_IDENT"></a><code class="inline">NAV LOC AIRPORT IDENT</code></td>
+                <td>The airport ICAO ident for the localizer that is currently tuned on the nav radio (like 'EGLL' or
+                    'KJFK')</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_LOC_RUNWAY_DESIGNATOR"></a><code class="inline">NAV LOC RUNWAY DESIGNATOR</code></td>
+                <td>The letter code for the runway that the currently tuned localizer is tuned to.</td>
+                <td>String
+                    <ol class="minitoc-list">
+                        <li>'L' - Left</li>
+                        <li>'R' - Right</li>
+                        <li>'C' - Center</li>
+                        <li>'W' - Water</li>
+                        <li>'A' - A</li>
+                        <li>'B' - B</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_LOC_RUNWAY_NUMBER"></a><code class="inline">NAV LOC RUNWAY NUMBER</code></td>
+                <td>NAV LOC RUNWAY NUMBER - The number portion of the runway that the currently tuned localizer is tuned
+                    to (so if the runway was 15L, this would be 15).</td>
+                <td>
+                    <p>String</p>
+                    <ol class="minitoc-list">
+                        <li>'1' - '36'</li>
+                        <li>'N'</li>
+                        <li>'NE'</li>
+                        <li>'E'</li>
+                        <li>'SE'</li>
+                        <li>'S'</li>
+                        <li>'SW'</li>
+                        <li>'W'</li>
+                        <li>'NW'</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_MAGVAR"></a><code class="inline">NAV MAGVAR</code></td>
+                <td>Magnetic variation of tuned Nav station.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_NAME"></a><code class="inline">NAV NAME</code></td>
+                <td>Descriptive name.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_OBS"></a><code class="inline">NAV OBS</code></td>
+                <td>OBS setting. Index of 1 or 2.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_RADIAL"></a><code class="inline">NAV RADIAL</code></td>
+                <td>Radial that aircraft is on.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_RADIAL_ERROR"></a><code class="inline">NAV RADIAL ERROR</code></td>
+                <td>Difference between current radial and OBS tuned radial.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_RAW_GLIDE_SLOPE"></a><code class="inline">NAV RAW GLIDE SLOPE</code></td>
+                <td>The glide slope angle.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_RELATIVE_BEARING_TO_STATION"></a><code
+                        class="inline">NAV RELATIVE BEARING TO STATION</code></td>
+                <td>Relative bearing to station.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_SIGNAL"></a><code class="inline">NAV SIGNAL</code></td>
+                <td>Nav signal strength.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_SOUND"></a><code class="inline">NAV SOUND:index</code></td>
+                <td>Nav audio flag. Index of 1 or 2.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_STANDBY_FREQUENCY"></a><code class="inline">NAV STANDBY FREQUENCY:index</code></td>
+                <td>Nav standby frequency. Index is 1 or 2.</td>
+                <td>MHz</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_TOFROM"></a><code class="inline">NAV TOFROM</code></td>
+                <td>Returns whether the Nav is going to or from the current radial (or is off).</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = Off</li>
+                        <li>1 = TO</li>
+                        <li>2 = FROM</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_VOLUME"></a><code class="inline">NAV VOLUME</code></td>
+                <td>The volume of the Nav radio.</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_VOR_DISTANCE"></a><code class="inline">NAV VOR DISTANCE</code></td>
+                <td>Distance of the VOR beacon.</td>
+                <td>Meters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_VOR_LATLONALT"></a><code class="inline">NAV VOR LATLONALT:index</code></td>
+                <td>Returns the VOR station latitude, longitude and altitude.</td>
+                <td><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_LATLONALT.htm"><code
+                            class="inline">SIMCONNECT_DATA_LATLONALT</code></a> structure</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NAV_VOR_LLAF64"></a><code class="inline">NAV VOR LLAF64</code></td>
+                <td>Nav VOR latitude, longitude, altitude.</td>
+                <td><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_LATLONALT.htm"><code
+                            class="inline">SIMCONNECT_DATA_LATLONALT</code></a> structure</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="tacan">TACAN</h3>
+    <p>The table below lists all the SimVars related to the&nbsp;<a href="#"
+            data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+            data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a>&nbsp;system on an aircraft. You can
+        have either 1 or 2 of these systems, and in so all these SimVars require an index value of 1 or 2, depending on
+        which one you want to target. Note that you must have first enabled the Tacan using the&nbsp;<code
+            class="inline"><a href="../../../Content_Configuration/SimObjects/Aircraft_SimO/systems_cfg.htm#Tacan.N">Tacan.N</a></code>
+        parameter in the&nbsp;<a
+            href="../../../Content_Configuration/SimObjects/Aircraft_SimO/systems_cfg.htm">systems.cfg</a> file.</p>
+    <p>&nbsp;</p>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 281px;">
+            <col style="width: 543px;">
+            <col style="width: 118px;">
+            <col style="width: 26px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="TACAN_ACTIVE_CHANNEL"></a><code class="inline">TACAN ACTIVE CHANNEL:index</code></td>
+                <td>The active channel used by the indexed <a href="#"
+                        data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a> receiver on the
+                    aircraft, from 1 to 127.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TACAN_ACTIVE_MODE"></a><code class="inline">TACAN ACTIVE MODE:index</code></td>
+                <td>The active mode used by the indexed <a href="#"
+                        data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a> receiver on the
+                    aircraft, where 0 = <em>X</em> and 1 = <em>Y</em>.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TACAN_AVAILABLE"></a><code class="inline">TACAN AVAILABLE:index</code></td>
+                <td>Will be TRUE (1) if NAV1, NAV2, NAV3 or NAV4 can receive <a href="#"
+                        data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a> (depending on the index
+                    - 1, 2, 3, or 4), or FALSE (0) otherwise.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TACAN DRIVES NAV"></a><code class="inline">TACAN DRIVES NAV1:index</code></td>
+                <td>Tells whether the <a href="#"
+                        data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a> is driving the&nbsp;Nav
+                    1 indicator (TRUE, 1) or not (FALSE, 0), for autopilot purposes.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TACAN OBS"></a><code class="inline">TACAN OBS:index</code></td>
+                <td>The <a href="#"
+                        data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a> OBS setting, in
+                    degrees.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TACAN_STANDBY_CHANNEL"></a><code class="inline">TACAN STANDBY CHANNEL:index</code></td>
+                <td>The standby channel used by the indexed <a href="#"
+                        data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a> receiver on the
+                    aircraft, from 1 to 127.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TACAN_STANDBY_MODE"></a><code class="inline">TACAN STANDBY MODE:index</code></td>
+                <td>Indicates&nbsp;the indexed <a href="#"
+                        data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a> receiver standby mode,
+                    where 0 = <em>X</em> and 1 = <em>Y</em>.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TACAN STATION CDI"></a><code class="inline">TACAN STATION CDI:index</code></td>
+                <td>The CDI needle deflection amount(course deviation) to the station. Can be +/- 127.</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TACAN_STATION_DISTANCE"></a><code class="inline">TACAN STATION DISTANCE:index</code></td>
+                <td>The distance between the <a href="#"
+                        data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a> station position and
+                    the aircraft position. The index value refers to the Tacan receiver connected to the station (1 or
+                    2).</td>
+                <td>Meter</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TACAN STATION IDENT"></a><code class="inline">TACAN STATION IDENT:index</code></td>
+                <td>The tuned station identifier for the indexed <a href="#"
+                        data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a>.</td>
+                <td>String</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TACAN_STATION_LATLONALT"></a><code class="inline">TACAN STATION LATLONALT:index</code></td>
+                <td>Retrieves the latitude, longitude and altitude of the <a href="#"
+                        data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a> station.</td>
+                <td>
+                    <p><a
+                            href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_LATLONALT.htm"><code
+                                class="inline">SIMCONNECT_DATA_LATLONALT</code></a></p>
+                    <p>structure</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TACAN STATION RADIAL"></a><code class="inline">TACAN STATION RADIAL:index</code></td>
+                <td>The radial between the <a href="#"
+                        data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a> station and the
+                    aircraft.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TACAN STATION RADIAL ERROR"></a><code class="inline">TACAN STATION RADIAL ERROR:index</code>
+                </td>
+                <td>Difference between the current radial and OBS tuned radial, in degrees.</td>
+                <td>Degrees.</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TACAN STATION TOFROM"></a><code class="inline">TACAN STATION TOFROM:index</code></td>
+                <td>Returns whether the indexed <a href="#"
+                        data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a> is going <em>to</em> or
+                    <em>from</em> the current radial (or is off).</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = Off</li>
+                        <li>1 = TO</li>
+                        <li>2 = FROM</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TACAN VOLUME"></a><code class="inline">TACAN VOLUME:index</code></td>
+                <td>The volume value of the indexed <a href="#"
+                        data-popovertext="This stands for Tactical Air Navigation system, and is a navigation system generally used by military aircraft. It provides the user with bearing and distance (slant-range or hypotenuse) to a ground or ship-borne station. It is a more accurate version of the VOR/DME system that provides bearing and range information for civil aviation."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Tacan</a> receiver on the
+                    aircraft.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+
+
+    <table style="table-layout:auto;">
+
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+    <h3 id="misc_">Misc.</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 225px;">
+            <col style="width: 453px;">
+            <col style="width: 143px;">
+            <col style="width: 42px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="COPILOT TRANSMITTER TYPE"></a><code class="inline">COPILOT TRANSMITTER TYPE</code></td>
+                <td>On which channel the copilot is transmitting.</td>
+                <td>
+                    <p>Enum:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = COM1</li>
+                        <li>1 = COM2</li>
+                        <li>2 = COM3</li>
+                        <li>3 = TEL</li>
+                        <li>4 = NONE</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="COPILOT TRANSMITTING"></a><code class="inline">COPILOT TRANSMITTING</code></td>
+                <td>Whether or not the copilot is transmitting.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PILOT_TRANSMITTER_TYPE"></a><code class="inline">PILOT TRANSMITTER TYPE</code></td>
+                <td>On which channel the pilot is transmitting.</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = COM1</li>
+                        <li>1 = COM2</li>
+                        <li>2 = COM3</li>
+                        <li>3 = TEL</li>
+                        <li>4 = NONE</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PILOT_TRANSMITTING"></a><code class="inline">PILOT TRANSMITTING</code></td>
+                <td>Whether or not the pilot is transmitting.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RADIOS_AVAILABLE"></a><code class="inline">RADIOS AVAILABLE</code></td>
+                <td><em>Currently not used within the simulation.</em></td>
+                <td>-</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RADIO_HEIGHT"></a><code class="inline">RADIO HEIGHT</code></td>
+                <td>Radar altitude.</td>
+                <td>Feet</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TRANSPONDER_AVAILABLE"></a><code class="inline">TRANSPONDER AVAILABLE</code></td>
+                <td>True if a transponder is available.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TRANSPONDER_CODE"></a><code class="inline">TRANSPONDER CODE:index</code></td>
+                <td>4-digit code.</td>
+                <td>BCD16</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TRANSPONDER_IDENT"></a><code class="inline">TRANSPONDER IDENT</code></td>
+                <td>This can set the Ident transponder using the <code class="inline">KEY_XPNDR_IDENT_SET</code>, <code
+                        class="inline">KEY_XPNDR_IDENT_TOGGLE</code>, <code class="inline">KEY_XPNDR_IDENT_ON</code> or
+                    <code class="inline">KEY_XPNDR_IDENT_OFF</code> Event IDs (see <a
+                        href="../../Event_IDs/Aircraft_Radio_Navigation_Events.htm#Transponder">XPNDR (Transponder)</a>
+                    section for more information). When set to true, it will automatically turn false after 18 seconds.
+                </td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TRANSPONDER_STATE"></a><code class="inline">TRANSPONDER STATE</code></td>
+                <td>Transponder State.</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = Off</li>
+                        <li>1 = Standby</li>
+                        <li>2 = Test</li>
+                        <li>3 = On</li>
+                        <li>4 = Alt</li>
+                        <li>5 = Ground</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+</div>

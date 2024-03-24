@@ -15,6 +15,27 @@ unit_mapping = {
     'Volts': 'FlightSim.Unit.ElectricalPotential.VOLT',
     'Amps': 'FlightSim.Unit.ElectricalCurrent.AMPERE',
     'Pounds per square inch (psi)': 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_INCH',
+    'Pounds per square foot (psf)': 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_FOOT',
+    'RPM': 'FlightSim.Unit.AngularVelocity.REVOLUTION_PER_MINUTE',
+    'Centimeters': 'FlightSim.Unit.Length.CENTIMETER',
+    'Rankine': 'FlightSim.Unit.Temperature.RANKINE',
+    'Pounds per hour': 'FlightSim.Unit.WeightRate.POUND_PER_HOUR',
+    'Gallons per hour': 'FlightSim.Unit.VolumeRate.GALLON_PER_HOUR',
+    'Pounds per hour': 'FlightSim.Unit.POUND_PER_HOUR',
+    'Inches of mercury (inHg)': 'FlightSim.Unit.Pressure.INCH_OF_MERCURY',
+    'Ratio': 'FlightSim.Unit.Miscellaneous.RATIO',
+    'Scalar': 'FlightSim.Unit.Miscellaneous.SCALER',
+    'Foot pounds': 'FlightSim.Unit.Torque.FOOT_POUND',
+    'Hours': 'FlightSim.Unit.Time.HOUR',
+    'Pounds': 'FlightSim.Unit.Weight.POUND',
+    'Seconds': 'FlightSim.Unit.Time.SECOND',
+    'Psf': 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_FOOT',
+    'Meters': 'FlightSim.Unit.Length.METER',
+    'Meters per second': 'FlightSim.Unit.Length.METER_PER_SECOND',
+    'Nautical miles': 'FlightSim.Unit.Length.NAUTICAL_MILE',
+    'Hz': 'FlightSim.Unit.Frequency.HERTZ',
+    'Feet': 'FlightSim.Unit.Length.FOOT',
+    'MHz': 'FlightSim.Unit.Frequency.MEGAHERTZ',
 }
 
 processed_classes = []
@@ -123,13 +144,20 @@ def getFlightSimClass():
 
 with open('flightsim.py', 'w') as f:
     f.write('from enum import Enum\n')
-    f.write(processVariableGroup('Autopilot', 'Autopilot.html'))
-    f.write(processVariableGroup('Control', 'Control.html'))
-    f.write(processVariableGroup('Electrics', 'Electrics.html'))
+    f.write(processVariableGroup('Autopilot', 'sources/Autopilot.html'))
+    f.write(processVariableGroup('Brake', 'sources/Brake.html'))
+    f.write(processVariableGroup('Control', 'sources/Control.html'))
+    f.write(processVariableGroup('Electrics', 'sources/Electrics.html'))
+    f.write(processVariableGroup('Engine', 'sources/Engine.html'))
+    f.write(processVariableGroup('FlightModel', 'sources/FlightModel.html'))
+    f.write(processVariableGroup('Fuel', 'sources/Fuel.html'))
+    f.write(processVariableGroup('Misc', 'sources/Misc.html'))
+    f.write(processVariableGroup('Radio', 'sources/Radio.html'))
+    f.write(processVariableGroup('System', 'sources/System.html'))
     f.write(getFlightSimClass())
 
 
-
+# TODO: check if types shouldn't be narrower e.g. Meter -> Distance
 # TODO: check how the following variables work
 # - Electrics.GENERAL_ENG_MASTER_ALTERNATOR - has index
 # - Electrics.BLEED_AIR_ENGINE - has index
@@ -138,3 +166,4 @@ with open('flightsim.py', 'w') as f:
 # - Some enums
 # - AUTOPILOT_MAX_BANK_ID - wtf is Integer type
 # - APU_BLEED_PRESSURE_RECEIVED_BY_ENGINE - not sure if unit is correct
+# TODO: split autopilot & brake into separate files, maybe rename FlightModel

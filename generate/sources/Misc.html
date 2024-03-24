@@ -1,0 +1,855 @@
+<div>
+    <h2 id="aircraft_misc_v">AIRCRAFT MISC VARIABLES</h2>
+    <p>The tables below indicate the properties for the <a href="../Simulation_Variables.htm">Simulation Variables</a>
+        that can be used to get and set properties various miscellaneous properties related to the aircraft. For
+        information on the units listed for each variable, please see here: <a
+            href="../Simulation_Variable_Units.htm">Simulation Variable Units</a></p>
+    <p><span class="note"><strong>NOTE</strong>: When <span data-keyref="game_name">Microsoft Flight Simulator</span> is
+            running in multiplayer mode, only a small number of variables are communicated between aircraft. Those
+            variables that are available will say so in the description as being either for "All Aircraft" or for
+            "Shared Cockpit".</span></p>
+    <p>You can find a complete index of all available SimVars here: <a href="../Simulation_Variables.htm#h">SimVar
+            Index</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="aircraft_states">Aircraft States</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 160px;">
+            <col style="width: 422px;">
+            <col style="width: 185px;">
+            <col style="width: 97px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="1">Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="AMBIENT IN CLOUD"></a><code class="inline">AMBIENT IN CLOUD</code></td>
+                <td colspan="1">True if the aircraft is in a cloud.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CONTRAILS_CONDITIONS_MET"></a><code class="inline">CONTRAILS CONDITIONS MET</code></td>
+                <td colspan="1" rowspan="1">True if the aircraft has met the conditions required to spawn the contrail
+                    VFX.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="IS_SLEW_ACTIVE"></a><code class="inline">IS SLEW ACTIVE</code></td>
+                <td>True if slew is active.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="IS_SLEW_ALLOWED"></a><code class="inline">IS SLEW ALLOWED</code></td>
+                <td>True if slew is enabled.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="IS_USER_SIM"></a><code class="inline">IS USER SIM</code></td>
+                <td colspan="1">Is this the user loaded aircraft.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ON_ANY_RUNWAY"></a><code class="inline">ON ANY RUNWAY</code></td>
+                <td colspan="1">Whether or not the plane is currently on a runway.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_IN_PARKING_STATE"></a><code class="inline">PLANE IN PARKING STATE</code></td>
+                <td colspan="1">Whether or not the plane is currently parked (true) or not (false).</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="SURFACE_CONDITION"></a><code class="inline">SURFACE CONDITION</code></td>
+                <td colspan="1" rowspan="1">The state of the surface directly under the aircraft.</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = Normal</li>
+                        <li>1 = Wet</li>
+                        <li>2 = Icy</li>
+                        <li>3 = Snow</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="SURFACE_INFO_VALID"></a><code class="inline">SURFACE INFO VALID</code></td>
+                <td colspan="1" rowspan="1">True indicates that the <code class="inline">SURFACE CONDITION</code> return
+                    value is meaningful.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="SURFACE_TYPE"></a><code class="inline">SURFACE TYPE</code></td>
+                <td colspan="1" rowspan="1">
+                    <p>The type of surface under the aircraft.</p>
+                </td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = Concrete</li>
+                        <li>1 = Grass</li>
+                        <li>2 = Water</li>
+                        <li>3 = Grass_bumpy</li>
+                        <li>4 = Asphalt</li>
+                        <li>5 = Short_grass</li>
+                        <li>6 = Long_grass</li>
+                        <li>7 = Hard_turf</li>
+                        <li>8 = Snow</li>
+                        <li>9 = Ice</li>
+                        <li>10 = Urban</li>
+                        <li>11 = Forest</li>
+                        <li>12 = Dirt</li>
+                        <li>13 = Coral</li>
+                        <li>14 = Gravel</li>
+                        <li>15 = Oil_treated</li>
+                        <li>16 = Steel_mats</li>
+                        <li>17 = Bituminus</li>
+                        <li>18 = Brick</li>
+                        <li>19 = Macadam</li>
+                        <li>20 = Planks</li>
+                        <li>21 = Sand</li>
+                        <li>22 = Shale</li>
+                        <li>23 = Tarmac</li>
+                        <li>24 = Wright flyer track</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STRUCTURAL_ICE_PCT"></a><code class="inline">STRUCTURAL ICE PCT</code></td>
+                <td colspan="1">Amount of ice on aircraft structure. 100 is fully iced.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TITLE"></a><code class="inline">TITLE</code></td>
+                <td colspan="1">Title from <a
+                        href="../../../Content_Configuration/SimObjects/Aircraft_SimO/aircraft_cfg.htm">aircraft.cfg</a>.
+                </td>
+                <td>
+                    <p>String</p>
+                    <p>(max 128 chars)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TOW_CONNECTION"></a><code class="inline">TOW CONNECTION</code></td>
+                <td colspan="1">True if a towline is connected to both tow plane and glider.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="WINDSHIELD_RAIN_EFFECT_AVAILABLE"></a><code
+                        class="inline">WINDSHIELD RAIN EFFECT AVAILABLE</code></td>
+                <td colspan="1">Is visual effect available on this aircraft.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="aircraft_positi">Aircraft Position, Direction And Speed</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col style="width: 197px;">
+            <col style="width: 535px;">
+            <col style="width: 158px;">
+            <col style="width: 1px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="ACCELERATION BODY X"></a><code class="inline">ACCELERATION BODY X</code></td>
+                <td>Acceleration relative to aircraft X axis, in east/west direction.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second squared</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ACCELERATION BODY Y"></a><code class="inline">ACCELERATION BODY Y</code></td>
+                <td>Acceleration relative to aircraft Y axis, in vertical direction.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second squared</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ACCELERATION BODY Z"></a><code class="inline">ACCELERATION BODY Z</code></td>
+                <td>Acceleration relative to aircraft Z axis, in north/south direction.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second squared</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ACCELERATION WORLD X"></a><code class="inline">ACCELERATION WORLD X</code></td>
+                <td>Acceleration relative to the earth X axis, in east/west direction.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second squared</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ACCELERATION WORLD Y"></a><code class="inline">ACCELERATION WORLD Y</code></td>
+                <td>Acceleration relative to the earth Y axis, in vertical direction.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second squared</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ACCELERATION WORLD Z"></a><code class="inline">ACCELERATION WORLD Z</code></td>
+                <td>Acceleration relative to the earth Z axis, in north/south direction.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second squared</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="SURFACE_RELATIVE_GROUND_SPEED"></a><code class="inline">SURFACE RELATIVE GROUND SPEED</code>
+                </td>
+                <td>The speed of the aircraft relative to the speed of the first surface directly underneath it. Use
+                    this to retrieve, for example, an aircraft's taxiing speed while it is moving on a moving carrier.
+                    It also applies to airborne aircraft, for example when a helicopter is successfully hovering above a
+                    moving ship, this value should be zero. The returned value will be the same as <code
+                        class="inline">GROUND VELOCITY</code> if the first surface beneath it is not moving.</td>
+                <td>Feet per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GROUND_VELOCITY"></a><code class="inline">GROUND VELOCITY</code></td>
+                <td>
+                    <p>Speed relative to the earths surface.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer&nbsp;to all
+                            <strong>far</strong> aircraft. See here for more information:&nbsp;<a
+                                href="../../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_ALTITUDE"></a><code class="inline">PLANE ALTITUDE</code></td>
+                <td>Altitude of aircraft.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_ALT_ABOVE_GROUND"></a><code class="inline">PLANE ALT ABOVE GROUND</code></td>
+                <td>Altitude above the surface.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_ALT_ABOVE_GROUND_MINUS_CG"></a><code
+                        class="inline">PLANE ALT ABOVE GROUND MINUS CG</code></td>
+                <td>Altitude above the surface minus CG.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_BANK_DEGREES"></a><code class="inline">PLANE BANK DEGREES</code></td>
+                <td>Bank angle, although the name mentions degrees the units used are radians.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_HEADING_DEGREES_GYRO"></a><code class="inline">PLANE HEADING DEGREES GYRO</code></td>
+                <td>Heading indicator taken from the aircraft gyro.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_HEADING_DEGREES_MAGNETIC"></a><code
+                        class="inline">PLANE HEADING DEGREES MAGNETIC</code></td>
+                <td>Heading relative to magnetic north - although the name mentions degrees the units used are radians.
+                </td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_HEADING_DEGREES_TRUE"></a><code class="inline">PLANE HEADING DEGREES TRUE</code></td>
+                <td>Heading relative to true north - although the name mentions degrees the units used are radians.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_LATITUDE"></a><code class="inline">PLANE LATITUDE</code></td>
+                <td>Latitude of aircraft, North is positive, South negative.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_LONGITUDE"></a><code class="inline">PLANE LONGITUDE</code></td>
+                <td>Longitude of aircraft, East is positive, West negative.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_PITCH_DEGREES"></a><code class="inline">PLANE PITCH DEGREES</code></td>
+                <td>Pitch angle, although the name mentions degrees the units used are radians.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_TOUCHDOWN_BANK_DEGREES"></a><code class="inline">PLANE TOUCHDOWN BANK DEGREES</code>
+                </td>
+                <td>This float represents the bank of the player's plane from the last touchdown.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_TOUCHDOWN_HEADING_DEGREES_MAGNETIC"></a><code
+                        class="inline">PLANE TOUCHDOWN HEADING DEGREES MAGNETIC</code></td>
+                <td>This float represents the magnetic heading of the player's plane from the last touchdown.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_TOUCHDOWN_HEADING_DEGREES_TRUE"></a><code
+                        class="inline">PLANE TOUCHDOWN HEADING DEGREES TRUE</code></td>
+                <td>This float represents the true heading of the player's plane from the last touchdown.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_TOUCHDOWN_LATITUDE"></a><code class="inline">PLANE TOUCHDOWN LATITUDE</code></td>
+                <td>This float represents the plane latitude for the last touchdown.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_TOUCHDOWN_LONGITUDE"></a><code class="inline">PLANE TOUCHDOWN LONGITUDE</code></td>
+                <td>This float represents the plane longitude for the last touchdown.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_TOUCHDOWN_NORMAL_VELOCITY"></a><code
+                        class="inline">PLANE TOUCHDOWN NORMAL VELOCITY</code></td>
+                <td>This float represents the player's plane speed according to ground normal from the last touchdown.
+                </td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="PLANE_TOUCHDOWN_PITCH_DEGREES"></a><code class="inline">PLANE TOUCHDOWN PITCH DEGREES</code>
+                </td>
+                <td>This float represents the pitch of the player's plane from the last touchdown.</td>
+                <td>Degrees</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RELATIVE_WIND_VELOCITY_BODY_X"></a><code class="inline">RELATIVE WIND VELOCITY BODY X</code>
+                </td>
+                <td>Lateral (X axis) speed relative to wind.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RELATIVE_WIND_VELOCITY_BODY_Y"></a><code class="inline">RELATIVE WIND VELOCITY BODY Y</code>
+                </td>
+                <td>Vertical (Y axis) speed relative to wind.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RELATIVE_WIND_VELOCITY_BODY_Z"></a><code class="inline">RELATIVE WIND VELOCITY BODY Z</code>
+                </td>
+                <td>Longitudinal (Z axis) speed relative to wind.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr class="rh-cursor-row">
+                <td><a id="ROTATION_ACCELERATION_BODY_X"></a><code class="inline">ROTATION ACCELERATION BODY X</code>
+                </td>
+                <td>Rotation acceleration relative to aircraft X axis.</td>
+                <td>Radians per second squared</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ROTATION_ACCELERATION_BODY_Y"></a><code class="inline">ROTATION ACCELERATION BODY Y</code>
+                </td>
+                <td>Rotation acceleration relative to aircraft Y axis.</td>
+                <td>Radians per second squared</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ROTATION_ACCELERATION_BODY_Z"></a><code class="inline">ROTATION ACCELERATION BODY Z</code>
+                </td>
+                <td>Rotation acceleration relative to aircraft Z axis.</td>
+                <td>Radians per second squared</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ROTATION_VELOCITY_BODY_X"></a><code class="inline">ROTATION VELOCITY BODY X</code></td>
+                <td>Rotation velocity relative to aircraft X axis.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ROTATION_VELOCITY_BODY_Y"></a><code class="inline">ROTATION VELOCITY BODY Y</code></td>
+                <td>Rotation velocity relative to aircraft Y axis.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="ROTATION_VELOCITY_BODY_Z"></a><code class="inline">ROTATION VELOCITY BODY Z</code></td>
+                <td>Rotation velocity relative to aircraft Z axis.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="SLOPE_TO_ATC_RUNWAY"></a><code class="inline">SLOPE TO ATC RUNWAY</code></td>
+                <td>The slope between the plane and the expected landing position of the runway. Returns 0 if no runway
+                    is assigned.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="VELOCITY_BODY_X"></a><code class="inline">VELOCITY BODY X</code></td>
+                <td>True lateral speed, relative to aircraft X axis.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="VELOCITY_BODY_Y"></a><code class="inline">VELOCITY BODY Y</code></td>
+                <td>True vertical speed, relative to aircraft Y axis.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="VELOCITY_BODY_Z"></a><code class="inline">VELOCITY BODY Z</code></td>
+                <td>True longitudinal speed, relative to aircraft Z axis.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="VERTICAL_SPEED"></a><code class="inline">VERTICAL SPEED</code></td>
+                <td>The current indicated vertical speed for the aircraft.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>) per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="aircraft_struct">Aircraft Structs</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col style="width: 424px;">
+            <col style="width: 1px;">
+            <col style="width: 1px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="EYEPOINT_POSITION"></a><code class="inline">EYEPOINT POSITION</code></td>
+                <td>The eyepoint position relative to the reference datum position for the aircraft.</td>
+                <td>
+                    <p><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_XYZ.htm"><code
+                                class="inline">SIMCONNECT_DATA_XYZ</code></a></p>
+                    <p>feet</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STRUC_AIRSPEED_HOLD_PID_CONSTS"></a><code
+                        class="inline">STRUC AIRSPEED HOLD PID CONSTS</code></td>
+                <td>Returns the various airspeed <a href="#"
+                        data-popovertext="A 'Proportional–Integral–Derivative' controller is a control loop mechanism employing feedback for systems requiring continuously modulated control. A PID controller continuously calculates an error value as the difference between a desired setpoint and a measured process variable and applies a correction based on proportional, integral, and derivative terms."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">PID</a> constants. This is
+                    generally only used for AI controlled aircraft and boats, although it may be useful when working
+                    with RTCs and the user aircraft.</td>
+                <td>
+                    <p><code class="inline"><a href="../Simulation_Variable_Units.htm#PID_STRUCT">PID_STRUCT</a></code>
+                    </p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STRUC_HEADING_HOLD_PID_CONSTS"></a><code class="inline">STRUC HEADING HOLD PID CONSTS</code>
+                </td>
+                <td>Returns the various airspeed <a href="#"
+                        data-popovertext="A 'Proportional–Integral–Derivative' controller is a control loop mechanism employing feedback for systems requiring continuously modulated control. A PID controller continuously calculates an error value as the difference between a desired setpoint and a measured process variable and applies a correction based on proportional, integral, and derivative terms."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">PID</a> constants. This is
+                    generally only used for AI controlled aircraft and boats, although it may be useful when working
+                    with RTCs and the user aircraft.</td>
+                <td>
+                    <p><code class="inline"><a href="../Simulation_Variable_Units.htm#PID_STRUCT">PID_STRUCT</a></code>
+                    </p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STRUCT_BODY_ROTATION_ACCELERATION"></a><code
+                        class="inline">STRUCT BODY ROTATION ACCELERATION</code></td>
+                <td>The body rotation acceleration.</td>
+                <td>
+                    <p><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_XYZ.htm"><code
+                                class="inline">SIMCONNECT_DATA_XYZ</code></a></p>
+                    <p>radians per second</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STRUCT_BODY_ROTATION_VELOCITY"></a><code class="inline">STRUCT BODY ROTATION VELOCITY</code>
+                </td>
+                <td>The body rotation velocity.</td>
+                <td>
+                    <p><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_XYZ.htm"><code
+                                class="inline">SIMCONNECT_DATA_XYZ</code></a></p>
+                    <p>radians per second</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STRUCT_BODY_VELOCITY"></a><code class="inline">STRUCT BODY VELOCITY</code></td>
+                <td>The object body velocity.</td>
+                <td>
+                    <p><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_XYZ.htm"><code
+                                class="inline">SIMCONNECT_DATA_XYZ</code></a></p>
+                    <p>feet per second</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STRUCT_ENGINE_POSITION"></a><code class="inline">STRUCT ENGINE POSITION:index</code></td>
+                <td>The position of the indexed engine relative to the <a
+                        href="../../../Content_Configuration/SimObjects/Aircraft_SimO/Aircraft.htm#h">Datum Reference
+                        Point</a> for the aircraft.</td>
+                <td>
+                    <p><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_XYZ.htm"><code
+                                class="inline">SIMCONNECT_DATA_XYZ</code></a></p>
+                    <p>feet.</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STRUCT_EYEPOINT_DYNAMIC_ANGLE"></a><code class="inline">STRUCT EYEPOINT DYNAMIC ANGLE</code>
+                </td>
+                <td>The angle of the eyepoint view. Zero, zero, zero is straight ahead.</td>
+                <td>
+                    <p><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_XYZ.htm"><code
+                                class="inline">SIMCONNECT_DATA_XYZ</code></a></p>
+                    <p>radians</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STRUCT_EYEPOINT_DYNAMIC_OFFSET"></a><code
+                        class="inline">STRUCT EYEPOINT DYNAMIC OFFSET</code></td>
+                <td>A variable offset away from the EYEPOINT POSITION.</td>
+                <td>
+                    <p><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_XYZ.htm"><code
+                                class="inline">SIMCONNECT_DATA_XYZ</code></a></p>
+                    <p>feet</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STRUCT_LATLONALT"></a><code class="inline">STRUCT LATLONALT</code></td>
+                <td>Returns the latitude, longitude and altitude of the user aircraft.</td>
+                <td><a href="../../SimConnect/API_Reference/Structures_And_Enumerations/SIMCONNECT_DATA_LATLONALT.htm"><code
+                            class="inline">SIMCONNECT_DATA_LATLONALT</code></a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STRUCT_LATLONALTPBH"></a><code class="inline">STRUCT LATLONALTPBH</code></td>
+                <td>Returns the lattitude, longitude, altitude, pitch, bank and heading of the user aircraft.</td>
+                <td>Returns a struct with 6 values: lat, lon, alt, pitch, bank, heading</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="airspeed">Airspeed</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="AIRCRAFT WIND X"></a><code class="inline">AIRCRAFT WIND X</code></td>
+                <td>Wind component in aircraft lateral (X) axis.</td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AIRCRAFT WIND Y"></a><code class="inline">AIRCRAFT WIND Y</code></td>
+                <td>Wind component in aircraft vertical (Y) axis.</td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td><a id="AIRCRAFT WIND Z"></a><code class="inline">AIRCRAFT WIND Z</code></td>
+                <td>Wind component in aircraft longitudinal (Z) axis.</td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AIRSPEED BARBER POLE"></a><code class="inline">AIRSPEED BARBER POLE</code></td>
+                <td>Redline airspeed (dynamic on some aircraft).</td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AIRSPEED INDICATED"></a><code class="inline">AIRSPEED INDICATED</code></td>
+                <td>Indicated airspeed.</td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AIRSPEED MACH"></a><code class="inline">AIRSPEED MACH</code></td>
+                <td>Current mach.</td>
+                <td><a href="#"
+                        data-popovertext="A mach number is the ratio of an aircraft's speed relative to the speed of sound. So, an aircraft travelling at the speed of sound is travelling at 'mach 1'."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Mach</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AIRSPEED SELECT INDICATED OR TRUE"></a><code
+                        class="inline">AIRSPEED SELECT INDICATED OR TRUE</code></td>
+                <td>The airspeed, whether true or indicated airspeed has been selected.</td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AIRSPEED TRUE"></a><code class="inline">AIRSPEED TRUE</code></td>
+                <td>True airspeed.</td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AIRSPEED TRUE RAW"></a><code class="inline">AIRSPEED TRUE RAW</code></td>
+                <td>Equivalent to <code class="inline">AIRSPEED TRUE</code>, but does not account for wind when used to
+                    Set Airspeed value</td>
+                <td><a href="#"
+                        data-popovertext="The 'knot' is a unit of speed equal to one nautical mile per hour, which is 1.852 km/h using the metric scale and approximately 1.15078 mph using the imperial scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Knot</a>s</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BARBER_POLE_MACH"></a><code class="inline">BARBER POLE MACH</code></td>
+                <td>Mach associated with maximum airspeed.</td>
+                <td><a href="#"
+                        data-popovertext="A mach number is the ratio of an aircraft's speed relative to the speed of sound. So, an aircraft travelling at the speed of sound is travelling at 'mach 1'."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Mach</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TOTAL_VELOCITY"></a><code class="inline">TOTAL VELOCITY</code></td>
+                <td>Velocity regardless of direction. For example, if a helicopter is ascending vertically at 100 fps,
+                    getting this variable will return 100.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a> per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="WINDSHIELD_WIND_VELOCITY"></a><code class="inline">WINDSHIELD WIND VELOCITY</code></td>
+                <td>Longitudinal speed of wind on the windshield.</td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a> per second</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="temperature">Temperature</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th>Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="STANDARD_ATM_TEMPERATURE"></a><code class="inline">STANDARD ATM TEMPERATURE</code></td>
+                <td>Outside temperature on the standard ATM scale.</td>
+                <td><a href="#"
+                        data-popovertext="The Rankine scale is used in engineering systems where heat computations are done using degrees Fahrenheit. The simple formula for calculating it is °F + 460."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Rankine</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TOTAL_AIR_TEMPERATURE"></a><code class="inline">TOTAL AIR TEMPERATURE</code></td>
+                <td>Total air temperature is the air temperature at the front of the aircraft where the ram pressure
+                    from the speed of the aircraft is taken into account.</td>
+                <td>Celsius</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+</div>

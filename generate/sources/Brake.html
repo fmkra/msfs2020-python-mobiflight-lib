@@ -1,0 +1,824 @@
+<div>
+    <h2 id="aircraft_brake_">AIRCRAFT BRAKE / LANDING GEAR VARIABLES</h2>
+    <p>The tables below indicate the properties for the <a href="../Simulation_Variables.htm">Simulation Variables</a>
+        that can be used to get and set properties related to the brakes and landing gear control systems. For
+        information on the units listed for each variable, please see here: <a
+            href="../Simulation_Variable_Units.htm">Simulation Variable Units</a></p>
+    <p><span class="note"><strong>NOTE</strong>: When <span data-keyref="game_name">Microsoft Flight Simulator</span> is
+            running in multiplayer mode, only a small number of variables are communicated between aircraft. Those
+            variables that are available will say so in the description as being either for "All Aircraft" or for
+            "Shared Cockpit".</span></p>
+    <p>You can find a complete index of all available SimVars here: <a href="../Simulation_Variables.htm#h">SimVar
+            Index</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="brakes">Brakes</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col style="width: 455px;">
+            <col style="width: 120px;">
+            <col style="width: 109px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="1">Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="ANTISKID BRAKES ACTIVE"></a><code class="inline">ANTISKID BRAKES ACTIVE</code></td>
+                <td colspan="1">True if antiskid brakes active. This can be set using the <code
+                        class="inline"><a href="../../../Content_Configuration/Flights_And_Missions/Flight_Definitions.htm#AntiSkidActive">AntiSkidActive</a></code>
+                    parameter.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTOBRAKES ACTIVE"></a><code class="inline">AUTOBRAKES ACTIVE</code></td>
+                <td colspan="1">Whether or not the AutoBrakes are currently active.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUTO BRAKE SWITCH CB"></a><code class="inline">AUTO BRAKE SWITCH CB</code></td>
+                <td colspan="1">Auto brake switch position</td>
+                <td>Number</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BRAKE DEPENDENT HYDRAULIC PRESSURE"></a><code
+                        class="inline">BRAKE DEPENDENT HYDRAULIC PRESSURE</code></td>
+                <td colspan="1">Brake dependent hydraulic pressure reading</td>
+                <td>Pounds per square foot (<a href="#"
+                        data-popovertext="Stands for 'Pound per Square Foot' which is a unit of pressure or of stress based on imperial units. It is the pressure resulting from a force of one pound-force applied to an area of one square foot. 1 pound per square foot equals 47.8803 pascals in metric units."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">psf</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BRAKE INDICATOR"></a><code class="inline">BRAKE INDICATOR</code></td>
+                <td colspan="1">Brake on indication</td>
+                <td>
+                    <p>Position</p>
+                    <p>(0 to 16K)</p>
+                    <p>0 = off</p>
+                    <p>16K = full</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BRAKE LEFT POSITION"></a><code class="inline">BRAKE LEFT POSITION</code></td>
+                <td colspan="1">
+                    <p>Percent left brake.</p>
+                    <p>Note that this SimVar no longer sets the right brake percent and simply triggers a brake pressure
+                        increase regardless of the value passed.</p>
+                </td>
+                <td>
+                    <p>Position</p>
+                    <p>(0 to 32K)</p>
+                    <p>0 = off</p>
+                    <p>32K = full</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BRAKE LEFT POSITION EX1"></a><code class="inline">BRAKE LEFT POSITION EX1</code></td>
+                <td colspan="1">Triggers a brake pressure increase on the left brake regardless of the value passed.
+                </td>
+                <td>
+                    <p>Position</p>
+                    <p>(0 to 32K)</p>
+                    <p>0 = off</p>
+                    <p>32K = full</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BRAKE PARKING INDICATOR"></a><code class="inline">BRAKE PARKING INDICATOR</code></td>
+                <td colspan="1">Parking brake indicator</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BRAKE PARKING POSITION"></a><code class="inline">BRAKE PARKING POSITION</code></td>
+                <td>
+                    <p>Gets the parking brake position - either on (true) or off (false).</p>
+                </td>
+                <td>
+                    <p>Bool</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BRAKE RIGHT POSITION"></a><code class="inline">BRAKE RIGHT POSITION</code></td>
+                <td colspan="1">
+                    <p>Percent right brake.</p>
+                </td>
+                <td>
+                    <p>Position</p>
+                    <p>(0 to 32K)</p>
+                    <p>0 = off</p>
+                    <p>32K = full</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="BRAKE RIGHT POSITION EX1"></a><code class="inline">BRAKE RIGHT POSITION EX1</code></td>
+                <td colspan="1">Triggers a brake pressure increase on the right brake regardless of the value passed.
+                </td>
+                <td>
+                    <p>Position</p>
+                    <p>(0 to 32K)</p>
+                    <p>0 = off</p>
+                    <p>32K = full</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="REJECTED_TAKEOFF_BRAKES_ACTIVE"></a><code
+                        class="inline">REJECTED TAKEOFF BRAKES ACTIVE</code></td>
+                <td colspan="1">Whether or not the rejected takeoff brakes are currently active.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TOE_BRAKES_AVAILABLE"></a><code class="inline">TOE BRAKES AVAILABLE</code></td>
+                <td colspan="1">True if toe brakes are available</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="contact_points">Contact Points</h3>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="2">Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="CONTACT_POINT_COMPRESSION"></a><code class="inline">CONTACT POINT COMPRESSION:index</code>
+                </td>
+                <td colspan="2">The percentage value representing the amount the contact point is compressed. Index is
+                    from 0-19.</td>
+                <td>Position</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CONTACT_POINT_IS_ON_GROUND"></a><code class="inline">CONTACT POINT IS ON GROUND:index</code>
+                </td>
+                <td colspan="2">Returns true if the indexed contact point is on the ground, or will return false
+                    otherwise. Index is from 0 - 19.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CONTACT_POINT_IS_SKIDDING"></a><code class="inline">CONTACT POINT IS SKIDDING:index</code>
+                </td>
+                <td colspan="2">Returns true if the indexed contact point is skidding, or will return false otherwise.
+                    Index is from 0 - 19.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CONTACT_POINT_POSITION"></a><code class="inline">CONTACT POINT POSITION:index</code></td>
+                <td colspan="2">The currently extended position of the (retractable) contact point, expressed as a
+                    percentage. Index is from 0 - 19.</td>
+                <td>Position</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CONTACT_POINT_SKIDDING_FACTOR"></a><code
+                        class="inline">CONTACT POINT SKIDDING FACTOR:index</code></td>
+                <td colspan="2">The skidding factor associated with the indexed contact point, from 0 to 1. Index is
+                    from 0 - 19.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CONTACT_POINT_WATER_DEPTH"></a><code class="inline">CONTACT POINT WATER DEPTH:index</code>
+                </td>
+                <td colspan="2">This returns the depth of the water for the indexed contact point. Index is from 0 - 19.
+                </td>
+                <td>Feet (<a href="#"
+                        data-popovertext="The 'foot' (or 'feet' in plural) is an Imperial unit of measurement, and is approximately 0.3 meters on the metric scale."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">ft</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3 id="landing_gear">Landing Gear</h3>
+    <p>These SimVars are related to the landing gear of the aircraft. Note that some of them require an <em>index</em>
+        to identify the landing gear. This index value should be one of the following:</p>
+    <ul>
+        <li>0 = Center Gear</li>
+        <li>1 = Left Gear</li>
+        <li>2 = Right Gear</li>
+        <li>3 = Auxiliary Gear</li>
+        <li>4 = Left Water Rudder</li>
+        <li>5 = Right Water Rudder</li>
+        <li>6 = Left Float Retracted</li>
+        <li>7 = Right Float Retracted</li>
+        <li>8 = Left Ski Retracted</li>
+        <li>9 = Right Ski Retracted</li>
+        <li>10 = Center Front Skid</li>
+        <li>11 = Center Rear Skid</li>
+        <li>12 = Left Front Skid</li>
+        <li>13 = Left Rear Skid</li>
+        <li>14 = Right Front Skid</li>
+        <li>15 = Right Rear Skid</li>
+    </ul>
+    <p>&nbsp;</p>
+    <table style="table-layout:auto;">
+        <colgroup>
+            <col>
+            <col>
+            <col style="width: 231px;">
+            <col style="width: 1px;">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Simulation Variable</th>
+                <th colspan="1">Description</th>
+                <th>Units</th>
+                <th>Settable</th>
+            </tr>
+            <tr>
+                <td><a id="AUX WHEEL ROTATION ANGLE"></a><code class="inline">AUX WHEEL ROTATION ANGLE</code></td>
+                <td colspan="1">Aux wheel rotation angle (rotation around the axis for the wheel).</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="AUX WHEEL RPM"></a><code class="inline">AUX WHEEL RPM</code></td>
+                <td colspan="1">Rpm of fourth set of gear wheels.</td>
+                <td><a href="#"
+                        data-popovertext="This stands for 'Revolutions Per Minute' and is used to measure engine speed and power."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RPM</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CENTER WHEEL ROTATION ANGLE"></a><code class="inline">CENTER WHEEL ROTATION ANGLE</code></td>
+                <td colspan="1">
+                    <p>Center wheel rotation angle (rotation around the axis for the wheel).</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer<span> to
+                                all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See here for more
+                            information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="CENTER WHEEL RPM"></a><code class="inline">CENTER WHEEL RPM</code></td>
+                <td colspan="1">Center landing gear rpm.</td>
+                <td><a href="#"
+                        data-popovertext="This stands for 'Revolutions Per Minute' and is used to measure engine speed and power."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RPM</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_ANIMATION_POSITION"></a><code class="inline">GEAR ANIMATION POSITION:index</code></td>
+                <td colspan="1">Percent indexed gear animation extended. <span class="note"><strong>NOTE</strong>: This
+                        is available in multiplayer<span> to all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See
+                        here for more information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On
+                            SimVars In Multiplayer</a>.</span></td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_AUX_POSITION"></a><code class="inline">GEAR AUX POSITION</code></td>
+                <td colspan="1">Percent auxiliary gear extended.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_AUX_STEER_ANGLE"></a><code class="inline">GEAR AUX STEER ANGLE</code></td>
+                <td colspan="1">Aux wheel angle, negative to the left, positive to the right. The aux wheel is the
+                    fourth set of landing gear, sometimes used on helicopters.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_AUX_STEER_ANGLE_PCT"></a><code class="inline">GEAR AUX STEER ANGLE PCT</code></td>
+                <td colspan="1">Aux steer angle as a percentage.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_CENTER_POSITION"></a><code class="inline">GEAR CENTER POSITION</code></td>
+                <td colspan="1">Percent center gear extended.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_CENTER_STEER_ANGLE"></a><code class="inline">GEAR CENTER STEER ANGLE</code></td>
+                <td colspan="1">
+                    <p>Center wheel angle, negative to the left, positive to the right.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer<span> to
+                                all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See here for more
+                            information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_CENTER_STEER_ANGLE_PCT"></a><code class="inline">GEAR CENTER STEER ANGLE PCT</code></td>
+                <td colspan="1">Center steer angle as a percentage.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_DAMAGE_BY_SPEED"></a><code class="inline">GEAR DAMAGE BY SPEED</code></td>
+                <td colspan="1">True if gear has been damaged by excessive speed.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_EMERGENCY_HANDLE_POSITION"></a><code
+                        class="inline">GEAR EMERGENCY HANDLE POSITION</code></td>
+                <td colspan="1">True if gear emergency handle applied.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_HANDLE_POSITION"></a><code class="inline">GEAR HANDLE POSITION</code></td>
+                <td>The gear handle position, where 0 means the handle is retracted and 1 is the handle fully applied.
+                </td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_HYDRAULIC_PRESSURE"></a><code class="inline">GEAR HYDRAULIC PRESSURE</code></td>
+                <td colspan="1">Gear hydraulic pressure.</td>
+                <td>Pound force per square foot (<a href="#"
+                        data-popovertext="Stands for 'Pound per Square Foot' which is a unit of pressure or of stress based on imperial units. It is the pressure resulting from a force of one pound-force applied to an area of one square foot. 1 pound per square foot equals 47.8803 pascals in metric units."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">psf</a>)</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_IS_ON_GROUND"></a><code class="inline">GEAR IS ON GROUND:index</code></td>
+                <td colspan="1">True if the gear is on the ground.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_IS_SKIDDING"></a><code class="inline">GEAR IS SKIDDING:index</code></td>
+                <td colspan="1">True if the gear is skidding.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_LEFT_POSITION"></a><code class="inline">GEAR LEFT POSITION</code></td>
+                <td colspan="1">Percent left gear extended.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_LEFT_STEER_ANGLE"></a><code class="inline">GEAR LEFT STEER ANGLE</code></td>
+                <td colspan="1">
+                    <p>Left wheel angle, negative to the left, positive to the right.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer<span> to
+                                all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See here for more
+                            information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_LEFT_STEER_ANGLE_PCT"></a><code class="inline">GEAR LEFT STEER ANGLE PCT</code></td>
+                <td colspan="1">Left steer angle as a percentage.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_POSITION"></a><code class="inline">GEAR POSITION:index</code></td>
+                <td colspan="1">
+                    <p>Position of landing gear.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer<span> to
+                                all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See here for more
+                            information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>
+                    <p>Enum:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = unknown</li>
+                        <li>1 = up</li>
+                        <li>2 = down</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_RIGHT_POSITION"></a><code class="inline">GEAR RIGHT POSITION</code></td>
+                <td colspan="1">Percent right gear extended.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_RIGHT_STEER_ANGLE"></a><code class="inline">GEAR RIGHT STEER ANGLE</code></td>
+                <td colspan="1">
+                    <p>Right wheel angle, negative to the left, positive to the right.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer<span> to
+                                all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See here for more
+                            information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_RIGHT_STEER_ANGLE_PCT"></a><code class="inline">GEAR RIGHT STEER ANGLE PCT</code></td>
+                <td colspan="1">Right steer angle as a percentage.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR SKIDDING FACTOR"></a><code class="inline">GEAR SKIDDING FACTOR</code></td>
+                <td colspan="1">The gear skidding factor, expressed as a value between 0 and 1.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_SPEED_EXCEEDED"></a><code class="inline">GEAR SPEED EXCEEDED</code></td>
+                <td colspan="1">True if safe speed limit for gear exceeded.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_STEER_ANGLE"></a><code class="inline">GEAR STEER ANGLE:index</code></td>
+                <td colspan="1">
+                    <p>Alternative method of getting the steer angle.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is available in multiplayer<span> to
+                                all&nbsp;<strong>near</strong>&nbsp;aircraft</span>. See here for more
+                            information:&nbsp;<a href="../Simulation_Variables.htm#multiplayer">Note On SimVars In
+                                Multiplayer</a>.</span></p>
+                </td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_STEER_ANGLE_PCT"></a><code class="inline">GEAR STEER ANGLE PCT:index</code></td>
+                <td colspan="1">Alternative method of getting steer angle as a percentage.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a id="GEAR_TAIL_POSITION"></a><code
+                        class="inline">GEAR TAIL POSITION</code><span class="deprecated"></span></td>
+                <td colspan="1" style="background-color: rgba(255, 0, 0, 0.10)">
+                    <p>Percent tail gear extended.</p>
+                    <p><span class="note"><strong>NOTE</strong>: This is a <strong>deprecated</strong> legacy SimVar and
+                            should not be used, as it will always return 0.</span></p>
+                </td>
+                <td style="background-color: rgba(255, 0, 0, 0.10)"><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;background-color: rgba(255, 0, 0, 0.10)"><span class="checkmark"> <span
+                            class="checkmark_circle_red"></span> <span class="checkmark_right"></span> <span
+                            class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_TOTAL_PCT_EXTENDED"></a><code class="inline">GEAR TOTAL PCT EXTENDED</code></td>
+                <td colspan="1">Percent total gear extended.</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_WARNING"></a><code class="inline">GEAR WARNING:index</code></td>
+                <td colspan="1">
+                    <p>Gear warnings.</p>
+                </td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>0 = None</li>
+                        <li>1 = Gear Up</li>
+                        <li>2 = Amphibious Gear Up</li>
+                        <li>3 = Amphibious Gear Down</li>
+                        <li>4 = On Ground Handle Up</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="GEAR_WATER_DEPTH"></a><code class="inline">GEAR WATER DEPTH</code></td>
+                <td colspan="1">The depth of the gear in the water.</td>
+                <td>Centimeters</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="IS_GEAR_FLOATS"></a><code class="inline">IS GEAR FLOATS</code></td>
+                <td colspan="1">True if landing gear are floats</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="IS_GEAR_RETRACTABLE"></a><code class="inline">IS GEAR RETRACTABLE</code></td>
+                <td colspan="1">True if gear can be retracted</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="IS_GEAR_SKIDS"></a><code class="inline">IS GEAR SKIDS</code></td>
+                <td colspan="1">True if landing gear is skids</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="IS_GEAR_SKIS"></a><code class="inline">IS GEAR SKIS</code></td>
+                <td colspan="1">True if landing gear is skis</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="IS_GEAR_WHEELS"></a><code class="inline">IS GEAR WHEELS</code></td>
+                <td colspan="1">True if landing gear is wheels</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="LEFT_WHEEL_ROTATION_ANGLE"></a><code class="inline">LEFT WHEEL ROTATION ANGLE</code></td>
+                <td colspan="1">Left wheel rotation angle (rotation around the axis for the wheel).</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="LEFT_WHEEL_RPM"></a><code class="inline">LEFT WHEEL RPM</code></td>
+                <td colspan="1">Left landing gear rpm</td>
+                <td><a href="#"
+                        data-popovertext="This stands for 'Revolutions Per Minute' and is used to measure engine speed and power."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RPM</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NOSEWHEEL_LOCK_ON"></a><code class="inline">NOSEWHEEL LOCK ON</code></td>
+                <td colspan="1">True if the nosewheel lock is engaged. This can be set using the <code
+                        class="inline"><a href="../../../Content_Configuration/Flights_And_Missions/Flight_Definitions.htm#NosewheelLock">NosewheelLock</a></code>
+                    parameter.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="NOSEWHEEL_MAX_STEERING_ANGLE"></a><code class="inline">NOSEWHEEL MAX STEERING ANGLE</code>
+                </td>
+                <td colspan="1">Can be used to get or set the maximum permitted steering angle for the nose wheel of the
+                    aircraft.</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RETRACT_FLOAT_SWITCH"></a><code class="inline">RETRACT FLOAT SWITCH</code></td>
+                <td colspan="1">True if retract float switch on</td>
+                <td>
+                    <p><u>Enum</u>:</p>
+                    <ol class="minitoc-list">
+                        <li>-1: Retracted</li>
+                        <li>0: Neutral</li>
+                        <li>1: Extended</li>
+                    </ol>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RETRACT_LEFT_FLOAT_EXTENDED"></a><code class="inline">RETRACT LEFT FLOAT EXTENDED</code></td>
+                <td colspan="1">If aircraft has retractable floats.</td>
+                <td>
+                    <p>Percent</p>
+                    <p>(0 is fully retracted, 100 is fully extended)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RETRACT_RIGHT_FLOAT_EXTENDED"></a><code class="inline">RETRACT RIGHT FLOAT EXTENDED</code>
+                </td>
+                <td colspan="1">If aircraft has retractable floats.</td>
+                <td>
+                    <p>Percent</p>
+                    <p>(0 is fully retracted, 100 is fully extended)</p>
+                </td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RIGHT_WHEEL_ROTATION_ANGLE"></a><code class="inline">RIGHT WHEEL ROTATION ANGLE</code></td>
+                <td colspan="1">Right wheel rotation angle (rotation around the axis for the wheel).</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="RIGHT_WHEEL_RPM"></a><code class="inline">RIGHT WHEEL RPM</code></td>
+                <td colspan="1">Right landing gear rpm.</td>
+                <td><a href="#"
+                        data-popovertext="This stands for 'Revolutions Per Minute' and is used to measure engine speed and power."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RPM</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="STEER_INPUT_CONTROL"></a><code class="inline">STEER INPUT CONTROL</code></td>
+                <td colspan="1">Position of steering tiller.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="TAILWHEEL_LOCK_ON"></a><code class="inline">TAILWHEEL LOCK ON</code></td>
+                <td colspan="1">True if tailwheel lock applied. This can be set using the <code
+                        class="inline"><a href="../../../Content_Configuration/Flights_And_Missions/Flight_Definitions.htm#TailwheelLock">TailwheelLock</a></code>
+                    parameter.</td>
+                <td>Bool</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="WATER_LEFT_RUDDER_EXTENDED"></a><code class="inline">WATER LEFT RUDDER EXTENDED</code></td>
+                <td colspan="1">Percent extended.</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="WATER_LEFT_RUDDER_STEER_ANGLE"></a><code class="inline">WATER LEFT RUDDER STEER ANGLE</code>
+                </td>
+                <td colspan="1">Water left rudder angle, negative to the left, positive to the right.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="WATER_LEFT_RUDDER_STEER_ANGLE_PCT"></a><code
+                        class="inline">WATER LEFT RUDDER STEER ANGLE PCT</code></td>
+                <td colspan="1">Water left rudder angle as a percentage.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="WATER_RIGHT_RUDDER_EXTENDED"></a><code class="inline">WATER RIGHT RUDDER EXTENDED</code></td>
+                <td colspan="1">Percent extended.</td>
+                <td>Percent</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="WATER_RIGHT_RUDDER_STEER_ANGLE"></a><code
+                        class="inline">WATER RIGHT RUDDER STEER ANGLE</code></td>
+                <td colspan="1">Water right rudder angle, negative to the left, positive to the right.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="WATER_RIGHT_RUDDER_STEER_ANGLE_PCT"></a><code
+                        class="inline">WATER RIGHT RUDDER STEER ANGLE PCT</code></td>
+                <td colspan="1">Water right rudder as a percentage.</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="WATER_RUDDER_HANDLE_POSITION"></a><code class="inline">WATER RUDDER HANDLE POSITION</code>
+                </td>
+                <td>Position of the water rudder handle (0 handle retracted, 1 rudder handle applied).</td>
+                <td><a href="#"
+                        data-popovertext="The unit description 'percent over 100' means that the units are calculated as a percentage value divided by 100, such that the progression of values always falls within the range of 0 and 1."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">Percent Over 100</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle"></span> <span
+                            class="checkmark_stem"></span> <span class="checkmark_kick"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="WHEEL_ROTATION_ANGLE"></a><code class="inline">WHEEL ROTATION ANGLE:index</code></td>
+                <td colspan="1">Wheel rotation angle (rotation around the axis for the wheel).</td>
+                <td>Radians</td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+            <tr>
+                <td><a id="WHEEL_RPM"></a><code class="inline">WHEEL RPM:index</code></td>
+                <td colspan="1">Wheel rpm.</td>
+                <td><a href="#"
+                        data-popovertext="This stands for 'Revolutions Per Minute' and is used to measure engine speed and power."
+                        data-rhwidget="TextPopOver" aria-haspopup="true" role="button">RPM</a></td>
+                <td style="text-align: center;"><span class="checkmark"> <span class="checkmark_circle_red"></span>
+                        <span class="checkmark_right"></span> <span class="checkmark_left"></span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+</div>
