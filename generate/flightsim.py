@@ -555,12 +555,11 @@ class _FlightSim_Autopilot_AUTOPILOT_MAX_BANK:
 
 
 # Returns the index of the current maximum bank setting of the autopilot.
-#! Integer
 class _FlightSim_Autopilot_AUTOPILOT_MAX_BANK_ID:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'int'):
         return self._.get(f"(A:AUTOPILOT MAX BANK ID,{unit.value})")
 
 
@@ -1468,12 +1467,11 @@ class _FlightSim_Brake_GEAR_HANDLE_POSITION:
 
 
 # Gear hydraulic pressure.
-#! Pound force per square foot (psf)
 class _FlightSim_Brake_GEAR_HYDRAULIC_PRESSURE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_FOOT'):
         return self._.get(f"(A:GEAR HYDRAULIC PRESSURE,{unit.value})")
 
 
@@ -1761,24 +1759,22 @@ class _FlightSim_Brake_RETRACT_FLOAT_SWITCH:
 
 
 # If aircraft has retractable floats.
-#! Percent
-# (0 is fully retracted, 100 is fully extended)
 class _FlightSim_Brake_RETRACT_LEFT_FLOAT_EXTENDED:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Miscellaneous.PERCENT'):
+        # unit: Percent (0 is fully retracted, 100 is fully extended)
         return self._.get(f"(A:RETRACT LEFT FLOAT EXTENDED,{unit.value})")
 
 
 # If aircraft has retractable floats.
-#! Percent
-# (0 is fully retracted, 100 is fully extended)
 class _FlightSim_Brake_RETRACT_RIGHT_FLOAT_EXTENDED:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Miscellaneous.PERCENT'):
+        # unit: Percent (0 is fully retracted, 100 is fully extended)
         return self._.get(f"(A:RETRACT RIGHT FLOAT EXTENDED,{unit.value})")
 
 
@@ -2590,45 +2586,38 @@ class _FlightSim_Control_SPOILER_AVAILABLE:
 
 
 # Spoiler handle position.
-#! Percent Over 100
-# or
-# Position
-# (16K = down, 0 = up)
 class _FlightSim_Control_SPOILERS_HANDLE_POSITION:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Miscellaneous.PERCENT_OVER_100 | FlightSim.Unit.Miscellaneous.POSITION'):
+        # unit: Percent Over 100 or Position (16K = down, 0 = up)
         return self._.get(f"(A:SPOILERS HANDLE POSITION,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Miscellaneous.PERCENT_OVER_100 | FlightSim.Unit.Miscellaneous.POSITION', value: str):
+        # unit: Percent Over 100 or Position (16K = down, 0 = up)
         self._.set(f"{value} (>A:SPOILERS HANDLE POSITION,{unit.value})")
 
 
 # Percent left spoiler deflected.
 # NOTE: This is available in multiplayer. See here for more information: Note On SimVars In Multiplayer.
-#! Percent Over 100
-# or
-# Position
-# (0 = retracted, 16K fully extended)
 class _FlightSim_Control_SPOILERS_LEFT_POSITION:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Miscellaneous.PERCENT_OVER_100 | FlightSim.Unit.Miscellaneous.POSITION'):
+        # unit: Percent Over 100 or Position (0 = retracted, 16K fully extended)
         return self._.get(f"(A:SPOILERS LEFT POSITION,{unit.value})")
 
 
 # Percent right spoiler deflected.
 # NOTE: This is available in multiplayer. See here for more information: Note On SimVars In Multiplayer.
-#! Percent Over 100
-# or
-# Position (0 = retracted, 16K fully extended)
 class _FlightSim_Control_SPOILERS_RIGHT_POSITION:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Miscellaneous.PERCENT_OVER_100 | FlightSim.Unit.Miscellaneous.POSITION'):
+        # unit: Percent Over 100 or Position (0 = retracted, 16K fully extended)
         return self._.get(f"(A:SPOILERS RIGHT POSITION,{unit.value})")
 
 
@@ -3826,27 +3815,6 @@ class _FlightSim_Engine:
         self.RECIP_ENG_WASTEGATE_POSITION = lambda index: _FlightSim_Engine_RECIP_ENG_WASTEGATE_POSITION(flightSim, index)
         self.RECIP_MAX_CHT = _FlightSim_Engine_RECIP_MAX_CHT(flightSim)
         self.RECIP_MIXTURE_RATIO = lambda index: _FlightSim_Engine_RECIP_MIXTURE_RATIO(flightSim, index)
-        self.0 = _FlightSim_Engine_0(flightSim)
-        self.1 = _FlightSim_Engine_1(flightSim)
-        self.2 = _FlightSim_Engine_2(flightSim)
-        self.3 = _FlightSim_Engine_3(flightSim)
-        self.4 = _FlightSim_Engine_4(flightSim)
-        self.5 = _FlightSim_Engine_5(flightSim)
-        self.6 = _FlightSim_Engine_6(flightSim)
-        self.7 = _FlightSim_Engine_7(flightSim)
-        self.8 = _FlightSim_Engine_8(flightSim)
-        self.9 = _FlightSim_Engine_9(flightSim)
-        self.10 = _FlightSim_Engine_10(flightSim)
-        self.11 = _FlightSim_Engine_11(flightSim)
-        self.12 = _FlightSim_Engine_12(flightSim)
-        self.13 = _FlightSim_Engine_13(flightSim)
-        self.14 = _FlightSim_Engine_14(flightSim)
-        self.15 = _FlightSim_Engine_15(flightSim)
-        self.16 = _FlightSim_Engine_16(flightSim)
-        self.17 = _FlightSim_Engine_17(flightSim)
-        self.18 = _FlightSim_Engine_18(flightSim)
-        self.19 = _FlightSim_Engine_19(flightSim)
-        self.20 = _FlightSim_Engine_20(flightSim)
 
 
 # Returns whether or not the indexed engine (see note) attempts to provide bleed air.
@@ -3932,7 +3900,7 @@ class _FlightSim_Engine_ENGINE_TYPE:
         PISTON = 0
         JET = 1
         NONE = 2
-        HELO(BELL)_TURBINE = 3
+        HELO_BELL_TURBINE = 3
         UNSUPPORTED = 4
         TURBOPROP = 5
 
@@ -4081,37 +4049,34 @@ class _FlightSim_Engine_ENG_MAX_RPM:
 
 
 # The indexed engine (see note) N1 rpm.
-#! RPM
-# (0 to 16384 = 0 to 100%)
 class _FlightSim_Engine_ENG_N1_RPM:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.AngularVelocity.REVOLUTION_PER_MINUTE'):
+        # unit: RPM (0 to 16384 = 0 to 100%)
         return self._.get(f"(A:ENG N1 RPM:{self._index},{unit.value})")
 
 
 # The indexed engine (see note) N2 rpm.
-#! RPM
-# (0 to 16384 = 0 to 100%)
 class _FlightSim_Engine_ENG_N2_RPM:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.AngularVelocity.REVOLUTION_PER_MINUTE'):
+        # unit: RPM (0 to 16384 = 0 to 100%)
         return self._.get(f"(A:ENG N2 RPM:{self._index},{unit.value})")
 
 
 # The indexed engine (see note) oil pressure.
-#! pounds per square foot (psf)
 class _FlightSim_Engine_ENG_OIL_PRESSURE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_FOOT'):
         return self._.get(f"(A:ENG OIL PRESSURE:{self._index},{unit.value})")
 
 
@@ -4149,14 +4114,13 @@ class _FlightSim_Engine_ENG_ON_FIRE:
 
 
 # The indexed engine (see note) pressure ratio.
-#! Ratio
-#                         (0-16384)
 class _FlightSim_Engine_ENG_PRESSURE_RATIO:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Miscellaneous.RATIO'):
+        # unit: Ratio (0-16384)
         return self._.get(f"(A:ENG PRESSURE RATIO:{self._index},{unit.value})")
 
 
@@ -4332,16 +4296,15 @@ class _FlightSim_Engine_GENERAL_ENG_FIRE_DETECTED:
 
 
 # The indexed engine (see note) fuel pressure.
-#! Pounds per square inch (psi
 class _FlightSim_Engine_GENERAL_ENG_FUEL_PRESSURE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_INCH'):
         return self._.get(f"(A:GENERAL ENG FUEL PRESSURE:{self._index},{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_INCH', value: str):
         self._.set(f"{value} (>A:GENERAL ENG FUEL PRESSURE:{self._index},{unit.value})")
 
 
@@ -4636,16 +4599,16 @@ class _FlightSim_Engine_NUMBER_OF_ENGINES:
 
 
 # Deprecated, do not use!
-#! FS7 Oil Quantity
-#                     (Deprecated)
 class _FlightSim_Engine_OIL_AMOUNT:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.FS7_OIL_QUANTITY'):
+        # unit: FS7 Oil Quantity (Deprecated)
         return self._.get(f"(A:OIL AMOUNT,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Volume.FS7_OIL_QUANTITY', value: str):
+        # unit: FS7 Oil Quantity (Deprecated)
         self._.set(f"{value} (>A:OIL AMOUNT,{unit.value})")
 
 
@@ -4852,8 +4815,6 @@ class _FlightSim_Engine_PROPELLER_ADVANCED_SELECTION:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    class Unit(Enum):
-
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.ENUM'):
         return self._.get(f"(A:PROPELLER ADVANCED SELECTION,{unit.value})")
 
@@ -4910,13 +4871,12 @@ class _FlightSim_Engine_TURB_ENG_AFTERBURNER_STAGE_ACTIVE:
 
 
 # Bleed air pressure for the indexed engine (see note).
-#! Pounds per square inch (psi
 class _FlightSim_Engine_TURB_ENG_BLEED_AIR:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_INCH'):
         return self._.get(f"(A:TURB ENG BLEED AIR:{self._index},{unit.value})")
 
 
@@ -4941,7 +4901,7 @@ class _FlightSim_Engine_TURB_ENG_CONDITION_LEVER_POSITION:
         self._index = index
     
     class Unit(Enum):
-        FUEL_CUT-OFF = 0
+        FUEL_CUT_OFF = 0
         LOW_IDLE = 1
         HIGH_IDLE = 2
 
@@ -4992,16 +4952,15 @@ class _FlightSim_Engine_TURB_ENG_CORRECTED_N2:
 
 
 # The amount of free torque for the indexed turbine engine (see note).
-#! Foot Pound
 class _FlightSim_Engine_TURB_ENG_FREE_TURBINE_TORQUE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Torque.FOOT_POUND'):
         return self._.get(f"(A:TURB ENG FREE TURBINE TORQUE:{self._index},{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Torque.FOOT_POUND', value: str):
         self._.set(f"{value} (>A:TURB ENG FREE TURBINE TORQUE:{self._index},{unit.value})")
 
 
@@ -5237,13 +5196,12 @@ class _FlightSim_Engine_TURB_ENG_REVERSE_NOZZLE_PERCENT:
 
 
 # Fuel tanks used by the indexed engine (see note), one or more of the following bit flags: Center 1 Bit 0 Center 2 Bit 1 Center 3 Bit 2 Left Main Bit 3 Left Aux Bit 4 Left Tip Bit 5 Right Main Bit 6 Right Aux Bit 7 Right Tip Bit 8 External 1 Bit 9 External 2 Bit 10
-#! Mask
 class _FlightSim_Engine_TURB_ENG_TANKS_USED:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Miscellaneous.MASK'):
         return self._.get(f"(A:TURB ENG TANKS USED:{self._index},{unit.value})")
 
 
@@ -5253,8 +5211,6 @@ class _FlightSim_Engine_TURB_ENG_TANK_SELECTOR:
         self._ = flightSim
         self._index = index
     
-    class Unit(Enum):
-
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.ENUM'):
         return self._.get(f"(A:TURB ENG TANK SELECTOR:{self._index},{unit.value})")
 
@@ -5305,16 +5261,15 @@ class _FlightSim_Engine_TURB_MAX_ITT:
 
 
 # Carburetor temperature the indexed engine (see note).
-#! Celsius
 class _FlightSim_Engine_RECIP_CARBURETOR_TEMPERATURE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Temperature.CELSIUS'):
         return self._.get(f"(A:RECIP CARBURETOR TEMPERATURE:{self._index},{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Temperature.CELSIUS', value: str):
         self._.set(f"{value} (>A:RECIP CARBURETOR TEMPERATURE:{self._index},{unit.value})")
 
 
@@ -5332,27 +5287,25 @@ class _FlightSim_Engine_RECIP_ENG_ALTERNATE_AIR_POSITION:
 
 
 # The maximum quantity of water/methanol mixture in the ADI tank for the indexed engine (see note). This value is set as part of the [ANTIDETONATION_SYSTEM.N] section in the aircraft configuration files.
-#! Gallons
 class _FlightSim_Engine_RECIP_ENG_ANTIDETONATION_TANK_MAX_QUANTITY:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:RECIP ENG ANTIDETONATION TANK MAX QUANTITY:{self._index},{unit.value})")
 
 
 # The quantity of water/methanol mixture currently in the ADI tank for the indexed engine (see note).
-#! Gallons
 class _FlightSim_Engine_RECIP_ENG_ANTIDETONATION_TANK_QUANTITY:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:RECIP ENG ANTIDETONATION TANK QUANTITY:{self._index},{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Volume.GALLON', value: str):
         self._.set(f"{value} (>A:RECIP ENG ANTIDETONATION TANK QUANTITY:{self._index},{unit.value})")
 
 
@@ -5380,16 +5333,15 @@ class _FlightSim_Engine_RECIP_ENG_ANTIDETONATION_FLOW_RATE:
 
 
 # Brake power produced by the indexed engine (see note).
-#! Foot pounds (ftlbs) per second
 class _FlightSim_Engine_RECIP_ENG_BRAKE_POWER:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Power.FOOT_POUND_PER_SECOND'):
         return self._.get(f"(A:RECIP ENG BRAKE POWER:{self._index},{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Power.FOOT_POUND_PER_SECOND', value: str):
         self._.set(f"{value} (>A:RECIP ENG BRAKE POWER:{self._index},{unit.value})")
 
 
@@ -5420,16 +5372,15 @@ class _FlightSim_Engine_RECIP_ENG_COWL_FLAP_POSITION:
 
 
 # Engine cylinder head temperature for the indexed engine (see note).
-#! Celsius
 class _FlightSim_Engine_RECIP_ENG_CYLINDER_HEAD_TEMPERATURE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Temperature.CELSIUS'):
         return self._.get(f"(A:RECIP ENG CYLINDER HEAD TEMPERATURE:{self._index},{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Temperature.CELSIUS', value: str):
         self._.set(f"{value} (>A:RECIP ENG CYLINDER HEAD TEMPERATURE:{self._index},{unit.value})")
 
 
@@ -5527,16 +5478,15 @@ class _FlightSim_Engine_RECIP_ENG_FUEL_NUMBER_TANKS_USED:
 
 
 # Fuel tanks used by the indexed engine (see note), one or more of the following bit flags: Center 1 Bit 0 Center 2 Bit 1 Center 3 Bit 2 Left Main Bit 3 Left Aux Bit 4 Left Tip Bit 5 Right Main Bit 6 Right Aux Bit 7 Right Tip Bit 8 External 1 Bit 9 External 2 Bit 10
-#! Mask
 class _FlightSim_Engine_RECIP_ENG_FUEL_TANKS_USED:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Miscellaneous.MASK'):
         return self._.get(f"(A:RECIP ENG FUEL TANKS USED:{self._index},{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Miscellaneous.MASK', value: str):
         self._.set(f"{value} (>A:RECIP ENG FUEL TANKS USED:{self._index},{unit.value})")
 
 
@@ -5546,8 +5496,6 @@ class _FlightSim_Engine_RECIP_ENG_FUEL_TANK_SELECTOR:
         self._ = flightSim
         self._index = index
     
-    class Unit(Enum):
-
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.ENUM'):
         return self._.get(f"(A:RECIP ENG FUEL TANK SELECTOR:{self._index},{unit.value})")
 
@@ -5576,41 +5524,38 @@ class _FlightSim_Engine_RECIP_ENG_LEFT_MAGNETO:
 
 
 # The indexed engine (see note) manifold pressure.
-#! Pounds per square inch (psi
 class _FlightSim_Engine_RECIP_ENG_MANIFOLD_PRESSURE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_INCH'):
         return self._.get(f"(A:RECIP ENG MANIFOLD PRESSURE:{self._index},{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_INCH', value: str):
         self._.set(f"{value} (>A:RECIP ENG MANIFOLD PRESSURE:{self._index},{unit.value})")
 
 
 # The maximum quantity of nitrous permitted per indexed engine (see note).
-#! Gallons
 class _FlightSim_Engine_RECIP_ENG_NITROUS_TANK_MAX_QUANTITY:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:RECIP ENG NITROUS TANK MAX QUANTITY:{self._index},{unit.value})")
 
 
 # The quantity of nitrous per indexed engine (see note).
-#! Gallons
 class _FlightSim_Engine_RECIP_ENG_NITROUS_TANK_QUANTITY:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:RECIP ENG NITROUS TANK QUANTITY:{self._index},{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Volume.GALLON', value: str):
         self._.set(f"{value} (>A:RECIP ENG NITROUS TANK QUANTITY:{self._index},{unit.value})")
 
 
@@ -5660,16 +5605,15 @@ class _FlightSim_Engine_RECIP_ENG_PRIMER:
 
 
 # The indexed engine (see note) radiator temperature.
-#! Celsius
 class _FlightSim_Engine_RECIP_ENG_RADIATOR_TEMPERATURE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Temperature.CELSIUS'):
         return self._.get(f"(A:RECIP ENG RADIATOR TEMPERATURE:{self._index},{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Temperature.CELSIUS', value: str):
         self._.set(f"{value} (>A:RECIP ENG RADIATOR TEMPERATURE:{self._index},{unit.value})")
 
 
@@ -5687,16 +5631,15 @@ class _FlightSim_Engine_RECIP_ENG_RIGHT_MAGNETO:
 
 
 # Torque produced by the indexed engine (see note).
-#! Foot pound
 class _FlightSim_Engine_RECIP_ENG_STARTER_TORQUE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Torque.FOOT_POUND'):
         return self._.get(f"(A:RECIP ENG STARTER TORQUE:{self._index},{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Torque.FOOT_POUND', value: str):
         self._.set(f"{value} (>A:RECIP ENG STARTER TORQUE:{self._index},{unit.value})")
 
 
@@ -5711,16 +5654,15 @@ class _FlightSim_Engine_RECIP_ENG_SUPERCHARGER_ACTIVE_GEAR:
 
 
 # The indexed engine (see note) turbine inlet temperature.
-#! Celsius
 class _FlightSim_Engine_RECIP_ENG_TURBINE_INLET_TEMPERATURE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Temperature.CELSIUS'):
         return self._.get(f"(A:RECIP ENG TURBINE INLET TEMPERATURE:{self._index},{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Temperature.CELSIUS', value: str):
         self._.set(f"{value} (>A:RECIP ENG TURBINE INLET TEMPERATURE:{self._index},{unit.value})")
 
 
@@ -5770,426 +5712,6 @@ class _FlightSim_Engine_RECIP_MIXTURE_RATIO:
 
     def set(self, unit: 'FlightSim.Unit.Miscellaneous.RATIO', value: str):
         self._.set(f"{value} (>A:RECIP MIXTURE RATIO:{self._index},{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-class _FlightSim_Engine_0:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:0,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-class _FlightSim_Engine_1:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:1,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-class _FlightSim_Engine_2:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:2,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-class _FlightSim_Engine_3:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:3,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-class _FlightSim_Engine_4:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:4,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-class _FlightSim_Engine_5:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:5,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-class _FlightSim_Engine_6:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:6,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-#! 7
-class _FlightSim_Engine_7:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:7,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-#! 7
-#! 8
-class _FlightSim_Engine_8:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:8,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-#! 7
-#! 8
-#! 9
-class _FlightSim_Engine_9:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:9,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-#! 7
-#! 8
-#! 9
-#! 10
-class _FlightSim_Engine_10:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:10,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-#! 7
-#! 8
-#! 9
-#! 10
-#! 11
-class _FlightSim_Engine_11:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:11,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-#! 7
-#! 8
-#! 9
-#! 10
-#! 11
-#! 12
-class _FlightSim_Engine_12:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:12,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-#! 7
-#! 8
-#! 9
-#! 10
-#! 11
-#! 12
-#! 13
-class _FlightSim_Engine_13:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:13,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-#! 7
-#! 8
-#! 9
-#! 10
-#! 11
-#! 12
-#! 13
-#! 14
-class _FlightSim_Engine_14:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:14,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-#! 7
-#! 8
-#! 9
-#! 10
-#! 11
-#! 12
-#! 13
-#! 14
-#! 15
-class _FlightSim_Engine_15:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:15,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-#! 7
-#! 8
-#! 9
-#! 10
-#! 11
-#! 12
-#! 13
-#! 14
-#! 15
-#! 16
-class _FlightSim_Engine_16:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:16,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-#! 7
-#! 8
-#! 9
-#! 10
-#! 11
-#! 12
-#! 13
-#! 14
-#! 15
-#! 16
-#! 17
-class _FlightSim_Engine_17:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:17,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-#! 7
-#! 8
-#! 9
-#! 10
-#! 11
-#! 12
-#! 13
-#! 14
-#! 15
-#! 16
-#! 17
-#! 18
-class _FlightSim_Engine_18:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:18,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-#! 7
-#! 8
-#! 9
-#! 10
-#! 11
-#! 12
-#! 13
-#! 14
-#! 15
-#! 16
-#! 17
-#! 18
-#! 19
-class _FlightSim_Engine_19:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:19,{unit.value})")
-
-
-# Fuel / Air mixture ratio for the indexed engine (see note).
-#! 0
-#! 1
-#! 2
-#! 3
-#! 4
-#! 5
-#! 6
-#! 7
-#! 8
-#! 9
-#! 10
-#! 11
-#! 12
-#! 13
-#! 14
-#! 15
-#! 16
-#! 17
-#! 18
-#! 19
-#! 20
-class _FlightSim_Engine_20:
-    def __init__(self, flightSim):
-        self._ = flightSim
-    
-    def get(self, unit: ''):
-        return self._.get(f"(A:20,{unit.value})")
 
 
 class _FlightSim_FlightModel:
@@ -6276,12 +5798,11 @@ class _FlightSim_FlightModel:
 
 
 # Beta dot
-#! Radians per second
 class _FlightSim_FlightModel_BETA_DOT:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.AngularVelocity.RADIAN_PER_SECOND'):
         return self._.get(f"(A:BETA DOT,{unit.value})")
 
 
@@ -6331,52 +5852,47 @@ class _FlightSim_FlightModel_DESIGN_SPAWN_ALTITUDE_DESCENT:
 
 
 # This design constant represents the optimal climb speed for the aircraft. It is derived from the climb_speed setting in the [REFERENCE SPEEDS] section of the flightmodel.cfg. Default value is -1.
-#! Feet (ft) per second
 class _FlightSim_FlightModel_DESIGN_SPEED_CLIMB:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:DESIGN SPEED CLIMB,{unit.value})")
 
 
 # This design constant represents the minimum speed required for aircraft rotation. It is derived from the rotation_speed_min setting in the [REFERENCE SPEEDS] section of the flightmodel.cfg. Default value is -1.
-#! Feet (ft) per second
 class _FlightSim_FlightModel_DESIGN_SPEED_MIN_ROTATION:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:DESIGN SPEED MIN ROTATION,{unit.value})")
 
 
 # This design constant represents the aircraft ideal cruising speed. It is derived from the cruise_speed setting in the [REFERENCE SPEEDS] section of the flightmodel.cfg. The default value is computed an internal function that uses the estimated cruise altitude and estimated cruise percent power, according of the engine type, the number of engines, the density, the wing area and some drag parameters. Normally this value is set in the CFG file and the default value is never used.
-#! Feet (ft) per second
 class _FlightSim_FlightModel_DESIGN_SPEED_VC:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:DESIGN SPEED VC,{unit.value})")
 
 
 # This design constant represents the the stall speed when flaps are fully extended. It is derived from the full_flaps_stall_speed setting in the [REFERENCE SPEEDS] section of the flightmodel.cfg. Default value is 0.8 x VS.
-#! kias
 class _FlightSim_FlightModel_DESIGN_SPEED_VS0:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.KNOT'):
         return self._.get(f"(A:DESIGN SPEED VS0,{unit.value})")
 
 
 # This design constant represents the stall speed when flaps are fully retracted. It is derived from the flaps_up_stall_speed setting in the [REFERENCE SPEEDS] section of the flightmodel.cfg. Default value is 0.
-#! kias
 class _FlightSim_FlightModel_DESIGN_SPEED_VS1:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.KNOT'):
         return self._.get(f"(A:DESIGN SPEED VS1,{unit.value})")
 
 
@@ -6399,25 +5915,23 @@ class _FlightSim_FlightModel_DYNAMIC_PRESSURE:
 
 
 # Estimated cruise speed
-#! Feet (ft) per second
 class _FlightSim_FlightModel_ESTIMATED_CRUISE_SPEED:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:ESTIMATED CRUISE SPEED,{unit.value})")
 
 
 # Current g force
-#! GForce
 class _FlightSim_FlightModel_G_FORCE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Acceleration.G_FORCE'):
         return self._.get(f"(A:G FORCE,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Acceleration.G_FORCE', value: str):
         self._.set(f"{value} (>A:G FORCE,{unit.value})")
 
 
@@ -6463,52 +5977,47 @@ class _FlightSim_FlightModel_IS_TAIL_DRAGGER:
 
 
 # Linear CL alpha
-#! Per radian
 class _FlightSim_FlightModel_LINEAR_CL_ALPHA:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Miscellaneous.PER_RADIAN'):
         return self._.get(f"(A:LINEAR CL ALPHA,{unit.value})")
 
 
 # Maximum design mach
-#! Mach
 class _FlightSim_FlightModel_MACH_MAX_OPERATE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.MACH'):
         return self._.get(f"(A:MACH MAX OPERATE,{unit.value})")
 
 
 # Maximum G force attained
-#! Gforce
 class _FlightSim_FlightModel_MAX_G_FORCE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Acceleration.G_FORCE'):
         return self._.get(f"(A:MAX G FORCE,{unit.value})")
 
 
 # Minimum drag velocity, in clean, with no input and no gears, when at 10000ft.
-#! Feet (ft) per second
 class _FlightSim_FlightModel_MIN_DRAG_VELOCITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:MIN DRAG VELOCITY,{unit.value})")
 
 
 # Minimum G force attained
-#! Gforce
 class _FlightSim_FlightModel_MIN_G_FORCE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Acceleration.G_FORCE'):
         return self._.get(f"(A:MIN G FORCE,{unit.value})")
 
 
@@ -6586,22 +6095,20 @@ class _FlightSim_FlightModel_STATIC_PITCH:
 
 
 # the typical (normal) descent rate for the aircraft.
-#! Feet (ft) per minute
 class _FlightSim_FlightModel_TYPICAL_DESCENT_RATE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_MINUTE'):
         return self._.get(f"(A:TYPICAL DESCENT RATE,{unit.value})")
 
 
 # Total wing area
-#! Square feet (ft)
 class _FlightSim_FlightModel_WING_AREA:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Area.SQUARE_FOOT'):
         return self._.get(f"(A:WING AREA,{unit.value})")
 
 
@@ -6735,22 +6242,20 @@ class _FlightSim_FlightModel_CG_FWD_LIMIT:
 
 
 # Deprecated, do not use!
-#! Mach
 class _FlightSim_FlightModel_CG_MAX_MACH:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.MACH'):
         return self._.get(f"(A:CG MAX MACH,{unit.value})")
 
 
 # Deprecated, do not use!
-#! Mach
 class _FlightSim_FlightModel_CG_MIN_MACH:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.MACH'):
         return self._.get(f"(A:CG MIN MACH,{unit.value})")
 
 
@@ -6927,7 +6432,7 @@ class _FlightSim_FlightModel_INTERACTIVE_POINT_TYPE:
         EMERGENCY_EXIT = 2
         FUEL_HOSE = 3
         GROUND_POWER_CABLE = 4
-        UNKNOWN_(FOR_ERROR_HANDLING) = 99
+        UNKNOWN_FOR_ERROR_HANDLING = 99
 
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.ENUM'):
         return self._.get(f"(A:INTERACTIVE POINT TYPE,{unit.value})")
@@ -6943,42 +6448,38 @@ class _FlightSim_FlightModel_EMPTY_WEIGHT:
 
 
 # Empty weight cross coupled moment of inertia
-#! Slugs per feet squared (Slug sqft)
 class _FlightSim_FlightModel_EMPTY_WEIGHT_CROSS_COUPLED_MOI:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.SLUG_FEET_SQUARED'):
         return self._.get(f"(A:EMPTY WEIGHT CROSS COUPLED MOI,{unit.value})")
 
 
 # Empty weight pitch moment of inertia
-#! Slugs per feet squared (Slug sqft)
 class _FlightSim_FlightModel_EMPTY_WEIGHT_PITCH_MOI:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.SLUG_FEET_SQUARED'):
         return self._.get(f"(A:EMPTY WEIGHT PITCH MOI,{unit.value})")
 
 
 # Empty weight roll moment of inertia
-#! Slugs per feet squared (Slug sqft)
 class _FlightSim_FlightModel_EMPTY_WEIGHT_ROLL_MOI:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.SLUG_FEET_SQUARED'):
         return self._.get(f"(A:EMPTY WEIGHT ROLL MOI,{unit.value})")
 
 
 # Empty weight yaw moment of inertia
-#! Slugs per feet squared (Slug sqft)
 class _FlightSim_FlightModel_EMPTY_WEIGHT_YAW_MOI:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.SLUG_FEET_SQUARED'):
         return self._.get(f"(A:EMPTY WEIGHT YAW MOI,{unit.value})")
 
 
@@ -7001,42 +6502,38 @@ class _FlightSim_FlightModel_TOTAL_WEIGHT:
 
 
 # Total weight cross coupled moment of inertia
-#! Slugs per feet squared
 class _FlightSim_FlightModel_TOTAL_WEIGHT_CROSS_COUPLED_MOI:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.SLUG_FEET_SQUARED'):
         return self._.get(f"(A:TOTAL WEIGHT CROSS COUPLED MOI,{unit.value})")
 
 
 # Total weight pitch moment of inertia
-#! Slugs per feet squared
 class _FlightSim_FlightModel_TOTAL_WEIGHT_PITCH_MOI:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.SLUG_FEET_SQUARED'):
         return self._.get(f"(A:TOTAL WEIGHT PITCH MOI,{unit.value})")
 
 
 # Total weight roll moment of inertia
-#! Slugs per feet squared
 class _FlightSim_FlightModel_TOTAL_WEIGHT_ROLL_MOI:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.SLUG_FEET_SQUARED'):
         return self._.get(f"(A:TOTAL WEIGHT ROLL MOI,{unit.value})")
 
 
 # Total weight yaw moment of inertia
-#! Slugs per feet squared
 class _FlightSim_FlightModel_TOTAL_WEIGHT_YAW_MOI:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.SLUG_FEET_SQUARED'):
         return self._.get(f"(A:TOTAL WEIGHT YAW MOI,{unit.value})")
 
 
@@ -7140,22 +6637,20 @@ class _FlightSim_Fuel_FUEL_DUMP_SWITCH:
 
 
 # Maximum capacity in volume of all the tanks on the left side of the aircraft.
-#! Gallons
 class _FlightSim_Fuel_FUEL_LEFT_CAPACITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL LEFT CAPACITY,{unit.value})")
 
 
 # Current quantity in volume of all the tanks on the left side of the aircraft.
-#! Gallons
 class _FlightSim_Fuel_FUEL_LEFT_QUANTITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL LEFT QUANTITY,{unit.value})")
 
 
@@ -7169,33 +6664,30 @@ class _FlightSim_Fuel_FUEL_PUMP:
 
 
 # Maximum capacity in volume of all the tanks on the right side of the aircraft.
-#! Gallons
 class _FlightSim_Fuel_FUEL_RIGHT_CAPACITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL RIGHT CAPACITY,{unit.value})")
 
 
 # Current quantity in volume of all the tanks on the right side of the aircraft.
-#! Gallons
 class _FlightSim_Fuel_FUEL_RIGHT_QUANTITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL RIGHT QUANTITY,{unit.value})")
 
 
 # Quantity of fuel in the tank referenced by the indexed selector. When using the legacy fuel system, this SimVar will return the quantity of fuel in the tank pointed to by the selector you chose with the index. If passing an index higher than the number of selectors - or when using the modern fuel system - it will return the total fuel quantity available.
-#! Gallons
 class _FlightSim_Fuel_FUEL_SELECTED_QUANTITY:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL SELECTED QUANTITY:{self._index},{unit.value})")
 
 
@@ -7227,22 +6719,20 @@ class _FlightSim_Fuel_FUEL_SELECTED_TRANSFER_MODE:
 
 
 # Total fuel capacity of the aircraft for all tanks.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TOTAL_CAPACITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TOTAL CAPACITY,{unit.value})")
 
 
 # Current total quantity of fuel in volume for all tanks of the aircraft.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TOTAL_QUANTITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TOTAL QUANTITY,{unit.value})")
 
 
@@ -7302,23 +6792,21 @@ class _FlightSim_Fuel_UNLIMITED_FUEL:
 
 
 # The total amount of fuel in all tanks of the aircraft which is not usable.
-#! Gallons
 class _FlightSim_Fuel_UNUSABLE_FUEL_TOTAL_QUANTITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:UNUSABLE FUEL TOTAL QUANTITY,{unit.value})")
 
 
 # The pressure of the fuel coming to the indexed engine. The index is the number of the engine N component as defined by the Engine.N parameter.
-#! Kilo pascal
 class _FlightSim_Fuel_FUELSYSTEM_ENGINE_PRESSURE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.KILOPASCAL'):
         return self._.get(f"(A:FUELSYSTEM ENGINE PRESSURE:{self._index},{unit.value})")
 
 
@@ -7343,24 +6831,22 @@ class _FlightSim_Fuel_FUELSYSTEM_LINE_FUEL_FLOW:
 
 
 # The level of fuel in the indexed line in Gallons. The index is the number of the line N component as defined by the Line.N parameter.
-#! Gallons
 class _FlightSim_Fuel_FUELSYSTEM_LINE_FUEL_LEVEL:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUELSYSTEM LINE FUEL LEVEL:{self._index},{unit.value})")
 
 
 # The pressure in the indexed fuel line, measured in KiloPascal. The index is the number of the line N component as defined by the Line.N parameter.
-#! Kilo pascal
 class _FlightSim_Fuel_FUELSYSTEM_LINE_FUEL_PRESSURE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.KILOPASCAL'):
         return self._.get(f"(A:FUELSYSTEM LINE FUEL PRESSURE:{self._index},{unit.value})")
 
 
@@ -7386,13 +6872,12 @@ class _FlightSim_Fuel_FUELSYSTEM_PUMP_SWITCH:
 
 # Total capacity of the indexed fuel tank. The index is the number of the tank N component as defined by the Tank.N parameter.
 # NOTE: This SimVar can only be used with the modern Fuel System.
-#! Gallons
 class _FlightSim_Fuel_FUELSYSTEM_TANK_CAPACITY:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUELSYSTEM TANK CAPACITY:{self._index},{unit.value})")
 
 
@@ -7412,28 +6897,26 @@ class _FlightSim_Fuel_FUELSYSTEM_TANK_LEVEL:
 
 # Quantity of fuel currently available in the indexed fuel tank. The index is the number of the tank N component as defined by the Tank.N parameter.
 # NOTE: If the fuel system Version is 2 or below, the index value will be one of the Fuel Tank Selection indices.
-#! Gallons
 class _FlightSim_Fuel_FUELSYSTEM_TANK_QUANTITY:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUELSYSTEM TANK QUANTITY:{self._index},{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Volume.GALLON', value: str):
         self._.set(f"{value} (>A:FUELSYSTEM TANK QUANTITY:{self._index},{unit.value})")
 
 
 # Total quantity of fuel available in the indexed fuel tank, including any unusable fuel. The index is the number of the tank N component as defined by the Tank.N parameter.
 # NOTE: If the fuel system Version is 2 or below, the index value will be one of the Fuel Tank Selection indices.
-#! Gallons
 class _FlightSim_Fuel_FUELSYSTEM_TANK_TOTAL_QUANTITY:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUELSYSTEM TANK TOTAL QUANTITY:{self._index},{unit.value})")
 
 
@@ -7482,12 +6965,11 @@ class _FlightSim_Fuel_FUELSYSTEM_VALVE_SWITCH:
 
 
 # Maximum capacity in volume of center tank 1/2/3.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_CENTER_CAPACITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK CENTER CAPACITY,{unit.value})")
 
 
@@ -7504,25 +6986,23 @@ class _FlightSim_Fuel_FUEL_TANK_CENTER_LEVEL:
 
 
 # Current quantity in volume of center tank 1/2/3.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_CENTER_QUANTITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK CENTER QUANTITY,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Volume.GALLON', value: str):
         self._.set(f"{value} (>A:FUEL TANK CENTER QUANTITY,{unit.value})")
 
 
 # Maximum capacity in volume of external tank 1/2.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_EXTERNAL1_CAPACITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK EXTERNAL1 CAPACITY,{unit.value})")
 
 
@@ -7539,25 +7019,23 @@ class _FlightSim_Fuel_FUEL_TANK_EXTERNAL1_LEVEL:
 
 
 # Current quantity in volume of external tank 1/2.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_EXTERNAL1_QUANTITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK EXTERNAL1 QUANTITY,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Volume.GALLON', value: str):
         self._.set(f"{value} (>A:FUEL TANK EXTERNAL1 QUANTITY,{unit.value})")
 
 
 # Maximum capacity in volume of the left auxiliary tank.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_LEFT_AUX_CAPACITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK LEFT AUX CAPACITY,{unit.value})")
 
 
@@ -7574,25 +7052,23 @@ class _FlightSim_Fuel_FUEL_TANK_LEFT_AUX_LEVEL:
 
 
 # Current quantity in volume of the left auxiliary tank.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_LEFT_AUX_QUANTITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK LEFT AUX QUANTITY,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Volume.GALLON', value: str):
         self._.set(f"{value} (>A:FUEL TANK LEFT AUX QUANTITY,{unit.value})")
 
 
 # Maximum capacity in volume of the left main tank.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_LEFT_MAIN_CAPACITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK LEFT MAIN CAPACITY,{unit.value})")
 
 
@@ -7609,25 +7085,23 @@ class _FlightSim_Fuel_FUEL_TANK_LEFT_MAIN_LEVEL:
 
 
 # Current quantity in volume of the left main tank.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_LEFT_MAIN_QUANTITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK LEFT MAIN QUANTITY,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Volume.GALLON', value: str):
         self._.set(f"{value} (>A:FUEL TANK LEFT MAIN QUANTITY,{unit.value})")
 
 
 # Maximum capacity in volume of the left tip tank.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_LEFT_TIP_CAPACITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK LEFT TIP CAPACITY,{unit.value})")
 
 
@@ -7644,25 +7118,23 @@ class _FlightSim_Fuel_FUEL_TANK_LEFT_TIP_LEVEL:
 
 
 # Current quantity in volume of the left tip tank.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_LEFT_TIP_QUANTITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK LEFT TIP QUANTITY,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Volume.GALLON', value: str):
         self._.set(f"{value} (>A:FUEL TANK LEFT TIP QUANTITY,{unit.value})")
 
 
 # Maximum capacity in volume of the right auxiliary tank.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_RIGHT_AUX_CAPACITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK RIGHT AUX CAPACITY,{unit.value})")
 
 
@@ -7679,25 +7151,23 @@ class _FlightSim_Fuel_FUEL_TANK_RIGHT_AUX_LEVEL:
 
 
 # Current quantity in volume of the right auxiliary tank.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_RIGHT_AUX_QUANTITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK RIGHT AUX QUANTITY,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Volume.GALLON', value: str):
         self._.set(f"{value} (>A:FUEL TANK RIGHT AUX QUANTITY,{unit.value})")
 
 
 # Maximum capacity in volume of the right main tank.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_RIGHT_MAIN_CAPACITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK RIGHT MAIN CAPACITY,{unit.value})")
 
 
@@ -7714,25 +7184,23 @@ class _FlightSim_Fuel_FUEL_TANK_RIGHT_MAIN_LEVEL:
 
 
 # Current quantity in volume of the right main tank.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_RIGHT_MAIN_QUANTITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK RIGHT MAIN QUANTITY,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Volume.GALLON', value: str):
         self._.set(f"{value} (>A:FUEL TANK RIGHT MAIN QUANTITY,{unit.value})")
 
 
 # Maximum capacity in volume of the right tip tank.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_RIGHT_TIP_CAPACITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK RIGHT TIP CAPACITY,{unit.value})")
 
 
@@ -7749,15 +7217,14 @@ class _FlightSim_Fuel_FUEL_TANK_RIGHT_TIP_LEVEL:
 
 
 # Current quantity in volume of the right tip tank.
-#! Gallons
 class _FlightSim_Fuel_FUEL_TANK_RIGHT_TIP_QUANTITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Volume.GALLON'):
         return self._.get(f"(A:FUEL TANK RIGHT TIP QUANTITY,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Volume.GALLON', value: str):
         self._.set(f"{value} (>A:FUEL TANK RIGHT TIP QUANTITY,{unit.value})")
 
 
@@ -7768,8 +7235,6 @@ class _FlightSim_Fuel_FUEL_TANK_SELECTOR:
         self._ = flightSim
         self._index = index
     
-    class Unit(Enum):
-
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.ENUM'):
         return self._.get(f"(A:FUEL TANK SELECTOR:{self._index},{unit.value})")
 
@@ -8024,72 +7489,65 @@ class _FlightSim_Misc_WINDSHIELD_RAIN_EFFECT_AVAILABLE:
 
 
 # Acceleration relative to aircraft X axis, in east/west direction.
-#! Feet (ft) per second squared
 class _FlightSim_Misc_ACCELERATION_BODY_X:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Acceleration.FEET_PER_SECOND_SQUARED'):
         return self._.get(f"(A:ACCELERATION BODY X,{unit.value})")
 
 
 # Acceleration relative to aircraft Y axis, in vertical direction.
-#! Feet (ft) per second squared
 class _FlightSim_Misc_ACCELERATION_BODY_Y:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Acceleration.FEET_PER_SECOND_SQUARED'):
         return self._.get(f"(A:ACCELERATION BODY Y,{unit.value})")
 
 
 # Acceleration relative to aircraft Z axis, in north/south direction.
-#! Feet (ft) per second squared
 class _FlightSim_Misc_ACCELERATION_BODY_Z:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Acceleration.FEET_PER_SECOND_SQUARED'):
         return self._.get(f"(A:ACCELERATION BODY Z,{unit.value})")
 
 
 # Acceleration relative to the earth X axis, in east/west direction.
-#! Feet (ft) per second squared
 class _FlightSim_Misc_ACCELERATION_WORLD_X:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Acceleration.FEET_PER_SECOND_SQUARED'):
         return self._.get(f"(A:ACCELERATION WORLD X,{unit.value})")
 
 
 # Acceleration relative to the earth Y axis, in vertical direction.
-#! Feet (ft) per second squared
 class _FlightSim_Misc_ACCELERATION_WORLD_Y:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Acceleration.FEET_PER_SECOND_SQUARED'):
         return self._.get(f"(A:ACCELERATION WORLD Y,{unit.value})")
 
 
 # Acceleration relative to the earth Z axis, in north/south direction.
-#! Feet (ft) per second squared
 class _FlightSim_Misc_ACCELERATION_WORLD_Z:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Acceleration.FEET_PER_SECOND_SQUARED'):
         return self._.get(f"(A:ACCELERATION WORLD Z,{unit.value})")
 
 
 # The speed of the aircraft relative to the speed of the first surface directly underneath it. Use this to retrieve, for example, an aircraft's taxiing speed while it is moving on a moving carrier. It also applies to airborne aircraft, for example when a helicopter is successfully hovering above a moving ship, this value should be zero. The returned value will be the same as GROUND VELOCITY if the first surface beneath it is not moving.
-#! Feet per second
 class _FlightSim_Misc_SURFACE_RELATIVE_GROUND_SPEED:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:SURFACE RELATIVE GROUND SPEED,{unit.value})")
 
 
@@ -8266,12 +7724,11 @@ class _FlightSim_Misc_PLANE_TOUCHDOWN_LONGITUDE:
 
 
 # This float represents the player's plane speed according to ground normal from the last touchdown.
-#! Feet (ft) per second
 class _FlightSim_Misc_PLANE_TOUCHDOWN_NORMAL_VELOCITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:PLANE TOUCHDOWN NORMAL VELOCITY,{unit.value})")
 
 
@@ -8285,110 +7742,101 @@ class _FlightSim_Misc_PLANE_TOUCHDOWN_PITCH_DEGREES:
 
 
 # Lateral (X axis) speed relative to wind.
-#! Feet (ft) per second
 class _FlightSim_Misc_RELATIVE_WIND_VELOCITY_BODY_X:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:RELATIVE WIND VELOCITY BODY X,{unit.value})")
 
 
 # Vertical (Y axis) speed relative to wind.
-#! Feet (ft) per second
 class _FlightSim_Misc_RELATIVE_WIND_VELOCITY_BODY_Y:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:RELATIVE WIND VELOCITY BODY Y,{unit.value})")
 
 
 # Longitudinal (Z axis) speed relative to wind.
-#! Feet (ft) per second
 class _FlightSim_Misc_RELATIVE_WIND_VELOCITY_BODY_Z:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:RELATIVE WIND VELOCITY BODY Z,{unit.value})")
 
 
 # Rotation acceleration relative to aircraft X axis.
-#! Radians per second squared
 class _FlightSim_Misc_ROTATION_ACCELERATION_BODY_X:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.AngularAcceleration.RADIAN_PER_SECOND_SQUARED'):
         return self._.get(f"(A:ROTATION ACCELERATION BODY X,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.AngularAcceleration.RADIAN_PER_SECOND_SQUARED', value: str):
         self._.set(f"{value} (>A:ROTATION ACCELERATION BODY X,{unit.value})")
 
 
 # Rotation acceleration relative to aircraft Y axis.
-#! Radians per second squared
 class _FlightSim_Misc_ROTATION_ACCELERATION_BODY_Y:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.AngularAcceleration.RADIAN_PER_SECOND_SQUARED'):
         return self._.get(f"(A:ROTATION ACCELERATION BODY Y,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.AngularAcceleration.RADIAN_PER_SECOND_SQUARED', value: str):
         self._.set(f"{value} (>A:ROTATION ACCELERATION BODY Y,{unit.value})")
 
 
 # Rotation acceleration relative to aircraft Z axis.
-#! Radians per second squared
 class _FlightSim_Misc_ROTATION_ACCELERATION_BODY_Z:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.AngularAcceleration.RADIAN_PER_SECOND_SQUARED'):
         return self._.get(f"(A:ROTATION ACCELERATION BODY Z,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.AngularAcceleration.RADIAN_PER_SECOND_SQUARED', value: str):
         self._.set(f"{value} (>A:ROTATION ACCELERATION BODY Z,{unit.value})")
 
 
 # Rotation velocity relative to aircraft X axis.
-#! Feet (ft) per second
 class _FlightSim_Misc_ROTATION_VELOCITY_BODY_X:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:ROTATION VELOCITY BODY X,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND', value: str):
         self._.set(f"{value} (>A:ROTATION VELOCITY BODY X,{unit.value})")
 
 
 # Rotation velocity relative to aircraft Y axis.
-#! Feet (ft) per second
 class _FlightSim_Misc_ROTATION_VELOCITY_BODY_Y:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:ROTATION VELOCITY BODY Y,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND', value: str):
         self._.set(f"{value} (>A:ROTATION VELOCITY BODY Y,{unit.value})")
 
 
 # Rotation velocity relative to aircraft Z axis.
-#! Feet (ft) per second
 class _FlightSim_Misc_ROTATION_VELOCITY_BODY_Z:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:ROTATION VELOCITY BODY Z,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND', value: str):
         self._.set(f"{value} (>A:ROTATION VELOCITY BODY Z,{unit.value})")
 
 
@@ -8402,54 +7850,50 @@ class _FlightSim_Misc_SLOPE_TO_ATC_RUNWAY:
 
 
 # True lateral speed, relative to aircraft X axis.
-#! Feet (ft) per second
 class _FlightSim_Misc_VELOCITY_BODY_X:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:VELOCITY BODY X,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND', value: str):
         self._.set(f"{value} (>A:VELOCITY BODY X,{unit.value})")
 
 
 # True vertical speed, relative to aircraft Y axis.
-#! Feet (ft) per second
 class _FlightSim_Misc_VELOCITY_BODY_Y:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:VELOCITY BODY Y,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND', value: str):
         self._.set(f"{value} (>A:VELOCITY BODY Y,{unit.value})")
 
 
 # True longitudinal speed, relative to aircraft Z axis.
-#! Feet (ft) per second
 class _FlightSim_Misc_VELOCITY_BODY_Z:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:VELOCITY BODY Z,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND', value: str):
         self._.set(f"{value} (>A:VELOCITY BODY Z,{unit.value})")
 
 
 # The current indicated vertical speed for the aircraft.
-#! Feet (ft) per second
 class _FlightSim_Misc_VERTICAL_SPEED:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:VERTICAL SPEED,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND', value: str):
         self._.set(f"{value} (>A:VERTICAL SPEED,{unit.value})")
 
 
@@ -8620,12 +8064,11 @@ class _FlightSim_Misc_AIRSPEED_INDICATED:
 
 
 # Current mach.
-#! Mach
 class _FlightSim_Misc_AIRSPEED_MACH:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.MACH'):
         return self._.get(f"(A:AIRSPEED MACH,{unit.value})")
 
 
@@ -8663,32 +8106,29 @@ class _FlightSim_Misc_AIRSPEED_TRUE_RAW:
 
 
 # Mach associated with maximum airspeed.
-#! Mach
 class _FlightSim_Misc_BARBER_POLE_MACH:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.MACH'):
         return self._.get(f"(A:BARBER POLE MACH,{unit.value})")
 
 
 # Velocity regardless of direction. For example, if a helicopter is ascending vertically at 100 fps, getting this variable will return 100.
-#! Feet (ft per second
 class _FlightSim_Misc_TOTAL_VELOCITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:TOTAL VELOCITY,{unit.value})")
 
 
 # Longitudinal speed of wind on the windshield.
-#! Feet (ft per second
 class _FlightSim_Misc_WINDSHIELD_WIND_VELOCITY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:WINDSHIELD WIND VELOCITY,{unit.value})")
 
 
@@ -8702,12 +8142,11 @@ class _FlightSim_Misc_STANDARD_ATM_TEMPERATURE:
 
 
 # Total air temperature is the air temperature at the front of the aircraft where the ram pressure from the speed of the aircraft is taken into account.
-#! Celsius
 class _FlightSim_Misc_TOTAL_AIR_TEMPERATURE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Temperature.CELSIUS'):
         return self._.get(f"(A:TOTAL AIR TEMPERATURE,{unit.value})")
 
 
@@ -8959,13 +8398,12 @@ class _FlightSim_Radio:
 
 
 # ADF frequency. Index of 1 or 2.
-#! Frequency ADF BCD32
 class _FlightSim_Radio_ADF_ACTIVE_FREQUENCY:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Frequency.ADF_BCD32'):
         return self._.get(f"(A:ADF ACTIVE FREQUENCY:{self._index},{unit.value})")
 
 
@@ -8989,22 +8427,20 @@ class _FlightSim_Radio_ADF_CARD:
 
 
 # Deprecated, use ADF ACTIVE FREQUENCY
-#! Frequency BCD16
 class _FlightSim_Radio_ADF_EXT_FREQUENCY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Frequency.BCD16'):
         return self._.get(f"(A:ADF EXT FREQUENCY,{unit.value})")
 
 
 # Deprecated, use ADF ACTIVE FREQUENCY
-#! Frequency BCD16
 class _FlightSim_Radio_ADF_FREQUENCY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Frequency.BCD16'):
         return self._.get(f"(A:ADF FREQUENCY,{unit.value})")
 
 
@@ -9014,7 +8450,6 @@ class _FlightSim_Radio_ADF_IDENT:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:ADF IDENT,{unit.value})")
 
 
@@ -9037,7 +8472,6 @@ class _FlightSim_Radio_ADF_NAME:
         self._index = index
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:ADF NAME:{self._index},{unit.value})")
 
 
@@ -9116,11 +8550,9 @@ class _FlightSim_Radio_ATC_AIRLINE:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:ATC AIRLINE,{unit.value})")
 
     def set(self, unit: 'FlightSim.Unit.Miscellaneous.STRING', value: str):
-        # unit: String
         self._.set(f"{value} (>A:ATC AIRLINE,{unit.value})")
 
 
@@ -9184,11 +8616,9 @@ class _FlightSim_Radio_ATC_FLIGHT_NUMBER:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:ATC FLIGHT NUMBER,{unit.value})")
 
     def set(self, unit: 'FlightSim.Unit.Miscellaneous.STRING', value: str):
-        # unit: String
         self._.set(f"{value} (>A:ATC FLIGHT NUMBER,{unit.value})")
 
 
@@ -9237,11 +8667,9 @@ class _FlightSim_Radio_ATC_ID:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:ATC ID,{unit.value})")
 
     def set(self, unit: 'FlightSim.Unit.Miscellaneous.STRING', value: str):
-        # unit: String
         self._.set(f"{value} (>A:ATC ID,{unit.value})")
 
 
@@ -9260,7 +8688,6 @@ class _FlightSim_Radio_ATC_MODEL:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:ATC MODEL,{unit.value})")
 
 
@@ -9288,7 +8715,6 @@ class _FlightSim_Radio_ATC_RUNWAY_AIRPORT_NAME:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:ATC RUNWAY AIRPORT NAME,{unit.value})")
 
 
@@ -9437,22 +8863,21 @@ class _FlightSim_Radio_ATC_TAXIPATH_DISTANCE:
 
 
 # Type used by ATC.
+#! String (30)
 class _FlightSim_Radio_ATC_TYPE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String (30)
+    def get(self, unit: ''):
         return self._.get(f"(A:ATC TYPE,{unit.value})")
 
 
 # The stored COM 1/2/3 frequency value.
-#! Frequency BCD16
 class _FlightSim_Radio_COM1_STORED_FREQUENCY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Frequency.BCD16'):
         return self._.get(f"(A:COM1 STORED FREQUENCY,{unit.value})")
 
 
@@ -9477,13 +8902,12 @@ class _FlightSim_Radio_COM_ACTIVE_DISTANCE:
 
 
 # Com frequency. Index is 1, 2 or 3.
-#! Frequency BCD16
 class _FlightSim_Radio_COM_ACTIVE_FREQUENCY:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Frequency.BCD16'):
         return self._.get(f"(A:COM ACTIVE FREQUENCY:{self._index},{unit.value})")
 
 
@@ -9494,18 +8918,31 @@ class _FlightSim_Radio_COM_ACTIVE_FREQ_IDENT:
         self._index = index
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:COM ACTIVE FREQ IDENT:{self._index},{unit.value})")
 
 
 # The type of COM frequency for the active indexed COM system. Index is 1, 2, or 3.
+#! String:
+# 
+# "ATIS" - Atis
+# "UNI" - Unicom
+# "CTAF" - CTAF
+# "GND" - Ground
+# "TWR" - Tower
+# "CLR" - Clearance
+# 
+#                             Delivery
+#                         
+# "APPR" - Approach
+# "DEP" - Departure
+# "FSS" - FSS
+# "AWS" - AWOS
 class _FlightSim_Radio_COM_ACTIVE_FREQ_TYPE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String:  "ATIS" - Atis "UNI" - Unicom "CTAF" - CTAF "GND" - Ground "TWR" - Tower "CLR" - Clearance                              Delivery                          "APPR" - Approach "DEP" - Departure "FSS" - FSS "AWS" - AWOS
+    def get(self, unit: ''):
         return self._.get(f"(A:COM ACTIVE FREQ TYPE:{self._index},{unit.value})")
 
 
@@ -9588,13 +9025,12 @@ class _FlightSim_Radio_COM_SPACING_MODE:
 
 
 # Com standby frequency. Index is 1, 2 or 3.
-#! Frequency BCD16
 class _FlightSim_Radio_COM_STANDBY_FREQUENCY:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Frequency.BCD16'):
         return self._.get(f"(A:COM STANDBY FREQUENCY:{self._index},{unit.value})")
 
 
@@ -9605,18 +9041,31 @@ class _FlightSim_Radio_COM_STANDBY_FREQ_IDENT:
         self._index = index
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:COM STANDBY FREQ IDENT:{self._index},{unit.value})")
 
 
 # The type of COM frequency for the standby indexed COM system. Index is 1, 2, or 3.
+#! String:
+# 
+# "ATIS" - Atis
+# "UNI" - Unicom
+# "CTAF" - CTAF
+# "GND" - Ground
+# "TWR" - Tower
+# "CLR" - Clearance
+# 
+#                             Delivery
+#                         
+# "APPR" - Approach
+# "DEP" - Departure
+# "FSS" - FSS
+# "AWS" - AWOS
 class _FlightSim_Radio_COM_STANDBY_FREQ_TYPE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String:  "ATIS" - Atis "UNI" - Unicom "CTAF" - CTAF "GND" - Ground "TWR" - Tower "CLR" - Clearance                              Delivery                          "APPR" - Approach "DEP" - Departure "FSS" - FSS "AWS" - AWOS
+    def get(self, unit: ''):
         return self._.get(f"(A:COM STANDBY FREQ TYPE:{self._index},{unit.value})")
 
 
@@ -9748,7 +9197,6 @@ class _FlightSim_Radio_GPS_APPROACH_AIRPORT_ID:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:GPS APPROACH AIRPORT ID,{unit.value})")
 
 
@@ -9758,7 +9206,6 @@ class _FlightSim_Radio_GPS_APPROACH_APPROACH_ID:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:GPS APPROACH APPROACH ID,{unit.value})")
 
 
@@ -9788,8 +9235,8 @@ class _FlightSim_Radio_GPS_APPROACH_APPROACH_TYPE:
         LOCALIZER = 5
         SDF = 6
         LDA = 7
-        VOR/_DME = 8
-        NDB/_DME = 9
+        VOR_DME = 8
+        NDB_DME = 9
         RNAV = 10
         BACKCOURSE = 11
 
@@ -9862,7 +9309,7 @@ class _FlightSim_Radio_GPS_APPROACH_SEGMENT_TYPE:
     class Unit(Enum):
         LINE = 0
         ARC_CLOCKWISE = 1
-        ARC_COUNTER-CLOCKWISE = 2
+        ARC_COUNTER_CLOCKWISE = 2
 
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.ENUM'):
         return self._.get(f"(A:GPS APPROACH SEGMENT TYPE,{unit.value})")
@@ -9889,7 +9336,6 @@ class _FlightSim_Radio_GPS_APPROACH_TRANSITION_ID:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:GPS APPROACH TRANSITION ID,{unit.value})")
 
 
@@ -10438,11 +9884,9 @@ class _FlightSim_Radio_GPS_WP_NEXT_ID:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:GPS WP NEXT ID,{unit.value})")
 
     def set(self, unit: 'FlightSim.Unit.Miscellaneous.STRING', value: str):
-        # unit: String
         self._.set(f"{value} (>A:GPS WP NEXT ID,{unit.value})")
 
 
@@ -10488,11 +9932,9 @@ class _FlightSim_Radio_GPS_WP_PREV_ID:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:GPS WP PREV ID,{unit.value})")
 
     def set(self, unit: 'FlightSim.Unit.Miscellaneous.STRING', value: str):
-        # unit: String
         self._.set(f"{value} (>A:GPS WP PREV ID,{unit.value})")
 
 
@@ -10667,7 +10109,6 @@ class _FlightSim_Radio_HSI_STATION_IDENT:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:HSI STATION IDENT,{unit.value})")
 
 
@@ -10882,7 +10323,6 @@ class _FlightSim_Radio_NAV_CLOSE_IDENT:
         self._index = index
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:NAV CLOSE IDENT:{self._index},{unit.value})")
 
 
@@ -10903,7 +10343,6 @@ class _FlightSim_Radio_NAV_CLOSE_NAME:
         self._index = index
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:NAV CLOSE NAME:{self._index},{unit.value})")
 
 
@@ -11103,7 +10542,6 @@ class _FlightSim_Radio_NAV_IDENT:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:NAV IDENT,{unit.value})")
 
 
@@ -11122,27 +10560,43 @@ class _FlightSim_Radio_NAV_LOC_AIRPORT_IDENT:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:NAV LOC AIRPORT IDENT,{unit.value})")
 
 
 # The letter code for the runway that the currently tuned localizer is tuned to.
+#! String
+#                     
+# 'L' - Left
+# 'R' - Right
+# 'C' - Center
+# 'W' - Water
+# 'A' - A
+# 'B' - B
 class _FlightSim_Radio_NAV_LOC_RUNWAY_DESIGNATOR:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String                      'L' - Left 'R' - Right 'C' - Center 'W' - Water 'A' - A 'B' - B
+    def get(self, unit: ''):
         return self._.get(f"(A:NAV LOC RUNWAY DESIGNATOR,{unit.value})")
 
 
 # NAV LOC RUNWAY NUMBER - The number portion of the runway that the currently tuned localizer is tuned to (so if the runway was 15L, this would be 15).
+#! String
+# 
+# '1' - '36'
+# 'N'
+# 'NE'
+# 'E'
+# 'SE'
+# 'S'
+# 'SW'
+# 'W'
+# 'NW'
 class _FlightSim_Radio_NAV_LOC_RUNWAY_NUMBER:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String  '1' - '36' 'N' 'NE' 'E' 'SE' 'S' 'SW' 'W' 'NW'
+    def get(self, unit: ''):
         return self._.get(f"(A:NAV LOC RUNWAY NUMBER,{unit.value})")
 
 
@@ -11161,7 +10615,6 @@ class _FlightSim_Radio_NAV_NAME:
         self._ = flightSim
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:NAV NAME,{unit.value})")
 
 
@@ -11373,13 +10826,12 @@ class _FlightSim_Radio_TACAN_STATION_CDI:
 
 
 # The distance between the Tacan station position and the aircraft position. The index value refers to the Tacan receiver connected to the station (1 or 2).
-#! Meter
 class _FlightSim_Radio_TACAN_STATION_DISTANCE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Length.METER'):
         return self._.get(f"(A:TACAN STATION DISTANCE:{self._index},{unit.value})")
 
 
@@ -11390,7 +10842,6 @@ class _FlightSim_Radio_TACAN_STATION_IDENT:
         self._index = index
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:TACAN STATION IDENT:{self._index},{unit.value})")
 
 
@@ -11417,13 +10868,12 @@ class _FlightSim_Radio_TACAN_STATION_RADIAL:
 
 
 # Difference between the current radial and OBS tuned radial, in degrees.
-#! Degrees.
 class _FlightSim_Radio_TACAN_STATION_RADIAL_ERROR:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Angle.DEGREE'):
         return self._.get(f"(A:TACAN STATION RADIAL ERROR:{self._index},{unit.value})")
 
 
@@ -11531,13 +10981,12 @@ class _FlightSim_Radio_TRANSPONDER_AVAILABLE:
 
 
 # 4-digit code.
-#! BCD16
 class _FlightSim_Radio_TRANSPONDER_CODE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Frequency.BCD16'):
         return self._.get(f"(A:TRANSPONDER CODE:{self._index},{unit.value})")
 
 
@@ -11909,15 +11358,14 @@ class _FlightSim_System_CARB_HEAT_AVAILABLE:
 
 
 # Rate of turn of heading indicator.
-#! Radians per second
 class _FlightSim_System_DELTA_HEADING_RATE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.AngularVelocity.RADIAN_PER_SECOND'):
         return self._.get(f"(A:DELTA HEADING RATE,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.AngularVelocity.RADIAN_PER_SECOND', value: str):
         self._.set(f"{value} (>A:DELTA HEADING RATE,{unit.value})")
 
 
@@ -12078,12 +11526,11 @@ class _FlightSim_System_INDUCTOR_COMPASS_PERCENT_DEVIATION:
 
 
 # Deprecated, do not use!
-#! Mask
 class _FlightSim_System_INSTRUMENTS_AVAILABLE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Miscellaneous.MASK'):
         return self._.get(f"(A:INSTRUMENTS AVAILABLE,{unit.value})")
 
 
@@ -12093,8 +11540,8 @@ class _FlightSim_System_INTERCOM_MODE:
         self._ = flightSim
     
     class Unit(Enum):
-        ALL =                         1
-        CREW =                         2
+        ALL = 1
+        CREW = 2
 
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.ENUM'):
         return self._.get(f"(A:INTERCOM MODE,{unit.value})")
@@ -12138,25 +11585,23 @@ class _FlightSim_System_IS_LATITUDE_LONGITUDE_FREEZE_ON:
 
 # The value for the given altimeter index in inches of mercury.
 # IMPORTANT! In the system.cfg file, altimeters are indexed from 0, but the SimVar indexes from 1. So, altimeter 0 in that file is accessed using KOHLSMAN SETTING HG:1, 1 by KOHLSMAN SETTING HG:2, etc...
-#! Inches of Mercury, inHg
 class _FlightSim_System_KOHLSMAN_SETTING_HG:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.INCH_OF_MERCURY'):
         return self._.get(f"(A:KOHLSMAN SETTING HG:{self._index},{unit.value})")
 
 
 # The value for the given altimeter index in millibars.
 # IMPORTANT! In the system.cfg file, altimeters are indexed from 0, but the SimVar indexes from 1. So, altimeter 0 in that file is accessed using KOHLSMAN SETTING MB:1, 1 by KOHLSMAN SETTING MB:2, etc...
-#! Millibars
 class _FlightSim_System_KOHLSMAN_SETTING_MB:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.MILLIBAR'):
         return self._.get(f"(A:KOHLSMAN SETTING MB:{self._index},{unit.value})")
 
 
@@ -12281,12 +11726,11 @@ class _FlightSim_System_PRESSURIZATION_CABIN_ALTITUDE_GOAL:
 
 
 # The rate at which cabin pressurization changes.
-#! Feet per second
 class _FlightSim_System_PRESSURIZATION_CABIN_ALTITUDE_RATE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:PRESSURIZATION CABIN ALTITUDE RATE,{unit.value})")
 
 
@@ -12300,12 +11744,11 @@ class _FlightSim_System_PRESSURIZATION_DUMP_SWITCH:
 
 
 # The difference in pressure between the set altitude pressurization and the current pressurization.
-#! Pounds per square foot, psf
 class _FlightSim_System_PRESSURIZATION_PRESSURE_DIFFERENTIAL:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_FOOT'):
         return self._.get(f"(A:PRESSURIZATION PRESSURE DIFFERENTIAL,{unit.value})")
 
 
@@ -12413,25 +11856,23 @@ class _FlightSim_System_STRUCTURAL_DEICE_SWITCH:
 
 
 # Vacuum system suction pressure.
-#! Inches of Mercury, inHg
 class _FlightSim_System_SUCTION_PRESSURE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.INCH_OF_MERCURY'):
         return self._.get(f"(A:SUCTION PRESSURE,{unit.value})")
 
-    def set(self, unit: '', value: str):
+    def set(self, unit: 'FlightSim.Unit.Pressure.INCH_OF_MERCURY', value: str):
         self._.set(f"{value} (>A:SUCTION PRESSURE,{unit.value})")
 
 
 # Deprecated, do not use!
-#! Mask
 class _FlightSim_System_SYSTEMS_AVAILABLE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Miscellaneous.MASK'):
         return self._.get(f"(A:SYSTEMS AVAILABLE,{unit.value})")
 
 
@@ -12499,12 +11940,11 @@ class _FlightSim_System_TURN_COORDINATOR_BALL_INV:
 
 # Turn indicator reading.
 # NOTE: This is available in multiplayer to all near aircraft. See here for more information: Note On SimVars In Multiplayer.
-#! Radians per second
 class _FlightSim_System_TURN_INDICATOR_RATE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.AngularVelocity.RADIAN_PER_SECOND'):
         return self._.get(f"(A:TURN INDICATOR RATE,{unit.value})")
 
 
@@ -12552,32 +11992,29 @@ class _FlightSim_System_VARIOMETER_MAC_CREADY_SETTING:
 
 
 # Variometer rate using Netto (Total Energy - polar sinkRate).
-#! Feet per second
 class _FlightSim_System_VARIOMETER_NETTO:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:VARIOMETER NETTO,{unit.value})")
 
 
 # The variometer rate.
-#! Feet per second
 class _FlightSim_System_VARIOMETER_RATE:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:VARIOMETER RATE,{unit.value})")
 
 
 # Optimal speed to fly between thermals using polar curve and MacCready setting.
-#! Kilometers per hour
 class _FlightSim_System_VARIOMETER_SPEED_TO_FLY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.KILOMETER_PER_HOUR'):
         return self._.get(f"(A:VARIOMETER SPEED TO FLY,{unit.value})")
 
 
@@ -12600,12 +12037,11 @@ class _FlightSim_System_VARIOMETER_SWITCH:
 
 
 # The variometer rate using total energy.
-#! Feet per second
 class _FlightSim_System_VARIOMETER_TOTAL_ENERGY:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Speed.FEET_PER_SECOND'):
         return self._.get(f"(A:VARIOMETER TOTAL ENERGY,{unit.value})")
 
 
@@ -12886,12 +12322,11 @@ class _FlightSim_System_LIGHT_NAV:
 
 
 # Bit mask:[index]
-#! Mask
 class _FlightSim_System_LIGHT_ON_STATES:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Miscellaneous.MASK'):
         return self._.get(f"(A:LIGHT ON STATES,{unit.value})")
 
 
@@ -12990,12 +12425,11 @@ class _FlightSim_System_LIGHT_RECOGNITION_ON:
 
 # Same as LIGHT_ON_STATES.
 # NOTE: This is available in multiplayer to all far aircraft. See here for more information: Note On SimVars In Multiplayer.
-#! Mask
 class _FlightSim_System_LIGHT_STATES:
     def __init__(self, flightSim):
         self._ = flightSim
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Miscellaneous.MASK'):
         return self._.get(f"(A:LIGHT STATES,{unit.value})")
 
 
@@ -13094,13 +12528,12 @@ class _FlightSim_System_STROBE_FLASH:
 
 
 # Hydraulic system pressure. Indexes start at 1.
-#! Pound force per square foot
 class _FlightSim_System_HYDRAULIC_PRESSURE:
     def __init__(self, flightSim, index):
         self._ = flightSim
         self._index = index
     
-    def get(self, unit: ''):
+    def get(self, unit: 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_FOOT'):
         return self._.get(f"(A:HYDRAULIC PRESSURE:{self._index},{unit.value})")
 
 
@@ -13432,11 +12865,9 @@ class _FlightSim_System_DROPPABLE_OBJECTS_TYPE:
         self._index = index
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:DROPPABLE OBJECTS TYPE:{self._index},{unit.value})")
 
     def set(self, unit: 'FlightSim.Unit.Miscellaneous.STRING', value: str):
-        # unit: String
         self._.set(f"{value} (>A:DROPPABLE OBJECTS TYPE:{self._index},{unit.value})")
 
 
@@ -13447,7 +12878,6 @@ class _FlightSim_System_DROPPABLE_OBJECTS_UI_NAME:
         self._index = index
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:DROPPABLE OBJECTS UI NAME:{self._index},{unit.value})")
 
 
@@ -13467,7 +12897,6 @@ class _FlightSim_System_PAYLOAD_STATION_NAME:
         self._index = index
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:PAYLOAD STATION NAME:{self._index},{unit.value})")
 
 
@@ -13488,7 +12917,6 @@ class _FlightSim_System_PAYLOAD_STATION_OBJECT:
         self._index = index
     
     def get(self, unit: 'FlightSim.Unit.Miscellaneous.STRING'):
-        # unit: String
         return self._.get(f"(A:PAYLOAD STATION OBJECT:{self._index},{unit.value})")
 
 
@@ -13917,7 +13345,7 @@ class FlightSim:
             # The watt is a unit of power in the International System of Units (SI). It is defined as a 1 joule per second.
             WATT = 'Watt'
             # Foot pounds per second are a unit of power using the imperial system. It is the energy transferred upon applying a force of 1 pound-force through a linear displacement of 1 foot over the time of 1 second.
-            FT_LB_PER_SECOND = 'ft lb per second'
+            FOOT_POUND_PER_SECOND = 'ft lb per second'
     
     
         class VolumeRate(Enum):

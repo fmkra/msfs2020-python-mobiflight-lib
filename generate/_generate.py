@@ -1,4 +1,6 @@
 from bs4 import BeautifulSoup
+import re
+
 
 unit_mapping = {
     'Percent Over 100': 'FlightSim.Unit.Miscellaneous.PERCENT_OVER_100',
@@ -15,6 +17,7 @@ unit_mapping = {
     'Volts': 'FlightSim.Unit.ElectricalPotential.VOLT',
     'Amps': 'FlightSim.Unit.ElectricalCurrent.AMPERE',
     'Pounds per square inch (psi)': 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_INCH',
+    'Pound force per square foot (psf)': 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_FOOT',
     'Pounds per square foot (psf)': 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_FOOT',
     'RPM': 'FlightSim.Unit.AngularVelocity.REVOLUTION_PER_MINUTE',
     'Centimeters': 'FlightSim.Unit.Length.CENTIMETER',
@@ -30,12 +33,50 @@ unit_mapping = {
     'Pounds': 'FlightSim.Unit.Weight.POUND',
     'Seconds': 'FlightSim.Unit.Time.SECOND',
     'Psf': 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_FOOT',
+    'Meter': 'FlightSim.Unit.Length.METER',
     'Meters': 'FlightSim.Unit.Length.METER',
     'Meters per second': 'FlightSim.Unit.Length.METER_PER_SECOND',
     'Nautical miles': 'FlightSim.Unit.Length.NAUTICAL_MILE',
     'Hz': 'FlightSim.Unit.Frequency.HERTZ',
     'Feet': 'FlightSim.Unit.Length.FOOT',
     'MHz': 'FlightSim.Unit.Frequency.MEGAHERTZ',
+    'Percent': 'FlightSim.Unit.Miscellaneous.PERCENT',
+    'String': 'FlightSim.Unit.Miscellaneous.STRING',
+    'Integer': 'int', # TODO: check this
+    'FS7 Oil Quantity': 'FlightSim.Unit.Volume.FS7_OIL_QUANTITY',
+    'Foot Pound': 'FlightSim.Unit.Torque.FOOT_POUND',
+    'Mask': 'FlightSim.Unit.Miscellaneous.MASK',
+    'Celsius': 'FlightSim.Unit.Temperature.CELSIUS',
+    'Gallons': 'FlightSim.Unit.Volume.GALLON',
+    'Foot pounds (ftlbs) per second': 'FlightSim.Unit.Power.FOOT_POUND_PER_SECOND',
+    'Radians per second': 'FlightSim.Unit.AngularVelocity.RADIAN_PER_SECOND', 
+    'Feet (ft) per second': 'FlightSim.Unit.Speed.FEET_PER_SECOND',
+    'Foot pound': 'FlightSim.Unit.Torque.FOOT_POUND',
+    'kias': 'FlightSim.Unit.Speed.KNOT', # TODO: check
+    'GForce': 'FlightSim.Unit.Acceleration.G_FORCE',
+    'Per radian': 'FlightSim.Unit.Miscellaneous.PER_RADIAN',
+    'Mach': 'FlightSim.Unit.Speed.MACH',
+    # 'Per second': 'FlightSim.Unit.',
+    'Feet (ft) per minute': 'FlightSim.Unit.Speed.FEET_PER_MINUTE',
+    'Square feet (ft)': 'FlightSim.Unit.Area.SQUARE_FOOT',
+    'Slugs per feet squared (Slug sqft)': 'FlightSim.Unit.Pressure.SLUG_FEET_SQUARED', # TODO: check (per or times)
+    'Slugs per feet squared': 'FlightSim.Unit.Pressure.SLUG_FEET_SQUARED',
+    'Kilo pascal': 'FlightSim.Unit.Pressure.KILOPASCAL',
+    'Feet (ft) per second squared': 'FlightSim.Unit.Acceleration.FEET_PER_SECOND_SQUARED',
+    'Feet per second': 'FlightSim.Unit.Speed.FEET_PER_SECOND',
+    'Radians per second squared': 'FlightSim.Unit.AngularAcceleration.RADIAN_PER_SECOND_SQUARED',
+    'Frequency BCD16': 'FlightSim.Unit.Frequency.BCD16',
+    'BCD16': 'FlightSim.Unit.Frequency.BCD16',
+    'Inches of Mercury, inHg': 'FlightSim.Unit.Pressure.INCH_OF_MERCURY',
+    'Millibars': 'FlightSim.Unit.Pressure.MILLIBAR',
+    'Pounds per square foot, psf': 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_FOOT',
+    'Kilometers per hour': 'FlightSim.Unit.Speed.KILOMETER_PER_HOUR',
+    'Pound force per square foot': 'FlightSim.Unit.Pressure.POUND_FORCE_PER_SQUARE_FOOT',
+    'Frequency ADF BCD32': 'FlightSim.Unit.Frequency.ADF_BCD32',
+    # -
+    # Percent with extra desc
+    # Percent over 100 or position
+
 }
 
 processed_classes = []
@@ -76,7 +117,7 @@ def processVariableGroup(groupName, fileName):
                         unit_comment = "\n        # unit: " + unit.replace('\n', ' ')
                     unit = unit_mapping['Position']
                 elif unit.startswith('Enum'):
-                    extra_class_body = '\n    class Unit(Enum):\n'
+                    extra_class_body = '\n    class Unit(Enum):\n' if len(unit.split('\n')) > 2 else ''
                     for u in unit.split('\n')[2:]:
                         try:
                             n,v = u.split(' = ')
@@ -84,15 +125,24 @@ def processVariableGroup(groupName, fileName):
                             n,*v = u.split(' ')
                             n = n.split(':')[0]
                             v = ' '.join(v)
-                        v = v.upper().replace(' ', '_').replace(',', '').replace('.', '_')
-                        extra_class_body += f"        {v} = {n}\n"
+                        v = '_'.join([x for x in re.split('[^a-zA-Z0-9]', v.upper()) if x])
+                        extra_class_body += f"        {v} = {n.strip()}\n"
                     unit = 'FlightSim.Unit.Miscellaneous.ENUM'
-                elif unit.startswith('String'):
-                    unit_comment = "\n        # unit: " + " ".join(unit.split('\n'))
-                    unit = 'FlightSim.Unit.Miscellaneous.STRING'
+                # elif unit.startswith('String'):
+                    # unit_comment = "\n        # unit: " + " ".join(unit.split('\n'))
+                    # unit = 'FlightSim.Unit.Miscellaneous.STRING'
                 else:
-                    extra_comment = '#! ' + ('\n# '.join(unit.split('\n')))
-                    unit = ''
+                    u = unit.split('\n')
+                    
+                    if len(u) >= 2 and u[1].strip() == 'or':
+                        unit = f"{unit_mapping[u[0]]} | {unit_mapping[u[2]]}"
+                        unit_comment = '\n        # unit: ' + ' '.join(u)
+                    elif len(u) == 2 and u[0] in unit_mapping:
+                        unit = unit_mapping[u[0]]
+                        unit_comment = '\n        # unit: ' + ' '.join([x.strip() for x in u])
+                    else:
+                        extra_comment = '#! ' + ('\n# '.join(unit.split('\n')))
+                        unit = ''
                 
                 if extra_comment:
                     desc_out += '\n' + extra_comment
@@ -167,3 +217,4 @@ with open('flightsim.py', 'w') as f:
 # - AUTOPILOT_MAX_BANK_ID - wtf is Integer type
 # - APU_BLEED_PRESSURE_RECEIVED_BY_ENGINE - not sure if unit is correct
 # TODO: split autopilot & brake into separate files, maybe rename FlightModel
+# TODO: String (30)

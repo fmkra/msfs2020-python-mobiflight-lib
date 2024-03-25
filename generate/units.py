@@ -201,7 +201,7 @@ class Unit:
         # The watt is a unit of power in the International System of Units (SI). It is defined as a 1 joule per second.
         WATT = 'Watt'
         # Foot pounds per second are a unit of power using the imperial system. It is the energy transferred upon applying a force of 1 pound-force through a linear displacement of 1 foot over the time of 1 second.
-        FT_LB_PER_SECOND = 'ft lb per second'
+        FOOT_POUND_PER_SECOND = 'ft lb per second'
 
 
     class VolumeRate(Enum):
